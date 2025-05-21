@@ -1,91 +1,44 @@
 .main-header {
-  position: relative;
-  padding: 15px 0 3px;
-  min-height: 100px;
-  // background-color: $color-navy-blue;
-
-  --link-padding: 4px;
-  --mobile-side-padding: 10px;
-  --tablet-side-padding: 40px;
-
+  position: absolute;
+  top: 20px;
+  min-height: 54px;
   z-index: $z-index-second;
 
-  @media (min-width: $tablet-width) {
-    min-height: 82px;
-    padding: 20px 0;
-  }
+  // @media (min-width: $tablet-width) {
 
-  @media (min-width: $desktop-width) {
-    min-height: 126px;
-    padding: 32px 0;
-  }
+  // }
+
+  // @media (min-width: $desktop-width) {
+
+  // }
 }
 
 .main-header__content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 6px 4px;
-
-  @media (min-width: $tablet-width) {
-    grid-template-columns: 1fr 142px 1fr;
-    align-items: center;
-  }
-
-  @media (min-width: $desktop-width) {
-    grid-template-columns: 205px 1fr 157px;
-    gap: 40px;
-  }
-}
-
-.main-header__burger {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  text-decoration: none;
-  border: none;
-  padding: 0 10px 10px 0;
-  cursor: pointer;
-  background-color: unset;
-  color: $color-white;
-  transition: color 0.3s;
 
-  &:hover {
-    color: rgba(255, 255, 255, 0.5);
-  }
+  // @media (min-width: $tablet-width) {
 
-  &:focus {
-    // color: $color-elephant;
-  }
+  // }
 
-  &:active {
-    // color: $color-resolution-blue;
-  }
+  // @media (min-width: $desktop-width) {
 
-  @media (min-width: $tablet-width) {
-    padding: 8px 10px 8px 0;
-  }
-
-  @media (min-width: $desktop-width) {
-    display: none;
-  }
+  // }
 }
 
-.main-header__burger svg {
-  flex-shrink: 0;
-}
+.main-header__primary-button {
+  min-height: 54px;
+  min-width: 136px;
 
-.main-header__close-icon {
-  display: none;
+  // @media (min-width: $tablet-width) {
 
-  .main-header--nav-is-opened & {
-    display: block;
-  }
-}
+  // }
 
-.main-header__burger-icon {
-  .main-header--nav-is-opened & {
-    display: none;
-  }
+  // @media (min-width: $desktop-width) {
+
+  // }
+
 }
 
 .main-header__nav-wrapper {
@@ -192,24 +145,3 @@
   }
 }
 
-
-.main-header__logo {
-  justify-self: flex-end;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-
-  @media (min-width: $desktop-width) {
-    grid-column: unset;
-    grid-row: unset;
-  }
-}
-
-.main-header__phone {
-  max-width: 170px;
-  grid-column: 2 / -1;
-  justify-self: flex-end;
-
-  @media (min-width: $tablet-width) {
-    grid-column: -1 / -2;
-  }
-}

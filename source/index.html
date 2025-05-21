@@ -26,15 +26,19 @@
           <img src="img/logo/logo.svg" alt="Логотип центра 'Стажировка'" width="52" height="52">
         </a>
         <nav class="main-header__main-nav">
-          <button class="main-header__burger" type="button">
+          <button class="main-header__primary-button primary-button" type="button">
             <span class="visually-hidden">Открыть меню</span>
-            <svg class="main-header__burger-icon" aria-hidden="true" focusable="false" width="26" height="26">
-              <use href="/__spritemap#sprite-burger-menu"></use>
-            </svg>
-            <span class="visually-hidden">Закрыть меню</span>
-            <svg class="main-header__close-icon" aria-hidden="true" focusable="false" width="26" height="26">
-              <use href="/__spritemap#sprite-close-menu"></use>
-            </svg>
+            <span class="primary-button__text">Меню</span>
+            <span class="primary-button__icon-wrap">
+              <svg class="primary-button__icon" aria-hidden="true" focusable="false" width="16" height="8">
+                <use href="/__spritemap#sprite-burger-menu"></use>
+              </svg>
+              <span class="visually-hidden">Закрыть меню</span>
+              <svg class="primary-button__icon primary-button__icon--close" aria-hidden="true" focusable="false"
+                width="18" height="18">
+                <use href="/__spritemap#sprite-close-menu"></use>
+              </svg>
+            </span>
           </button>
           <div class="main-header__nav-wrapper">
             <ul class="main-header__nav-list">
@@ -72,8 +76,6 @@
             </ul>
           </div>
         </nav>
-        <!-- Чтобы отобразить ссылку в состоянии disable надо добавить класс-модификатор is-disabled к элементу с классом phone. -->
-        <a class="main-header__phone phone" href="tel:+78000000000">8&nbsp;800 000-00-00</a>
       </div>
     </div>
   </header>
