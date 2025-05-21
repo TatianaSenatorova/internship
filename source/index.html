@@ -18,24 +18,86 @@
   <link rel="preload" href="fonts/manrope/Manrope-Medium.woff2" type="font/woff2" as="font" crossorigin="anonymous">
 </head>
 
-<body class="page-body">
-  <!-- пример использования спрайта -->
-  <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
-  <svg>
-    <use href="/__spritemap#sprite-user"></use>
-  </svg>
-  <!-- примеры требуемых атрибутов data-test="*" -->
-  <div data-test="hero">hero</div>
-  <div data-test="about">about</div>
-  <div data-test="programs">programs</div>
-  <div data-test="grant">grant</div>
-  <div data-test="news">news</div>
-  <div data-test="FAQ">FAQ</div>
-  <div data-test="reviews">reviews</div>
-  <div data-test="contacts">contacts</div>
-  <div data-test="form">form</div>
-  <div data-test="footer">footer</div>
-  <script type="module" src="js/main.js"></script>
+<body class="page__body">
+  <header class="main-header" data-test="header">
+    <div class="container">
+      <div class="main-header__content">
+        <a class="main-header__logo logo">
+          <img src="img/logo/logo.svg" alt="Логотип центра 'Стажировка'" width="52" height="52">
+        </a>
+        <nav class="main-header__main-nav">
+          <button class="main-header__burger" type="button">
+            <span class="visually-hidden">Открыть меню</span>
+            <svg class="main-header__burger-icon" aria-hidden="true" focusable="false" width="26" height="26">
+              <use href="/__spritemap#sprite-burger-menu"></use>
+            </svg>
+            <span class="visually-hidden">Закрыть меню</span>
+            <svg class="main-header__close-icon" aria-hidden="true" focusable="false" width="26" height="26">
+              <use href="/__spritemap#sprite-close-menu"></use>
+            </svg>
+          </button>
+          <div class="main-header__nav-wrapper">
+            <ul class="main-header__nav-list">
+              <!-- Чтобы отобразить ссылку в состоянии disable надо добавить класс-модификатор is-disabled к элементу с классом nav-link. -->
+              <li class="main-header__nav-item">
+                <a class="main-header__nav-link nav-link nav-link--uppercase" href="#tours" tabindex="0">
+                  Туры
+                </a>
+              </li>
+              <li class="main-header__nav-item">
+                <a class="main-header__nav-link nav-link nav-link--uppercase" href="#training">
+                  Обучение
+                </a>
+              </li>
+              <li class="main-header__nav-item">
+                <a class="main-header__nav-link nav-link nav-link--uppercase" href="#about">
+                  О&nbsp;нас
+                </a>
+              </li>
+              <li class="main-header__nav-item">
+                <a class="main-header__nav-link nav-link nav-link--uppercase" href="#reviews">
+                  Отзывы
+                </a>
+              </li>
+              <li class="main-header__nav-item">
+                <a class="main-header__nav-link nav-link nav-link--uppercase" href="#gallery">
+                  Фотографии
+                </a>
+              </li>
+              <li class="main-header__nav-item">
+                <a class="main-header__nav-link nav-link nav-link--uppercase" href="#contacts">
+                  Контакты
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- Чтобы отобразить ссылку в состоянии disable надо добавить класс-модификатор is-disabled к элементу с классом phone. -->
+        <a class="main-header__phone phone" href="tel:+78000000000">8&nbsp;800 000-00-00</a>
+      </div>
+    </div>
+  </header>
+  <main class="main-content">
+    <section class="hero" data-test="hero">
+    </section>
 </body>
+
+<!-- пример использования спрайта -->
+<!-- <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
+<svg>
+  <use href="/__spritemap#sprite-user"></use>
+</svg> -->
+<!-- примеры требуемых атрибутов data-test="*" -->
+<!-- <div data-test="hero">hero</div>
+<div data-test="about">about</div>
+<div data-test="programs">programs</div>
+<div data-test="grant">grant</div>
+<div data-test="news">news</div>
+<div data-test="FAQ">FAQ</div>
+<div data-test="reviews">reviews</div>
+<div data-test="contacts">contacts</div>
+<div data-test="form">form</div>
+<div data-test="footer">footer</div>
+<script type="module" src="js/main.js"></script> -->
 
 </html>

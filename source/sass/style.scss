@@ -1,4 +1,56 @@
 // Vendor
-// ---------------------------------
 
 @import "vendor/normalize";
+
+// Swiper
+@import "swiper/css";
+@import "swiper/css/pagination";
+
+
+/* GLOBAL */
+@import "common/variables";
+@import "common/fonts";
+@import "common/global";
+@import "common/visually-hidden";
+// @import "common/mixins";
+
+/* BLOCKS */
+@import "blocks/page";
+@import "blocks/container";
+@import "blocks/main-header";
+@import "blocks/logo";
+@import "blocks/main-content";
+@import "blocks/main-footer";
+
+
+// @import "blocks/nav-link";
+// @import "blocks/phone";
+// @import "blocks/hero";
+// @import "blocks/hero-card";
+// @import "blocks/button";
+// @import "blocks/addition-photos";
+// @import "blocks/wrapper-tours-training";
+// @import "blocks/buttons-swiper-list";
+// @import "blocks/section-title";
+// @import "blocks/tours";
+// @import "blocks/tours-card";
+// @import "blocks/button-secondary";
+// @import "blocks/button-swiper";
+// @import "blocks/training";
+// @import "blocks/training-card";
+// @import "blocks/social-link";
+// @import "blocks/learning-card";
+// @import "blocks/about";
+// @import "blocks/wrapper-reviews-advantages";
+// @import "blocks/reviews";
+// @import "blocks/review-card";
+// @import "blocks/advantages";
+// @import "blocks/advantages-card";
+// @import "blocks/gallery";
+// @import "blocks/gallery-card";
+// @import "blocks/form-section";
+// @import "blocks/form";
+// @import "blocks/input";
+// @import "blocks/contacts";
+// @import "blocks/footer-nav";
+// @import "blocks/social";
