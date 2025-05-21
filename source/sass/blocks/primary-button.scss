@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 5px 5px 21px;
+  padding: 3px 5px 3px 21px;
   text-decoration: none;
   color: $color-cerulean-blue;
   border-radius: 30px;
@@ -47,12 +47,29 @@
     color: $color-mischka;
     background-color: transparent;
   }
+
+  &--light {
+    background-color: $color-white;
+
+    &:focus {
+      background-color: $color-white;
+    }
+
+    &:disabled {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  &--light, &--is-disabled {
+  background-color: rgba(255, 255, 255, 0.6);
+  }
 }
 
 .primary-button__icon-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: 46px;
   height: 46px;
   border-radius: 50%;

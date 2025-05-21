@@ -15,8 +15,10 @@
 
 .main-header__content {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: auto 1fr;
   align-items: center;
+  justify-content: space-between;
+  column-gap: 20px;
 
   // @media (min-width: $tablet-width) {
 
@@ -39,6 +41,9 @@
 
   // }
 
+}
+.main-header__main-nav {
+  justify-self: end;
 }
 
 .main-header__nav-wrapper {
