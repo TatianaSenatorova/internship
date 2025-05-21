@@ -38,12 +38,14 @@
     pointer-events: none;
     border-color: $color-mischka;
     color: $color-mischka;
+    background-color: transparent;
   }
 
   &--is-disabled {
     pointer-events: none;
     border-color: $color-mischka;
     color: $color-mischka;
+    background-color: transparent;
   }
 }
 
@@ -55,11 +57,40 @@
   height: 46px;
   border-radius: 50%;
   background-color: $color-cerulean-blue;
+  transition: background-color 0.3s;
+  color: $color-white;
+
+  .primary-button:hover & {
+    background-color: $color-white;
+    color: $color-cerulean-blue;
+  }
+
+  .primary-button:focus & {
+    background-color: $color-cerulean-blue;
+    color: $color-white;
+  }
+
+  .primary-button:active & {
+    background-color: $color-white;
+    color: rgba(49, 109, 194, 0.7);
+  }
+
+  .primary-button:disabled & {
+    background-color: $color-mischka;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .primary-button--is-disabled & {
+    background-color: $color-mischka;
+    color: rgba(255, 255, 255, 0.6);
+  }
 }
 
 .primary-button__icon {
   display: block;
   flex-shrink: 0;
+  color: inherit;
+  transition: color 0.3s;
 
   .main-header--nav-is-opened & {
     display: none;
@@ -71,5 +102,15 @@
     .main-header--nav-is-opened & {
       display: block;
     }
+  }
+
+  .primary-button--icon-rotate & {
+    transform: rotate(-45deg);
+  }
+
+  .primary-button--icon-rotate:hover &,
+  .primary-button--icon-rotate:focus &,
+  .primary-button--icon-rotate:active & {
+    transform: unset;
   }
 }
