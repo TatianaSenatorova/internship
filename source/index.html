@@ -19,7 +19,7 @@
 </head>
 
 <body class="page__body">
-  <header class="main-header" data-test="header">
+  <header class="main-header main-header--nav-is-opened" data-test="header">
     <div class="container">
       <div class="main-header__content">
         <a class="main-header__logo logo">
@@ -41,39 +41,102 @@
             </span>
           </button>
           <div class="main-header__nav-wrapper">
-            <ul class="main-header__nav-list">
-              <!-- Чтобы отобразить ссылку в состоянии disable надо добавить класс-модификатор is-disabled к элементу с классом nav-link. -->
-              <li class="main-header__nav-item">
-                <a class="main-header__nav-link nav-link nav-link--uppercase" href="#tours" tabindex="0">
-                  Туры
-                </a>
-              </li>
-              <li class="main-header__nav-item">
-                <a class="main-header__nav-link nav-link nav-link--uppercase" href="#training">
-                  Обучение
-                </a>
-              </li>
-              <li class="main-header__nav-item">
-                <a class="main-header__nav-link nav-link nav-link--uppercase" href="#about">
-                  О&nbsp;нас
-                </a>
-              </li>
-              <li class="main-header__nav-item">
-                <a class="main-header__nav-link nav-link nav-link--uppercase" href="#reviews">
-                  Отзывы
-                </a>
-              </li>
-              <li class="main-header__nav-item">
-                <a class="main-header__nav-link nav-link nav-link--uppercase" href="#gallery">
-                  Фотографии
-                </a>
-              </li>
-              <li class="main-header__nav-item">
-                <a class="main-header__nav-link nav-link nav-link--uppercase" href="#contacts">
-                  Контакты
-                </a>
-              </li>
-            </ul>
+            <div class="container">
+              <ul class="main-header__nav-list">
+                <!-- Чтобы отобразить ссылку в состоянии disable надо добавить класс-модификатор is-disabled к элементу с классом nav-link. -->
+                <li class="main-header__nav-item">
+                  <a class="main-header__nav-link" href="#about">
+                    О&nbsp;проекте
+                  </a>
+                </li>
+                <li class="main-header__nav-item">
+                  <button class="main-header__nav-link main-header__nav-link--with-arrow" type="button">
+                    Программы
+                    <span class="visually-hidden">Открыть или закрыть подменю</span>
+                    <svg class="main-header__nav-link-arrow" aria-hidden="true" focusable="false" width="12"
+                      height="12">
+                      <use href="/__spritemap#sprite-arrow-down"></use>
+                    </svg>
+                  </button>
+                  <ul class="main-header__sub-nav-list">
+                    <!-- Чтобы отобразить ссылку в состоянии disable надо добавить класс-модификатор is-disabled к элементу с классом nav-link. -->
+                    <li class="main-header__nav-item">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs">
+                        Стажировки
+                      </a>
+                    </li>
+                    <li class="main-header__nav-item">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs">
+                        Волонтёрство
+                      </a>
+                    </li>
+                    <li class="main-header__nav-item">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs">
+                        Учёба
+                      </a>
+                    </li>
+                    <li class="main-header__nav-item">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs">
+                        Религия
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="main-header__nav-item">
+                  <a class="main-header__nav-link" href="#grant">
+                    Как поехать
+                  </a>
+                </li>
+                <li class="main-header__nav-item">
+                  <a class="main-header__nav-link" href="#reviews">
+                    Отзывы
+                  </a>
+                </li>
+                <li class="main-header__nav-item">
+                  <button class="main-header__nav-link main-header__nav-link--with-arrow" type="button">
+                    Новости
+                    <span class="visually-hidden">Открыть или закрыть подменю</span>
+                    <svg class="main-header__nav-link-arrow" aria-hidden="true" focusable="false" width="12"
+                      height="12">
+                      <use href="/__spritemap#sprite-arrow-down"></use>
+                    </svg>
+                  </button>
+                  <ul>
+                    <!-- Чтобы отобразить ссылку в состоянии disable надо добавить класс-модификатор is-disabled к элементу с классом nav-link. -->
+                    <li class="main-header__nav-item">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#news">
+                        Общее
+                      </a>
+                    </li>
+                    <li class="main-header__nav-item">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#news">
+                        Волонтёрство
+                      </a>
+                    </li>
+                    <li class="main-header__nav-item">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#news">>
+                        Стажировки
+                      </a>
+                    </li>
+                    <li class="main-header__nav-item">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#news">>
+                        Карьера
+                      </a>
+                    </li>
+                    <li class="main-header__nav-item">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#news">>
+                        Путешествия
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="main-header__nav-item">
+                  <a class="main-header__nav-link" href="#contacts">
+                    Контакты
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </nav>
       </div>
