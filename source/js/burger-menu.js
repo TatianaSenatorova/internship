@@ -18,7 +18,7 @@ const onButtonSubMenuClick = (evt) => {
     subMenu.style.maxHeight = null;
     subMenu.style.paddingTop = null;
   } else {
-    subMenu.style.paddingTop =  SUB_MENU_PADDING_TOP + 'px';
+    subMenu.style.paddingTop = SUB_MENU_PADDING_TOP + 'px';
     subMenu.style.maxHeight = subMenu.scrollHeight + "px";
   }
 }
