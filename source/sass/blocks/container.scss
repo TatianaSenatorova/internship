@@ -13,4 +13,9 @@
     width: $desktop-width;
     padding: 0 100px;
   }
+
+  &--wide {
+    width: 100vw;
+    padding: unset;
+  }
 }
