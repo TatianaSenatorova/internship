@@ -41,15 +41,12 @@
                   </a>
                 </li>
                 <li class="main-header__nav-item">
-                  <button class="main-header__nav-link main-header__nav-link--with-arrow" type="button">
+                  <button class="main-header__nav-button" aria-expanded="false" aria-controls="programms-submenu"
+                    type="button">
                     Программы
                     <span class="visually-hidden">Открыть или закрыть подменю</span>
-                    <svg class="main-header__nav-link-arrow" aria-hidden="true" focusable="false" width="12"
-                      height="12">
-                      <use href="/__spritemap#sprite-arrow-down"></use>
-                    </svg>
                   </button>
-                  <ul class="main-header__sub-nav-list">
+                  <ul class="main-header__sub-nav-list" id="programms-submenu">
                     <!-- Чтобы отобразить ссылку в состоянии disable надо добавить класс-модификатор is-disabled к элементу с классом nav-link. -->
                     <li class="main-header__nav-item">
                       <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs">
@@ -84,15 +81,12 @@
                   </a>
                 </li>
                 <li class="main-header__nav-item">
-                  <button class="main-header__nav-link main-header__nav-link--with-arrow" type="button">
+                  <button class="main-header__nav-button" aria-expanded="false" aria-controls="news-submenu"
+                    type="button">
                     Новости
                     <span class="visually-hidden">Открыть или закрыть подменю</span>
-                    <svg class="main-header__nav-link-arrow" aria-hidden="true" focusable="false" width="12"
-                      height="12">
-                      <use href="/__spritemap#sprite-arrow-down"></use>
-                    </svg>
                   </button>
-                  <ul class="main-header__sub-nav-list">
+                  <ul class="main-header__sub-nav-list" id="news-submenu">
                     <!-- Чтобы отобразить ссылку в состоянии disable надо добавить класс-модификатор is-disabled к элементу с классом nav-link. -->
                     <li class="main-header__nav-item">
                       <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs">
