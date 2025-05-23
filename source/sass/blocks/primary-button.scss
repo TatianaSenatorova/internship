@@ -17,7 +17,7 @@
   line-height: 1;
   letter-spacing: 0.28px;
   text-transform: uppercase;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s, max-width 0.3s;
 
   &::before {
     content: "";
@@ -138,10 +138,18 @@
     mask-image: url("/__spritemap#sprite-close-menu-view");
   }
 
-  .main-header--nav-is-opened &--light,
-  &--dark {
+  &--dark,
+  .main-header--nav-is-opened &--light {
     background-color: #316dc2;
     color: $color-white;
+
+    &::before {
+      background-color: $color-white;
+    }
+
+    &::after {
+      background-color: $color-cerulean-blue;
+    }
 
     &:hover {
       background-color: $color-white;
@@ -177,11 +185,11 @@
       border-color: transparent;
     }
 
-    &:focus::before {
+    &:active::before {
       background-color: $color-cerulean-blue;
     }
 
-    &:focus::after {
+    &:active::after {
       background-color: rgb(255, 255, 255, 0.7);
     }
   }
