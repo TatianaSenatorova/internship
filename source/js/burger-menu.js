@@ -7,7 +7,8 @@ import {
 
 import {
   CLASS_MENU_IS_OPENED,
-  CLASS_SUB_MENU_BUTTON_ACTIVE
+  CLASS_SUB_MENU_BUTTON_ACTIVE,
+  SUB_MENU_PADDING_TOP
 } from './constants.js';
 
 const onButtonSubMenuClick = (evt) => {
@@ -17,7 +18,7 @@ const onButtonSubMenuClick = (evt) => {
     subMenu.style.maxHeight = null;
     subMenu.style.paddingTop = null;
   } else {
-    subMenu.style.paddingTop = '10px';
+    subMenu.style.paddingTop =  SUB_MENU_PADDING_TOP + 'px';
     subMenu.style.maxHeight = subMenu.scrollHeight + "px";
   }
 }
