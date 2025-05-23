@@ -1,10 +1,8 @@
 .primary-button {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 46px;
-  justify-content: space-between;
+  display: flex;
   align-items: center;
-  padding: 3px 4px 3px 20px;
+  padding: 3px 51px 3px 20px;
   text-decoration: none;
   color: $color-cerulean-blue;
   border-radius: 30px;
@@ -20,6 +18,10 @@
   transition: background-color 0.3s, color 0.3s, border-color 0.3s, max-width 0.3s;
 
   &::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 4px;
     content: "";
     grid-column: 2 / 3;
     grid-row: 1 / 2;
@@ -30,6 +32,10 @@
   }
 
   &::after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 19px;
     content: "";
     grid-column: 2 / 3;
     grid-row: 1 / 2;
