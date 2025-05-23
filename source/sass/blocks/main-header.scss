@@ -58,6 +58,7 @@
   margin: 0;
   padding: 0;
   padding-left: 16px;
+  // padding-top: 10px;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -67,12 +68,13 @@
   transition: max-height 0.3s;
 }
 
-// .main-header__nav-button--is-active+.main-header__sub-nav-list {
-//    max-height: 100%;
-// }
+.main-header__nav-item {
+  display: block;
+}
 
 .main-header__nav-link,
 .main-header__nav-button {
+  display: block;
   text-decoration: none;
   padding: 5px;
   font-size: 16px;

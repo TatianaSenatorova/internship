@@ -1,31 +1,31 @@
 import {
   mainHeader,
   menuButton,
-  navList,
   body,
-  buttonsSubMenu,
-  subMenus
+  buttonsSubMenu
 } from './dom-elements';
 
 import {
-  menuOpenedClass,
-  subMenuButtonActiveClass
+  CLASS_MENU_IS_OPENED,
+  CLASS_SUB_MENU_BUTTON_ACTIVE
 } from './constants.js';
 
 const onButtonSubMenuClick = (evt) => {
-  evt.target.classList.toggle(subMenuButtonActiveClass);
+  evt.target.classList.toggle(CLASS_SUB_MENU_BUTTON_ACTIVE);
   const subMenu = evt.target.closest('.main-header__nav-item').querySelector('.main-header__sub-nav-list');
   if (subMenu.style.maxHeight) {
     subMenu.style.maxHeight = null;
+    subMenu.style.paddingTop = null;
   } else {
+    subMenu.style.paddingTop = '10px';
     subMenu.style.maxHeight = subMenu.scrollHeight + "px";
   }
 }
 
 const onMenuButtonClick = (evt) => {
   evt.stopPropagation();
-  mainHeader.classList.toggle(menuOpenedClass);
-  if (mainHeader.classList.contains(menuOpenedClass)) {
+  mainHeader.classList.toggle(CLASS_MENU_IS_OPENED);
+  if (mainHeader.classList.contains(CLASS_MENU_IS_OPENED)) {
     body.addEventListener('click', onBodyClick);
     buttonsSubMenu.forEach((buttonSubMenu) => {
       buttonSubMenu.addEventListener('click', onButtonSubMenuClick)
@@ -36,7 +36,7 @@ const onMenuButtonClick = (evt) => {
 };
 
 const closeNavigation = () => {
-  mainHeader.classList.remove(menuOpenedClass);
+  mainHeader.classList.remove(CLASS_MENU_IS_OPENED);
 }
 
 const onBodyClick = (evt) => {
