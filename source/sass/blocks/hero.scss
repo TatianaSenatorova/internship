@@ -1,7 +1,6 @@
 .hero__slider {
   overflow: hidden;
   position: relative;
-  // background-color: $color-air-force-blue;
 }
 
 .hero__slider-item {
@@ -10,93 +9,93 @@
 
 .hero__slider-list {
   margin: 0;
-  margin-top: auto;
+  // margin-top: auto;
   padding: 0;
   list-style: none;
 }
 
-.hero__slider .hero__slider-pagination {
-  z-index: $z-index-first;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-  width: fit-content;
-  max-width: 300px;
-  left: 50%;
-  transform: translateX(-50%);
-  position: relative;
-  // bottom: calc(var(--bullet-margin-bottom) + var(--bullet-radius-mobil));
-  // margin-bottom: calc(var(--bullet-radius-mobil) * -1);
+// .hero__slider .hero__slider-pagination {
+//   z-index: $z-index-first;
+//   padding: 0;
+//   list-style: none;
+//   display: flex;
+//   flex-wrap: wrap;
+//   align-items: center;
+//   gap: 10px;
+//   width: fit-content;
+//   max-width: 300px;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   position: relative;
+//   // bottom: calc(var(--bullet-margin-bottom) + var(--bullet-radius-mobil));
+//   // margin-bottom: calc(var(--bullet-radius-mobil) * -1);
 
-  @media (min-width: $tablet-width) {
-    // bottom: calc(var(--bullet-margin-bottom) + var(--bullet-radius-tablet));
-    // margin-bottom: calc(var(--bullet-radius-tablet) * -1);
-    max-width: 500px;
-  }
+//   @media (min-width: $tablet-width) {
+//     // bottom: calc(var(--bullet-margin-bottom) + var(--bullet-radius-tablet));
+//     // margin-bottom: calc(var(--bullet-radius-tablet) * -1);
+//     max-width: 500px;
+//   }
 
-  @media (min-width: $desktop-width) {
-    left: unset;
-    transform: unset;
-    // bottom: calc(var(--bullet-margin-bottom-desktop) + var(--bullet-radius-tablet));
-    margin-left: auto;
-    padding-right: 115px;
-    max-width: 650px;
-  }
-}
+//   @media (min-width: $desktop-width) {
+//     left: unset;
+//     transform: unset;
+//     // bottom: calc(var(--bullet-margin-bottom-desktop) + var(--bullet-radius-tablet));
+//     margin-left: auto;
+//     padding-right: 115px;
+//     max-width: 650px;
+//   }
+// }
 
-.hero__pagination-control {
-  margin: 0;
-  // width: var(--bullet-radius-mobil);
-  // height: var(--bullet-radius-mobil);
-  border-radius: 50%;
-  outline: none;
-  border: none;
-  flex-shrink: 0;
-  padding: 0;
-  opacity: 1;
-  background-color: transparent;
-  background-image: radial-gradient(circle, transparent 6px, $color-white 8px, transparent 9px);
-  cursor: pointer;
-  transition: background-image 0.3s;
+// .hero__pagination-control {
+//   margin: 0;
+//   // width: var(--bullet-radius-mobil);
+//   // height: var(--bullet-radius-mobil);
+//   border-radius: 50%;
+//   outline: none;
+//   border: none;
+//   flex-shrink: 0;
+//   padding: 0;
+//   opacity: 1;
+//   background-color: transparent;
+//   background-image: radial-gradient(circle, transparent 6px, $color-white 8px, transparent 9px);
+//   cursor: pointer;
+//   transition: background-image 0.3s;
 
-  &:hover {
-    // background-image: radial-gradient(circle, $color-gainsboro 7px, $color-white 8px, transparent 9px);
-  }
+//   &:hover {
+//     // background-image: radial-gradient(circle, $color-gainsboro 7px, $color-white 8px, transparent 9px);
+//   }
 
-  &:focus {
-    background-image: radial-gradient(circle, transparent 7px, $color-white 8px, transparent 9px, transparent 11px, rgba(255, 255, 255, 0.5) 12px, transparent 13px);
-  }
+//   &:focus {
+//     background-image: radial-gradient(circle, transparent 7px, $color-white 8px, transparent 9px, transparent 11px, rgba(255, 255, 255, 0.5) 12px, transparent 13px);
+//   }
 
-  &:active {
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 7px, $color-white 8px, transparent 9px);
-  }
+//   &:active {
+//     background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 7px, $color-white 8px, transparent 9px);
+//   }
 
-  &--is-active {
-    background-image: radial-gradient(circle, $color-white 8px, transparent 9px);
-  }
+//   &--is-active {
+//     background-image: radial-gradient(circle, $color-white 8px, transparent 9px);
+//   }
 
-  @media (min-width: $tablet-width) {
-    // width: var(--bullet-radius-tablet);
-    // height: var(--bullet-radius-tablet);
-    background-image: radial-gradient(circle, transparent 9px, $color-white 10px, transparent 11px);
+//   @media (min-width: $tablet-width) {
+//     // width: var(--bullet-radius-tablet);
+//     // height: var(--bullet-radius-tablet);
+//     background-image: radial-gradient(circle, transparent 9px, $color-white 10px, transparent 11px);
 
-    &:hover {
-      // background-image: radial-gradient(circle, $color-gainsboro 9px, $color-white 10px, transparent 11px);
-    }
+//     &:hover {
+//       // background-image: radial-gradient(circle, $color-gainsboro 9px, $color-white 10px, transparent 11px);
+//     }
 
-    &:focus {
-      background-image: radial-gradient(circle, transparent 9px, $color-white 10px, transparent 11px, transparent 13px, rgba(255, 255, 255, 0.5) 14px, transparent 15px);
-    }
+//     &:focus {
+//       background-image: radial-gradient(circle, transparent 9px, $color-white 10px, transparent 11px, transparent 13px, rgba(255, 255, 255, 0.5) 14px, transparent 15px);
+//     }
 
-    &:active {
-      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 9px, $color-white 10px, transparent 11px);
-    }
+//     &:active {
+//       background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 9px, $color-white 10px, transparent 11px);
+//     }
 
-    &--is-active {
-      background-image: radial-gradient(circle, $color-white 10px, transparent 11px);
-    }
-  }
-}
+//     &--is-active {
+//       background-image: radial-gradient(circle, $color-white 10px, transparent 11px);
+//     }
+//   }
+// }
