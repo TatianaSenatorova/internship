@@ -23,8 +23,8 @@
 
 .main-header__primary-button {
   min-height: 54px;
-  min-width: 134px;
-  max-width: fit-content;
+  min-width: 136px;
+  width: 136px;
   justify-self: end;
   // width: 100%;
   // max-width: 136px;
@@ -32,7 +32,7 @@
 
   .main-header--nav-is-opened & {
     // width: 100%;
-      min-width: 100%;
+    min-width: 100%;
     max-width: 100%;
     text-align: left;
   }
@@ -68,11 +68,11 @@
 
 .main-header__nav-list {
   margin: 0;
-  padding: 30px 25px 30px 20px;
+  padding: 28px 25px 27px 20px;
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 14px;
   border-radius: 16px;
   background-color: $color-cerulean-blue;
 }
@@ -80,11 +80,11 @@
 .main-header__sub-nav-list {
   margin: 0;
   padding: 0;
-  padding-left: 11px;
+  padding-left: 16px;
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 2px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s;
@@ -119,6 +119,13 @@
 
   &--sub-link {
     text-transform: unset;
+    font-weight: 400;
+    letter-spacing: unset;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &--sub-link:active {
+    color: rgba(255, 255, 255, 0.9);
   }
 }
 
@@ -137,6 +144,12 @@
     mask-repeat: no-repeat;
     mask-position: center;
     transform: rotate(180deg);
+  }
+
+  &:hover::after,
+  &:focus::after,
+  &:active::after {
+    background-color: $color-white;
   }
 
   &--is-active::after {

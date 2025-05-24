@@ -50,6 +50,11 @@
   padding: 28px 14px 10px 14px;
   border-radius: 12px 0 0 14px;
   background-color: $color-white;
+  --nb-r: 14px;
+  --nb-w: 180px;
+  --nb-h: -13px;
+  // --nb-curve-rw: 40px;
+  // --nb-curve-rh: 40px;
 }
 
 .hero-card__title {
