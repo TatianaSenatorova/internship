@@ -23,11 +23,16 @@
 
 .main-header__primary-button {
   min-height: 54px;
-  width: 100%;
-  max-width: 136px;
-  margin-left: auto;
+  min-width: 134px;
+  max-width: fit-content;
+  justify-self: end;
+  // width: 100%;
+  // max-width: 136px;
+  // margin-left: auto;
 
   .main-header--nav-is-opened & {
+    // width: 100%;
+      min-width: 100%;
     max-width: 100%;
     text-align: left;
   }

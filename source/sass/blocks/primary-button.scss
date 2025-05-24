@@ -1,8 +1,9 @@
 .primary-button {
-  position: relative;
-  display: flex;
+  // position: relative;
+  display: grid;
+  grid-template-columns: 1fr 39px;
   align-items: center;
-  padding: 3px 51px 3px 20px;
+  padding: 3px 4px 3px 20px;
   text-decoration: none;
   color: $color-cerulean-blue;
   border-radius: 30px;
@@ -15,41 +16,57 @@
   line-height: 1;
   letter-spacing: 0.28px;
   text-transform: uppercase;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s, max-width 0.3s;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s, max-width 0.3s, min-width 0.3s;
+  // --big-circle-radius: 46px;
+  // --small-circle-radius: 34px;
+  // --padding-right: 4px;
 
   &::before {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 4px;
+    // position: absolute;
+    // top: 50%;
+    // transform: translateY(-50%);
+    // right: var(--padding-right);
     content: "";
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    width: 46px;
-    height: 46px;
+    justify-self: center;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     background-color: $color-cerulean-blue;
   }
 
   &::after {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 19px;
+    // position: absolute;
+    // top: 50%;
+    // transform: translateY(-50%);
+    // right: 19px;
     content: "";
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     justify-self: center;
     background-color: $color-white;
+    width: 8px;
+    height: 8px;
+    mask-image: url("/__spritemap#sprite-primary-button-arrow-view");
     mask-size: 100%;
     mask-repeat: no-repeat;
     mask-position: center;
+  }
+
+  &--burger {
+    grid-template-columns: 1fr 51px;
   }
 
   &--burger::after {
     width: 16px;
     height: 8px;
     mask-image: url("/__spritemap#sprite-burger-menu-view");
+  }
+
+  &--burger::before {
+    width: 46px;
+    height: 46px;
   }
 
   &:hover {
@@ -202,5 +219,5 @@
 }
 
 .primary-button__text {
-  grid-row: 1 / 2;
+  // grid-row: 1 / 2;
 }

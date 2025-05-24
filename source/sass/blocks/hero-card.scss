@@ -29,30 +29,51 @@
   z-index: $z-index-second;
   align-self: flex-end;
   padding: 80px 0 20px;
-  max-height: 400px;
-  overflow-y: auto;
+  // max-height: 400px;
+  // overflow-y: auto;
   // display: flex;
   // align-items: center;
   grid-area: 1 / 1 / 2 / 2;
   // padding: 44px 0 70px;
 }
 
+.div {
+  // border-radius: 0px 16px 16px 0px;
+  // padding-top: 28px;
+  // --nb-r: 16px;
+  // --nb-w: 20px;
+  // --nb-h: 20px;
+  // background-color: $color-white;
+}
+
+.hero-card__info {
+  padding: 28px 14px 10px 14px;
+  border-radius: 12px 0 0 14px;
+  background-color: $color-white;
+}
+
 .hero-card__title {
   margin: 0;
-  padding: 20px 14px 16px;
+  margin-bottom: 16px;
+  // padding: 20px 14px 16px;
   font-size: 22px;
   font-weight: 400;
   line-height: 1.18;
   color: $color-cerulean-blue;
-  background-color: $color-white;
+  // background-color: $color-white;
+  //  --nb-r: 16px;
+  //   --nb-w: 20px;
+  //   --nb-h: 20px;
 }
 
 .hero-card__content {
-  padding: 0 14px 15px;
+  max-width: 267px;
+  margin-bottom: 25px;
+  // padding: 0 14px 15px;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.25;
-  background-color: $color-white;
+  // background-color: $color-white;
 
   p {
     margin: 0 auto;
