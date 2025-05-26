@@ -46,13 +46,31 @@
   // background-color: $color-white;
 }
 
+.hero-card__pagination-nebo-wrap {
+  background-image: linear-gradient(to bottom, transparent 15px, $color-white 15px);
+  // border-radius: 12px 12px 0px 0px;
+  width: fit-content;
+  min-height: 28px;
+  // width: fit-content;
+  // background-color: $color-white;
+    --nb-r: 14px;
+  --nb-w: 6px;
+  --nb-h: 6px;
+  --nb-curve-rw: 10px;
+  --nb-curve-rh: 10px;
+  --nb-cor2-rw: 12px;
+  --nb-cor2-rh: 12px;
+  --nb-cor1-rw: 16px;
+  --nb-cor1-rh: 16px;
+}
+
 .hero-card__info {
   min-height: 299px;
   // background-color: $color-white;
   // padding: 28px 14px 10px 14px;
 }
 
-.hero-card__nebo-wrap {
+.hero-card__info {
   // padding: 28px 0 0 0;
   border-radius: 12px 0 0 0;
   // background-color: $color-white;

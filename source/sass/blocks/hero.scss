@@ -1,6 +1,8 @@
 .hero__slider {
   overflow: hidden;
   position: relative;
+  --mobile-container-padding: 15px;
+  --mobile-pagination-left-padding: 12px;
 }
 
 .hero__slider-item {
@@ -15,8 +17,11 @@
 }
 
 .hero__slider .hero__slider-pagination {
-  z-index: $z-index-first;
-  padding: 0;
+  position: static;
+  background-color: $color-white;
+  padding: 6px 12px 0 12px;
+  border-radius: 12px 12px 0px 0px;
+  // z-index: $z-index-first;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -24,6 +29,16 @@
   gap: 4px;
   width: fit-content;
   max-width: 300px;
+  // transition: bottom 0.3s;
+  // --nb-r: 14px;
+  // --nb-w: 6px;
+  // --nb-h: 6px;
+  // --nb-curve-rw: 10px;
+  // --nb-curve-rh: 10px;
+  // --nb-cor2-rw: 12px;
+  // --nb-cor2-rh: 12px;
+  // --nb-cor1-rw: 16px;
+  // --nb-cor1-rh: 16px;
 }
 
 .hero__pagination-control {

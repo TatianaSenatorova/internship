@@ -4,5 +4,9 @@ export const menuButton = mainHeader.querySelector('.main-header__primary-button
 export const navList = mainHeader.querySelector('.main-header__nav-list');
 export const buttonsSubMenu = document.querySelectorAll('.main-header__nav-button');
 export const subMenus = document.querySelectorAll('.main-header__sub-nav-list');
+export const sliderHero = document.querySelector('.hero__slider');
+export const slidesHero = sliderHero.querySelectorAll('.hero__slider-item');
+export const slidesHeroInfoContent = sliderHero.querySelectorAll('.hero-card__info');
+export const heroPagination = sliderHero.querySelector('.hero__slider-pagination');
 
-export const slidesHero = document.querySelectorAll('.hero__slider-item');
+

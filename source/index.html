@@ -19,7 +19,7 @@
 </head>
 
 <body class="page__body">
-  <header class="main-header" data-test="header">
+  <header class="main-header">
     <div class="container">
       <div class="main-header__content">
         <a class="main-header__logo logo">
@@ -155,27 +155,31 @@
               </div>
               <div class="hero-card__info-wrap">
                 <div class="container">
+                  <!-- <div class="hero-card__info"> -->
                   <div class="hero-card__info">
-                    <div class="hero-card__nebo-wrap nebo nebo--tr">
-                      <div class="hero-card__title-nebo-wrap nebo nebo--br">
-                        <h2 class="hero-card__title">Глобальный профессиональный опыт&nbsp;обучения
-                          за&nbsp;рубежом</h2>
-                      </div>
-                      <div class="hero-card__content">
-                        <p>Погрузитесь в&nbsp;академическую программу, проходя практику в&nbsp;разных городах,
-                          ощущая
-                          настоящий студенческий стиль&nbsp;жизни!</p>
-                      </div>
-                      <div class="hero-card__button-wrap nebo nebo--br">
-                        <!-- Чтобы кнопка  button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
-                        <a class="hero-card__primary-button primary-button" href="#">Подробнее</a>
-                      </div>
+                    <div class="hero-card__pagination-nebo-wrap nebo nebo--tr">
+                      <div class="hero__slider-pagination swiper-pagination"></div>
+                    </div>
+                    <div class="hero-card__title-nebo-wrap nebo nebo--br">
+                      <h2 class="hero-card__title">Глобальный профессиональный опыт&nbsp;обучения
+                        за&nbsp;рубежом</h2>
+                    </div>
+                    <div class="hero-card__content">
+                      <p>Погрузитесь в&nbsp;академическую программу, проходя практику в&nbsp;разных городах,
+                        ощущая
+                        настоящий студенческий стиль&nbsp;жизни!</p>
+                    </div>
+                    <div class="hero-card__button-wrap nebo nebo--br">
+                      <!-- Чтобы кнопка  button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
+                      <a class="hero-card__primary-button primary-button" href="#">Подробнее</a>
                     </div>
                   </div>
+                  <!-- </div> -->
                 </div>
               </div>
               <div class="hero-card__overlay"></div>
             </article>
+
           </li>
           <li class="hero__slider-item swiper-slide">
             <article class="hero-card hero-card--addition-photos">
@@ -219,6 +223,7 @@
               </div>
               <div class="hero-card__overlay"></div>
             </article>
+
           </li>
           <li class="hero__slider-item swiper-slide">
             <article class="hero-card">
@@ -261,13 +266,29 @@
               </div>
               <div class="hero-card__overlay"></div>
             </article>
+
           </li>
         </ul>
-        <div class="hero__slider-pagination swiper-pagination"></div>
+
       </div>
     </section>
     <section class="about" id="about" data-test="about">
-
+      <div class="container">
+        <div class="about__top-wrapper">
+          <h2 class="about__section-title section-title">О&nbsp;проекте &laquo;Стажировка&raquo;</h2>
+          <div class="about__content-slogan">
+            <p>&laquo;Стажировка&raquo;&nbsp;&mdash; совместный проект правительств и&nbsp;волонтёрских бригад.</p>
+          </div>
+          <div class="about__content">
+            <h3>Наша цель</h3>
+            <p>Наша деятельность направлена на&nbsp;повышение квалификации молодых специалистов на&nbsp;ранних
+              и&nbsp;средних стадиях карьеры, предоставляя им&nbsp;инструменты для решения сложных проблем,
+              с&nbsp;которыми сталкиваются в&nbsp;мире. Цель центра&nbsp;&mdash; наделить этих людей способностью
+              инициировать значимые изменения.</p>
+          </div>
+          <button class="about__primary-button primary-button" type="button">Подробнее о&nbsp;проекте</button>
+        </div>
+      </div>
     </section>
   </main>
   <script type="module" src="js/main.js"></script>

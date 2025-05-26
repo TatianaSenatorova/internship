@@ -1,6 +1,10 @@
 import Swiper from 'swiper';
 import { Pagination } from 'swiper/modules';
-import { slidesHero } from './dom-elements.js';
+import {
+  slidesHero,
+  slidesHeroInfoContent,
+  heroPagination
+} from './dom-elements.js';
 
 export const heroSwiper = new Swiper('.swiper-hero', {
   modules: [Pagination],
@@ -23,11 +27,13 @@ export const heroSwiper = new Swiper('.swiper-hero', {
     clickable: true,
     renderBullet: function (index, bulletClass) {
       return `<button class=${bulletClass}><span class="visually-hidden">Перейти к слайду ${index + 1
-      }</span></button>`;
+        }</span></button>`;
     },
     enabled: true,
   },
 });
+
+
 
 const unfocusNonActiveSlides = () => {
   slidesHero.forEach((slide, index) => {
@@ -39,4 +45,21 @@ const unfocusNonActiveSlides = () => {
   });
 };
 
-heroSwiper.on('slideChange', unfocusNonActiveSlides);
+// const changePaginationPosition = () => {
+//   if (document.documentElement.clientWidth < TABLET_WIDTH) {
+//     marginBottomPagination = slidesHeroInfoContent[heroSwiper.activeIndex].offsetHeight - HERO_MOBILE_WRAPPER_FOR_PAGINATION_HEIGHT + HERO_BOTTOM_SECTION_PADDING_MOBILE + HERO__PAGINATION_BOTTOM_PADDING;
+//     heroPagination.style.bottom = `${marginBottomPagination}px`;
+//     return;
+//     // marginBottomPagination = slidesHeroInfoContent[heroSwiper.activeIndex].offsetHeight + HERO_BOTTOM_SECTION_PADDING_TABLET;
+//     // heroPagination.style.bottom = `${marginBottomPagination}px`;
+//   }
+// }
+
+changePaginationPosition();
+
+const onSliderSlideChange = () => {
+  unfocusNonActiveSlides();
+  // changePaginationPosition();
+}
+
+heroSwiper.on('slideChange', onSliderSlideChange);
