@@ -9,7 +9,7 @@
 
   &::before {
     z-index: $z-index-first;
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -38,7 +38,7 @@
   position: relative;
   height: 100%;
   z-index: 0;
-  padding: 16px 21px;
+  padding: 15px 20px;
   border-radius: 16px;
   border: 1px solid $color-alabaster;
 
@@ -71,6 +71,7 @@
   }
 
   @media (min-width: $tablet-width) {
+
     h3 {
       max-width: 180px;
       font-size: 20px;
@@ -85,13 +86,14 @@
   }
 
   @media (min-width: $desktop-width) {
-    padding: 31px 41px;
+    padding: 30px 41px;
     display: grid;
     grid-template-columns: 201px 1fr;
     align-items: center;
     justify-content: space-between;
 
     h3 {
+      margin-bottom: 0;
       font-size: 26px;
       line-height: 1.15;
       letter-spacing: 0.26px;

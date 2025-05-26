@@ -18,10 +18,10 @@ const onButtonSubMenuClick = (evt) => {
     subMenu.style.maxHeight = null;
     subMenu.style.paddingTop = null;
   } else {
-    subMenu.style.paddingTop = SUB_MENU_PADDING_TOP + 'px';
-    subMenu.style.maxHeight = subMenu.scrollHeight + "px";
+    subMenu.style.paddingTop = `${SUB_MENU_PADDING_TOP }px`;
+    subMenu.style.maxHeight = `${subMenu.scrollHeight }px`;
   }
-}
+};
 
 const onMenuButtonClick = (evt) => {
   evt.stopPropagation();
@@ -29,8 +29,8 @@ const onMenuButtonClick = (evt) => {
   if (mainHeader.classList.contains(CLASS_MENU_IS_OPENED)) {
     body.addEventListener('click', onBodyClick);
     buttonsSubMenu.forEach((buttonSubMenu) => {
-      buttonSubMenu.addEventListener('click', onButtonSubMenuClick)
-    })
+      buttonSubMenu.addEventListener('click', onButtonSubMenuClick);
+    });
     return;
   }
   body.removeEventListener('click', onBodyClick);
@@ -38,7 +38,7 @@ const onMenuButtonClick = (evt) => {
 
 const closeNavigation = () => {
   mainHeader.classList.remove(CLASS_MENU_IS_OPENED);
-}
+};
 
 const onBodyClick = (evt) => {
   if ((!evt.target.closest('.main-header__nav-list')

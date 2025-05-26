@@ -1,6 +1,7 @@
 .hero__slider {
   overflow: hidden;
   position: relative;
+
   --mobile-container-padding: 15px;
   --mobile-pagination-left-padding: 12px;
 }
@@ -11,6 +12,7 @@
 
 .hero__slider-list {
   margin: 0;
+
   // margin-top: auto;
   padding: 0;
   list-style: none;
@@ -19,8 +21,9 @@
 .hero__slider .hero__slider-pagination {
   position: static;
   background-color: $color-white;
-  padding: 6px 12px 0 12px;
-  border-radius: 12px 12px 0px 0px;
+  padding: 6px 12px 0;
+  border-radius: 12px 12px 0 0;
+
   // z-index: $z-index-first;
   list-style: none;
   display: flex;
@@ -29,6 +32,7 @@
   gap: 4px;
   width: fit-content;
   max-width: 300px;
+
   // transition: bottom 0.3s;
   // --nb-r: 14px;
   // --nb-w: 6px;

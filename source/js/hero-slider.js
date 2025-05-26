@@ -27,12 +27,11 @@ export const heroSwiper = new Swiper('.swiper-hero', {
     clickable: true,
     renderBullet: function (index, bulletClass) {
       return `<button class=${bulletClass}><span class="visually-hidden">Перейти к слайду ${index + 1
-        }</span></button>`;
+      }</span></button>`;
     },
     enabled: true,
   },
 });
-
 
 
 const unfocusNonActiveSlides = () => {
@@ -60,6 +59,6 @@ changePaginationPosition();
 const onSliderSlideChange = () => {
   unfocusNonActiveSlides();
   // changePaginationPosition();
-}
+};
 
 heroSwiper.on('slideChange', onSliderSlideChange);
