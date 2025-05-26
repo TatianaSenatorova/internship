@@ -234,6 +234,16 @@
   &--is-disabled::after {
     background-color: rgba(255, 255, 255, 0.6);
   }
+
+  @media (min-width: $tablet-width) {
+    padding-left: 30px;
+    font-size: 14px;
+    letter-spacing: 0.28px;
+
+    &--burger {
+      padding-left: 20px;
+    }
+  }
 }
 
 .primary-button__text {
