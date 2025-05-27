@@ -332,6 +332,42 @@
       </div>
     </section>
   </main>
+  <footer></footer>
+  <section class="modal modal--is-opened">
+    <div class="modal__container">
+      <section class="modal__content">
+        <h2 class="visually-hidden">Заполните форму для получения ответов на Ваши вопросы</h2>
+        <button class="modal__close-button" type="button">
+          <span class="visually-hidden">Закрыть.</span>
+          <svg aria-hidden="true" focusable="false" width="12" height="12">
+            <use href="/__spritemap#sprite-close-icon"></use>
+          </svg>
+        </button>
+        <form class="form" action="https://echo.htmlacademy.ru/" method="post" autocomplete="off" novalidate>
+          <h3 class="form__title">Напишите нам</h3>
+          <p class="form__description">Оставьте ваши контакты, если&nbsp;у&nbsp;вас остались вопросы&nbsp;&mdash;
+            мы&nbsp;на&nbsp;них ответим!</p>
+          <fieldset class="form__user-data">
+            <legend class="visually-hidden">Введите Ваши данные</legend>
+            <ul class="form__inputs-list">
+              <li class="form__list-item">
+                <!-- Чтобы отобразить инпут в состоянии ошибки надо добавить класс-модификатор error к элементу с классом input". -->
+                <label class="input" for="name">
+                  <span class="input__label">Имя</span>
+                  <input class="input__field" type="text" id="name" name="name" required disabled>
+                </label>
+              </li>
+             <label class="input" for="phone">
+                  <span class="input__label">Телефон</span>
+                  <input class="input__field" type="tel" name="phone" pattern="^(?=(?:.*\d){10,})[0-9\(\)\+\-\s]+$" required>
+                </label>
+            </ul>
+          </fieldset>
+          <button class="form__button button" type="submit">Отправить</button>
+        </form>
+      </section>
+  </section>
+
   <script type="module" src="js/main.js"></script>
 </body>
 

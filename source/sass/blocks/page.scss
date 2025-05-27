@@ -20,3 +20,8 @@
   overflow: hidden;
   background-color: rgba(13, 29, 51, 0.4);
 }
+
+.page__body:has(.modal--is-opened) {
+  overflow: hidden;
+  background-color: rgba(13, 29, 51, 0.4);
+}
