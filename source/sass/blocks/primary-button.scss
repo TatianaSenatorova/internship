@@ -251,6 +251,10 @@
       height: 46px;
     }
   }
+
+   @media (min-width: $desktop-width) {
+   padding-left: 29px;
+  }
 }
 
 .primary-button__text {
