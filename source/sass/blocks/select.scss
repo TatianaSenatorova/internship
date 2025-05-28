@@ -1,0 +1,171 @@
+.select {
+  position: relative;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.select select {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+.select__label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  color: rgba(72, 72, 72, 0.8);
+  transition: color 0.3s;
+
+  .select:has(.select__button:not(:disabled):hover) & {
+    color: $color-charcoal;
+  }
+
+  .select:has(.select__button:not(:disabled):focus) & {
+    color: $color-charcoal;
+  }
+
+  .select:has(.select__button:not(:disabled):active) & {
+    color: $color-charcoal;
+  }
+
+  .input:has(.input__field:disabled) & {
+    color: $color-mischka;
+  }
+}
+
+.select__button {
+  position: relative;
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 20px;
+  border-radius: 8px;
+  font-family: $primary-font;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  background-color: $color-white;
+  outline: none;
+  border: 1px solid rgba(72, 72, 72, 0.3);
+  transition: border-color 0.3s;
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    right: 20px;
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-image: url("/__spritemap#sprite-arrow-down-view");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: $color-charcoal;
+  }
+
+  &:focus::after,
+  &:active::after {
+    transform: translateY(-50%);
+  }
+
+  &:disabled {
+    pointer-events: none;
+    border: 1px solid rgba(169, 175, 183, 0.50);
+    background-color: rgba(169, 175, 183, 0.20);
+  }
+
+  .select--is-opened & {
+    border-color: $color-charcoal;
+  }
+
+  .select--is-opened &::after {
+    transform: translateY(-50%);
+  }
+
+  .select--is-disabled & {
+    pointer-events: none;
+    border: 1px solid rgba(169, 175, 183, 0.50);
+    background-color: rgba(169, 175, 183, 0.20);
+  }
+}
+
+
+
+.select__list {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 1px solid $color-charcoal;
+  list-style: none;
+  border-radius: 8px;
+  background-color: $color-white;
+  overflow-y: auto;
+  visibility: hidden;
+  opacity: 0;
+
+  .select--is-opened & {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .select--is-disabled & {
+    display: none;
+  }
+}
+
+.select__item {
+  padding: 17px 20px;
+  cursor: pointer;
+  color: $color-charcoal;
+  background-color: $color-white;
+  transition: color 0.3s;
+
+  &:not(.select__item--is-disabled):hover {
+    color: $color-cerulean-blue;
+  }
+
+  &:not(.select__item--is-disabled):focus,
+  &:not(.select__item--is-disabled):active {
+    background-color: $color-cerulean-blue;
+    color: $color-white;
+  }
+
+  &[aria-selected="true"] {
+    color: $color-white;
+    background-color: $color-cerulean-blue;
+  }
+
+  &--is-disabled {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+}
+
+.select__text {
+  display: block;
+  margin: 0;
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

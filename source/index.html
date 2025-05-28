@@ -354,16 +354,60 @@
                 <!-- Чтобы отобразить инпут в состоянии ошибки надо добавить класс-модификатор error к элементу с классом input". -->
                 <label class="input" for="name">
                   <span class="input__label">Имя</span>
-                  <input class="input__field" type="text" id="name" name="name" required disabled>
+                  <input class="input__field" type="text" id="name" name="name" required>
                 </label>
               </li>
-             <label class="input" for="phone">
+              <li class="form__list-item">
+                <label class="input" for="phone">
                   <span class="input__label">Телефон</span>
-                  <input class="input__field" type="tel" name="phone" pattern="^(?=(?:.*\d){10,})[0-9\(\)\+\-\s]+$" required>
+                  <input class="input__field" type="tel" name="phone" pattern="^(?=(?:.*\d){10,})[0-9\(\)\+\-\s]+$"
+                    required>
                 </label>
+              </li>
             </ul>
           </fieldset>
-          <button class="form__button button" type="submit">Отправить</button>
+          <!-- Чтобы открыть кастомный селект необходимо добавить класс-модификатор  is-opened к элементу с классом select. Для состояния disable добавляем класс-модификатор is-disabled элементу select. -->
+          <div class="form__select select select--is-opened" data-select="select" data-validate-type="select" data-name="select"
+            data-id="select">
+            <span class="select__label">Выберите город</span>
+            <button class="select__button" type="button" aria-label="Выберите одну из опций" tabindex="0"></button>
+            <ul class="select__list" role="listbox">
+              <!-- Если надо сделать состояние disable опции - добавляем элементу с классом select__item класс-модификатор is-disabled -->
+              <li class="select__item" tabindex="0" data-select-value="id-1" aria-selected="false" role="option">
+                <span class="select__text">
+                  Санкт-Петербург
+                </span>
+              </li>
+              <li class="select__item select__item--is-disabled" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">
+                <span class="select__text">
+                  Санкт-Петербург
+                </span>
+              </li>
+              <li class="select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">
+                <span class="select__text">
+                  Санкт-Петербург
+                </span>
+              </li>
+              <li class="select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">
+                <span class="select__text">
+                  Санкт-Петербург
+                </span>
+              </li>
+            </ul>
+            <select id="select" name="select" tabindex="-1" aria-hidden="true">
+              <option value="id-1" selected="">Санкт-Петербург</option>
+              <option value="id-2">Санкт-Петербург</option>
+              <option value="id-3">Санкт-Петербург</option>
+              <option value="id-4">Санкт-Петербург</option>
+            </select>
+            <span class="select__button-select-arrow button-select-arrow">
+              <span class="visually-hidden">Открыть или закрыть селект</span>
+              <svg aria-hidden="true" focusable="false" width="16" height="16">
+                <use href="icons/stack.svg#arrow-select"></use>
+              </svg>
+            </span>
+          </div>
+          <button class="form__primary-button primary-button" type="submit">Отправить</button>
         </form>
       </section>
   </section>

@@ -32,5 +32,8 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+}
+
+.form__select {
+  margin-bottom: 15px;
 }
