@@ -2,7 +2,7 @@
 
 .form__title {
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 13px;
   text-align: center;
   font-size: 18px;
   font-weight: 400;
@@ -36,4 +36,9 @@
 
 .form__select {
   margin-bottom: 15px;
+}
+
+.form__primary-button {
+  width: 100%;
+  min-height: 42px;
 }

@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: 1fr 38px;
   align-items: center;
-  padding: 3px 4px 3px 20px;
+  padding: 3px 1px 3px 20px;
   column-gap: 15px;
   text-decoration: none;
   color: $color-cerulean-blue;
@@ -11,6 +11,7 @@
   border: 1px solid $color-cerulean-blue;
   background-color: transparent;
   cursor: pointer;
+  text-align: center;
   font-family: $primary-font;
   font-size: 12px;
   font-weight: 500;
@@ -96,6 +97,11 @@
     &::after {
       background-color: rgba(49, 109, 194, 0.7);
     }
+  }
+
+  &--wide {
+    gap: 30px;
+    padding-left: 30px;
   }
 
   &--burger {
