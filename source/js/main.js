@@ -5,5 +5,6 @@
 
 import './burger-menu.js';
 import './dom-elements.js';
-import './hero-slider.js';
+// import './hero-slider.js';
+import './select.js';
 

@@ -352,13 +352,13 @@
             <ul class="form__inputs-list">
               <li class="form__list-item">
                 <!-- Чтобы отобразить инпут в состоянии ошибки надо добавить класс-модификатор error к элементу с классом input". -->
-                <label class="input" for="name">
+                <label class="input">
                   <span class="input__label">Имя</span>
                   <input class="input__field" type="text" id="name" name="name" required>
                 </label>
               </li>
               <li class="form__list-item">
-                <label class="input" for="phone">
+                <label class="input">
                   <span class="input__label">Телефон</span>
                   <input class="input__field" type="tel" name="phone" pattern="^(?=(?:.*\d){10,})[0-9\(\)\+\-\s]+$"
                     required>
@@ -367,7 +367,7 @@
             </ul>
           </fieldset>
           <!-- Чтобы открыть кастомный селект необходимо добавить класс-модификатор  is-opened к элементу с классом select. Для состояния disable добавляем класс-модификатор is-disabled элементу select. -->
-          <div class="form__select select select--is-opened" data-select="select" data-validate-type="select" data-name="select"
+          <div class="form__select select" data-select="select" data-validate-type="select" data-name="select"
             data-id="select">
             <span class="select__label">Выберите город</span>
             <button class="select__button" type="button" aria-label="Выберите одну из опций" tabindex="0"></button>
@@ -378,7 +378,7 @@
                   Санкт-Петербург
                 </span>
               </li>
-              <li class="select__item select__item--is-disabled" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">
+              <li class="select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">
                 <span class="select__text">
                   Санкт-Петербург
                 </span>
@@ -407,6 +407,11 @@
               </svg>
             </span>
           </div>
+          <label class="checkbox">
+            <input class="visually-hidden checkbox__input" type="checkbox" name="confirmation" value="1" required>
+            <span class="checkbox__mark"></span>
+            <span class="checkbox__label">Я&nbsp;согласен на&nbsp;обработку моих персональных данных</span>
+          </label>
           <button class="form__primary-button primary-button" type="submit">Отправить</button>
         </form>
       </section>
