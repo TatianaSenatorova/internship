@@ -26,11 +26,17 @@
           <img src="img/logo/logo.svg" alt="Логотип центра 'Стажировка'" width="52" height="52">
         </a>
         <nav class="main-header__main-nav">
-          <button
-            class="main-header__primary-button primary-button primary-button--light primary-button--with-icon primary-button--burger"
-            type="button">
+          <button class="main-header__menu-button menu-button" type="button">
             <span class="visually-hidden">Открыть меню</span>
-            <span class="primary-button__text">Меню</span>
+            <span class="menu-button__text">Меню</span>
+            <span class="menu-button__icon-wrap">
+              <svg class="menu-button__burger-icon" aria-hidden="true" focusable="false" width="16" height="8">
+                <use href="/__spritemap#sprite-burger-menu"></use>
+              </svg>
+              <svg class="menu-button__close-icon" aria-hidden="true" focusable="false" width="16" height="16">
+                <use href="/__spritemap#sprite-close-icon"></use>
+              </svg>
+            </span>
           </button>
           <div class="main-header__nav-wrapper">
             <div class="container">

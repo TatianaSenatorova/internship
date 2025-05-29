@@ -1,0 +1,110 @@
+.menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 4px 3px 20px;
+  text-decoration: none;
+  color: $color-cerulean-blue;
+  border-radius: 30px;
+  border: 1px solid $color-cerulean-blue;
+  background-color: $color-white;
+  cursor: pointer;
+  text-align: center;
+  font-family: $primary-font;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.28px;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s, max-width 0.3s, min-width 0.3s;
+
+  &:hover {
+    background-color: $color-cerulean-blue;
+    color: $color-white;
+  }
+
+  &:focus {
+    background-color: $color-white;
+    color: $color-cerulean-blue;
+  }
+
+  &:active {
+    background-color: $color-cerulean-blue;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &:disabled {
+    pointer-events: none;
+    color: $color-mischka;
+    border-color: $color-mischka;
+  }
+}
+
+.menu-button__text {
+  justify-self: right;
+
+  .main-header--nav-is-opened & {
+    justify-self: left;
+  }
+}
+
+.menu-button__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: $color-cerulean-blue;
+  transition: background-color 0.3s;
+
+  .menu-button:hover & {
+    background-color: $color-white;
+  }
+
+  .menu-button:focus & {
+    background-color: $color-cerulean-blue;
+  }
+
+  .menu-button:active & {
+    background-color: $color-white;
+  }
+
+  .menu-button:disabled & {
+    background-color: $color-mischka;
+  }
+}
+
+.menu-button__burger-icon {
+  display: block;
+  color: $color-white;
+  transition: color 0.3s;
+
+  .menu-button:hover & {
+    color: $color-cerulean-blue;
+  }
+
+  .menu-button:focus & {
+    color: $color-white;
+  }
+
+  .menu-button:active & {
+    color: rgba(49, 109, 194, 0.7);
+  }
+
+  .menu-button:disabled & {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .main-header--nav-is-opened & {
+    display: none;
+  }
+}
+
+.menu-button__close-icon {
+  display: none;
+
+  .main-header--nav-is-opened & {
+    display: block;
+  }
+}
