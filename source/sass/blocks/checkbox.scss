@@ -12,7 +12,7 @@
   }
 }
 
-.checkbox__input+.checkbox__mark {
+.checkbox__input + .checkbox__mark {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -26,12 +26,12 @@
 }
 
 .checkbox--error:not(:checked) .checkbox__mark {
-  background-color: rgba(255, 94, 102, 0.20);
+  background-color: rgba(255, 94, 102, 0.2);
   border-color: $color-wild-watermelon;
   opacity: 0.7;
 }
 
-.checkbox__input:checked+.checkbox__mark::before {
+.checkbox__input:checked + .checkbox__mark::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -57,12 +57,12 @@
   background-color: $color-cerulean-blue;
 }
 
-.checkbox__input:checked:disabled+.checkbox__mark {
+.checkbox__input:checked:disabled + .checkbox__mark {
   background-color: $color-mischka;
   border-color: transparent;
 }
 
-.checkbox__input:checked:disabled+.checkbox__mark::before {
+.checkbox__input:checked:disabled + .checkbox__mark::before {
   background-color: rgba(255, 255, 255, 0.7);
 }
 

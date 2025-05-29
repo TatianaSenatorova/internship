@@ -56,7 +56,7 @@
     top: 50%;
     transform: translateY(-50%) rotate(180deg);
     right: 19px;
-    content: '';
+    content: "";
     width: 16px;
     height: 16px;
     background-image: url("/__spritemap#sprite-arrow-down-view");
@@ -97,7 +97,6 @@
   .select--is-disabled &:active::after {
     transform: translateY(-50%) rotate(180deg);
   }
-
 }
 
 .select__list {

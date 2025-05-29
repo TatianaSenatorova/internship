@@ -23,8 +23,8 @@
 
 @mixin disabled-field {
   pointer-events: none;
-  border: 1px solid rgba(169, 175, 183, 0.50);
-  background-color: rgba(169, 175, 183, 0.20);
+  border: 1px solid rgba(169, 175, 183, 0.5);
+  background-color: rgba(169, 175, 183, 0.2);
 }
 
 @mixin label-form-field {
