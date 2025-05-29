@@ -43,6 +43,10 @@
   .input:has(.input__field:disabled) & {
     color: $color-mischka;
   }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 12px;
+  }
 }
 
 .select__button {
@@ -103,6 +107,10 @@
     pointer-events: none;
     border: 1px solid rgba(169, 175, 183, 0.50);
     background-color: rgba(169, 175, 183, 0.20);
+  }
+
+  @media (min-width: $tablet-width) {
+    min-height: 50px;
   }
 }
 

@@ -1,6 +1,10 @@
 .input {
   display: block;
   margin-bottom: 15px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 20px;
+  }
 }
 
 .input__label {
@@ -31,11 +35,17 @@
   .input--error & {
     color: $color-charcoal;
   }
+
+  @media (min-width: $tablet-width) {
+    line-height: 1.43;
+    margin-bottom: 12px;
+  }
 }
 
 .input__field {
   width: 100%;
-  display: block;
+  display: flex;
+  align-items: center;
   min-height: 44px;
   padding: 11px 20px;
   border-radius: 8px;
@@ -65,5 +75,9 @@
   .input--error & {
     border-color: $color-wild-watermelon;
     background-color: rgba(255, 94, 102, 0.20);
+  }
+
+  @media (min-width: $tablet-width) {
+    min-height: 50px;
   }
 }

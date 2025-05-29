@@ -30,6 +30,11 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: $z-index-forth;
+
+  @media (min-width: $tablet-width) {
+    top: 204px;
+    width: 510px;
+  }
 }
 
 .modal__content {
@@ -38,6 +43,10 @@
   padding: 37px 15px 40px;
   border-radius: 16px;
   background-color: $color-white;
+
+  @media (min-width: $tablet-width) {
+    padding: 55px 80px 60px;
+  }
 }
 
 .modal__close-button {
@@ -74,5 +83,14 @@
     pointer-events: none;
     background-color: $color-mischka;
     color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.modal__close-button svg {
+  display: block;
+
+   @media (min-width: $tablet-width) {
+    width: 18px;
+    height: 18px;
   }
 }
