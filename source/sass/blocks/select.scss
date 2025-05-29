@@ -20,13 +20,7 @@
 }
 
 .select__label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1;
-  color: rgba(72, 72, 72, 0.8);
-  transition: color 0.3s;
+  @include label-form-field;
 
   .select:has(.select__button:not(:disabled):hover) & {
     color: $color-charcoal;
@@ -46,23 +40,16 @@
 
   @media (min-width: $tablet-width) {
     margin-bottom: 12px;
+    line-height: 1.43;
+  }
+
+  @media (min-width: $desktop-width) {
+    line-height: 1.29;
   }
 }
 
 .select__button {
-  position: relative;
-  width: 100%;
-  min-height: 44px;
-  padding: 11px 20px;
-  border-radius: 8px;
-  font-family: $primary-font;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1;
-  background-color: $color-white;
-  outline: none;
-  border: 1px solid rgba(72, 72, 72, 0.3);
-  transition: border-color 0.3s;
+  @include form-field;
 
   &::after {
     position: absolute;
@@ -84,15 +71,13 @@
     border-color: $color-charcoal;
   }
 
-  &:focus::after,
-  &:active::after {
+  &:not(:disabled):focus::after,
+  &:not(:disabled):active::after {
     transform: translateY(-50%);
   }
 
   &:disabled {
-    pointer-events: none;
-    border: 1px solid rgba(169, 175, 183, 0.50);
-    background-color: rgba(169, 175, 183, 0.20);
+    @include disabled-field;
   }
 
   .select--is-opened & {
@@ -104,14 +89,15 @@
   }
 
   .select--is-disabled & {
-    pointer-events: none;
-    border: 1px solid rgba(169, 175, 183, 0.50);
-    background-color: rgba(169, 175, 183, 0.20);
+    @include disabled-field;
   }
 
-  @media (min-width: $tablet-width) {
-    min-height: 50px;
+  .select--is-disabled &:hover::after,
+  .select--is-disabled &:focus::after,
+  .select--is-disabled &:active::after {
+    transform: translateY(-50%) rotate(180deg);
   }
+
 }
 
 .select__list {

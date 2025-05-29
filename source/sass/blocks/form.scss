@@ -13,6 +13,12 @@
     margin-bottom: 17px;
     font-size: 28px;
   }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 14px;
+    font-size: 32px;
+    line-height: 1.13;
+  }
 }
 
 .form__description {
@@ -30,6 +36,10 @@
     font-size: 16px;
     line-height: 1.25;
   }
+
+  @media (min-width: $desktop-width) {
+    line-height: 1.63;
+  }
 }
 
 .form__user-data {
@@ -44,9 +54,6 @@
   list-style: none;
   display: flex;
   flex-direction: column;
- @media (min-width: $tablet-width) {
-    margin-bottom: 5px;
-  }
 }
 
 .form__select {
@@ -55,13 +62,17 @@
   @media (min-width: $tablet-width) {
     margin-bottom: 24px;
   }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 23px;
+  }
 }
 
 .form__checkbox {
   margin-bottom: 25px;
 
   @media (min-width: $tablet-width) {
-    margin-bottom: 33px;
+    margin-bottom: 34px;
   }
 }
 
@@ -70,6 +81,7 @@
   min-height: 42px;
 
   @media (min-width: $tablet-width) {
+    min-height: 54px;
     width: 194px;
     margin: 0 auto;
   }

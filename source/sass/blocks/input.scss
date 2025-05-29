@@ -8,13 +8,7 @@
 }
 
 .input__label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1;
-  color: rgba(72, 72, 72, 0.8);
-  transition: color 0.3s;
+  @include label-form-field;
 
   .input:has(.input__field:not(:disabled)):hover & {
     color: $color-charcoal;
@@ -40,22 +34,14 @@
     line-height: 1.43;
     margin-bottom: 12px;
   }
+
+  @media (min-width: $desktop-width) {
+    line-height: 1.29;
+  }
 }
 
 .input__field {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 11px 20px;
-  border-radius: 8px;
-  font-family: $primary-font;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1;
-  outline: none;
-  border: 1px solid rgba(72, 72, 72, 0.3);
-  transition: border-color 0.3s;
+  @include form-field;
 
   .input:has(.input__field:not(:disabled)):hover & {
     border-color: $color-charcoal;
@@ -67,17 +53,11 @@
   }
 
   &:disabled {
-    pointer-events: none;
-    border: 1px solid rgba(169, 175, 183, 0.50);
-    background-color: rgba(169, 175, 183, 0.20);
+    @include disabled-field;
   }
 
   .input--error & {
     border-color: $color-wild-watermelon;
     background-color: rgba(255, 94, 102, 0.20);
-  }
-
-  @media (min-width: $tablet-width) {
-    min-height: 50px;
   }
 }

@@ -7,4 +7,5 @@ import './burger-menu.js';
 import './dom-elements.js';
 // import './hero-slider.js';
 import './select.js';
-
+import './modal.js';
+import './validate-form.js';
