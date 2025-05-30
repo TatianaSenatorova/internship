@@ -5,11 +5,11 @@
   --tablet-padding-top: 30px;
   position: relative;
   top: calc((var(--mobile-header-height) + var(--mobile-padding-top))* -1);
-  margin-bottom: calc(var(--mobile-header-height) + var(--mobile-padding-top));
+  margin-bottom: calc((var(--mobile-header-height) + var(--mobile-padding-top))* -1);
 
   @media (min-width: $tablet-width) {
     top: calc((var(--tablet-header-height) + var(--tablet-padding-top))* -1);
-    margin-bottom: calc(var(--tablet-header-height) + var(--tablet-padding-top));
+    margin-bottom: calc((var(--tablet-header-height) + var(--tablet-padding-top))* -1);
   }
 
 }

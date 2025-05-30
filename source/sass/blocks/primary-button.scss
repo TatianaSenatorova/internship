@@ -1,5 +1,4 @@
 .primary-button {
-  // position: relative;
   display: grid;
   grid-template-columns: 1fr 38px;
   align-items: center;
@@ -20,15 +19,7 @@
   text-transform: uppercase;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s, max-width 0.3s, min-width 0.3s, transform 0.3s;
 
-  // --big-circle-radius: 46px;
-  // --small-circle-radius: 34px;
-  // --padding-right: 4px;
-
   &::before {
-    // position: absolute;
-    // top: 50%;
-    // transform: translateY(-50%);
-    // right: var(--padding-right);
     content: "";
     grid-column: 2 / 3;
     grid-row: 1 / 2;
@@ -40,10 +31,6 @@
   }
 
   &::after {
-    // position: absolute;
-    // top: 50%;
-    // transform: translateY(-50%);
-    // right: 19px;
     content: "";
     grid-column: 2 / 3;
     grid-row: 1 / 2;
@@ -51,7 +38,7 @@
     background-color: $color-white;
     width: 8px;
     height: 8px;
-    mask-image: url("/__spritemap#sprite-primary-button-arrow-view");
+    mask-image: url("/__spritemap#sprite-button-arrow-view");
     mask-size: 100%;
     mask-repeat: no-repeat;
     mask-position: center;
@@ -104,34 +91,6 @@
     padding-left: 30px;
   }
 
-  &--burger {
-    grid-template-columns: 1fr 47px;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.28px;
-  }
-
-  &--burger::after {
-    width: 16px;
-    height: 8px;
-    mask-image: url("/__spritemap#sprite-burger-menu-view");
-  }
-
-  &--burger::before {
-    width: 46px;
-    height: 46px;
-  }
-
-  &--burger:hover::after {
-    transform: unset;
-  }
-
-  .main-header--nav-is-opened &--burger::after {
-    width: 18px;
-    height: 18px;
-    mask-image: url("/__spritemap#sprite-close-icon-view");
-  }
-
   &--light {
     background-color: $color-white;
 
@@ -154,8 +113,7 @@
     }
   }
 
-  &--dark,
-  .main-header--nav-is-opened &--light {
+  &--dark {
     background-color: #316dc2;
     color: $color-white;
 
@@ -248,11 +206,7 @@
     font-size: 14px;
     letter-spacing: 0.28px;
 
-    &--burger {
-      padding-left: 20px;
-    }
-
-    &::before {
+      &::before {
       width: 46px;
       height: 46px;
     }
@@ -263,10 +217,6 @@
   }
 }
 
-.primary-button__text {
-  justify-self: right;
-
-  .main-header--nav-is-opened & {
-    justify-self: left;
-  }
-}
+// .primary-button__text {
+//   justify-self: right;
+// }

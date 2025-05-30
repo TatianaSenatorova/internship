@@ -1,0 +1,17 @@
+.secondary-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  text-decoration: none;
+  color: $color-white;
+  border-radius: 50%;
+  background-color: $color-cerulean-blue;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.secondary-button svg {
+  display: block;
+}

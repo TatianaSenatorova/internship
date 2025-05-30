@@ -48,12 +48,12 @@
                   </a>
                 </li>
                 <li class="main-header__nav-item">
-                  <button class="main-header__nav-button" aria-expanded="false" aria-controls="programms-submenu" data-button="programms"
-                    type="button">
+                  <button class="main-header__nav-button" aria-expanded="false" aria-controls="programs-submenu"
+                    data-button="programs" type="button">
                     Программы
                     <span class="visually-hidden">Открыть или закрыть подменю</span>
                   </button>
-                  <ul class="main-header__sub-nav-list" id="programms-submenu" data-submenu="programms">
+                  <ul class="main-header__sub-nav-list" id="programs-submenu" data-submenu="programs">
                     <!-- Чтобы отобразить ссылку в состоянии disable надо добавить класс-модификатор is-disabled к элементу с классом nav-link. -->
                     <li class="main-header__nav-item">
                       <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs" tabindex="-1">
@@ -88,8 +88,8 @@
                   </a>
                 </li>
                 <li class="main-header__nav-item">
-                  <button class="main-header__nav-button" aria-expanded="false" aria-controls="news-submenu" data-button="news"
-                    type="button">
+                  <button class="main-header__nav-button" aria-expanded="false" aria-controls="news-submenu"
+                    data-button="news" type="button">
                     Новости
                     <span class="visually-hidden">Открыть или закрыть подменю</span>
                   </button>
@@ -335,6 +335,57 @@
         </ul>
       </div>
     </section>
+    <section class="programs" id="programs" data-test="programs">
+      <div class="container">
+        <h2 class="programs__section-title section-title">Программы</h2>
+        <a class="programs__primary-button primary-button" href="#">Все программы</a>
+        <div class="programs__slider swiper-programs">
+          <ul class="programs__slider-list swiper-wrapper">
+            <li class="programs__slider-item swiper-slide">
+              <article class="programs-card">
+                <div class="programs-card__image-wrap">
+                  <picture>
+                    <source type="image/webp" media="(min-width: 1440px)" width="1440" height="800"
+                      srcset="img/hero-photos/hero-desktop-slide-1@1x.webp 1x, img/hero-photos/hero-desktop-slide-1@2x.webp 2x">
+                    <source type="image/webp" media="(min-width: 768px)" width="768" height="1024"
+                      srcset="img/hero-photos/hero-tablet-slide-1@1x.webp 1x, img/hero-photos/hero-tablet-slide-1@2x.webp 2x">
+                    <source type="image/webp" width="320" height="568"
+                      srcset="img/hero-photos/hero-mobile-slide-1@1x.webp 1x, img/hero-photos/hero-mobile-slide-1@2x.webp 2x">
+
+                    <source media="(min-width: 1440px)" width="1440" height="800" type="image/jpeg"
+                      srcset="img/hero-photos/hero-desktop-slide-1@1x.jpg 1x, img/hero-photos/hero-desktop-slide-1@2x.jpg 2x">
+                    <source media="(min-width: 768px)" width="768" height="1024" type="image/jpeg"
+                      srcset="img/hero-photos/hero-tablet-slide-1@1x.jpg 1x, img/hero-photos/hero-tablet-slide-1@2x.jpg 2x">
+                    <img class="programs-card__image" src="img/hero-photos/hero-mobile-slide-1@1x.jpg"
+                      srcset="img/hero-photos/hero-mobile-slide-1@2x.jpg 2x" alt="Девушка с учебными материалами"
+                      width="320" height="568">
+                  </picture>
+                </div>
+                <div class="programs-card__info-wrap">
+                  <h3 class="programs-card__title">Стажировки</h3>
+                  <div class="programs-card__content">
+                    <p>Получите незаменимый опыт работы в&nbsp;крупнейших мировых компаниях.</p>
+                  </div>
+                  <!-- Чтобы кнопка secondary-button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
+                  <a class="programs-card__secondary-button secondary-button" href="#">
+                    <span class="visually-hidden">Подробнее о программе</span>
+                    <svg aria-hidden="true" focusable="false" width="8" height="8">
+                      <use href="/__spritemap#sprite-button-arrow"></use>
+                    </svg>
+                  </a>
+                </div>
+        </div>
+        <!-- </div> -->
+      </div>
+      <div class="hero-card__overlay"></div>
+      </article>
+      </li>
+
+      </ul>
+      </div>
+      </div>
+    </section>
+
   </main>
   <footer></footer>
   <section class="modal">

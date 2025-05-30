@@ -5,6 +5,9 @@ import {
   slidesHeroInfoContent,
   heroPagination
 } from './dom-elements.js';
+import {
+HTML_FOR_PAGINATION
+} from './constants.js';
 
 export const heroSwiper = new Swiper('.swiper-hero', {
   modules: [Pagination],
@@ -40,7 +43,10 @@ const unfocusNonActiveSlide = () => {
 };
 
 const changePaginationPlace = () => {
-  console.log('123')
+    slidesHero[heroSwiper.previousIndex].querySelector('.hero-card__pagination-nebo-wrap').innerHTML = '';
+    console.log(slidesHero[heroSwiper.previousIndex].querySelector('.hero-card__pagination-nebo-wrap'));
+    slidesHero[heroSwiper.activeIndex].querySelector('.hero-card__pagination-nebo-wrap').innerHTML = HTML_FOR_PAGINATION;
+    heroSwiper.renderBullet;
 }
 
 const onSliderSlideChange = () => {
