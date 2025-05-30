@@ -8,8 +8,8 @@
   margin-bottom: calc(var(--mobile-header-height) + var(--mobile-padding-top));
 
   @media (min-width: $tablet-width) {
- top: calc((var( --tablet-header-height) + var(--tablet-padding-top))* -1);
-  margin-bottom: calc(var( --tablet-header-height) + var(--tablet-padding-top));
+    top: calc((var(--tablet-header-height) + var(--tablet-padding-top))* -1);
+    margin-bottom: calc(var(--tablet-header-height) + var(--tablet-padding-top));
   }
 
 }

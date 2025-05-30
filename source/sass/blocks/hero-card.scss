@@ -49,10 +49,14 @@
 }
 
 .hero-card__pagination-nebo-wrap {
+  margin-bottom: -15px;
+  padding-bottom: 15px;
+  display: inline-block;
+  padding-right: 30px;
   background-image: linear-gradient(to bottom, transparent 15px, $color-white 15px);
 
   // border-radius: 12px 12px 0px 0px;
-  width: fit-content;
+  // width: calc(auto + 50px);
   min-height: 28px;
 
   // width: fit-content;
@@ -72,19 +76,19 @@
 .hero-card__info {
   min-height: 299px;
 
-  // padding: 28px 0 0 0;
-  border-radius: 12px 0 0;
+  // // padding: 28px 0 0 0;
+  // border-radius: 0 16px 16px 0;
 
-  // background-color: $color-white;
-  --nb-r: 14px;
-  --nb-w: 184px;
-  --nb-h: 6px;
-  --nb-curve-rw: 10px;
-  --nb-curve-rh: 10px;
-  --nb-cor2-rw: 12px;
-  --nb-cor2-rh: 12px;
-  --nb-cor1-rw: 16px;
-  --nb-cor1-rh: 16px;
+  // // background-color: $color-white;
+  // --nb-r: 14px;
+  // --nb-w: 184px;
+  // --nb-h: 6px;
+  // --nb-curve-rw: 10px;
+  // --nb-curve-rh: 10px;
+  // --nb-cor2-rw: 12px;
+  // --nb-cor2-rh: 12px;
+  // --nb-cor1-rw: 16px;
+  // --nb-cor1-rh: 16px;
 }
 
 .hero-card__title-nebo-inner-wrap {
@@ -104,7 +108,7 @@
 }
 
 .hero-card__title-nebo-wrap {
-  padding: 28px 0 0;
+  border-radius: 0 16px 0 0;
   background-color: $color-white;
 
   --nb-r: 16px;
