@@ -25,7 +25,7 @@
 
   // width: 136px;
   justify-self: end;
-  text-align: left;
+
 
   .main-header--nav-is-opened & {
     grid-column: 1 / 3;
@@ -33,6 +33,15 @@
     max-width: 290px;
 
     // text-align: left;
+  }
+
+  @media (min-width: $tablet-width) {
+    min-height: 56px;
+
+    .main-header--nav-is-opened & {
+      min-width: 286px;
+      max-width: 286px;
+    }
   }
 }
 
@@ -75,6 +84,11 @@
   gap: 14px;
   border-radius: 16px;
   background-color: $color-cerulean-blue;
+
+  @media (min-width: $tablet-width) {
+    width: 286px;
+    margin-left: auto;
+  }
 }
 
 .main-header__sub-nav-list {

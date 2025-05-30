@@ -1,7 +1,17 @@
 .hero {
+  --mobile-header-height: 54px;
+  --mobile-padding-top: 20px;
+  --tablet-header-height: 56px;
+  --tablet-padding-top: 30px;
   position: relative;
-  top: -74px;
-  margin-bottom: -74px;
+  top: calc((var(--mobile-header-height) + var(--mobile-padding-top))* -1);
+  margin-bottom: calc(var(--mobile-header-height) + var(--mobile-padding-top));
+
+  @media (min-width: $tablet-width) {
+ top: calc((var( --tablet-header-height) + var(--tablet-padding-top))* -1);
+  margin-bottom: calc(var( --tablet-header-height) + var(--tablet-padding-top));
+  }
+
 }
 
 .hero__slider {
