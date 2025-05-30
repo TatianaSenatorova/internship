@@ -48,30 +48,30 @@
                   </a>
                 </li>
                 <li class="main-header__nav-item">
-                  <button class="main-header__nav-button" aria-expanded="false" aria-controls="programms-submenu"
+                  <button class="main-header__nav-button" aria-expanded="false" aria-controls="programms-submenu" data-button="programms"
                     type="button">
                     Программы
                     <span class="visually-hidden">Открыть или закрыть подменю</span>
                   </button>
-                  <ul class="main-header__sub-nav-list" id="programms-submenu">
+                  <ul class="main-header__sub-nav-list" id="programms-submenu" data-submenu="programms">
                     <!-- Чтобы отобразить ссылку в состоянии disable надо добавить класс-модификатор is-disabled к элементу с классом nav-link. -->
                     <li class="main-header__nav-item">
-                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs" tabindex="-1">
                         Стажировки
                       </a>
                     </li>
                     <li class="main-header__nav-item">
-                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs" tabindex="-1">
                         Волонтёрство
                       </a>
                     </li>
                     <li class="main-header__nav-item">
-                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs" tabindex="-1">
                         Учёба
                       </a>
                     </li>
                     <li class="main-header__nav-item">
-                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs" tabindex="-1">
                         Религия
                       </a>
                     </li>
@@ -88,35 +88,35 @@
                   </a>
                 </li>
                 <li class="main-header__nav-item">
-                  <button class="main-header__nav-button" aria-expanded="false" aria-controls="news-submenu"
+                  <button class="main-header__nav-button" aria-expanded="false" aria-controls="news-submenu" data-button="news"
                     type="button">
                     Новости
                     <span class="visually-hidden">Открыть или закрыть подменю</span>
                   </button>
-                  <ul class="main-header__sub-nav-list" id="news-submenu">
+                  <ul class="main-header__sub-nav-list" id="news-submenu" data-submenu="news">
                     <!-- Чтобы отобразить ссылку в состоянии disable надо добавить класс-модификатор is-disabled к элементу с классом nav-link. -->
                     <li class="main-header__nav-item">
-                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs" tabindex="-1">
                         Общее
                       </a>
                     </li>
                     <li class="main-header__nav-item">
-                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs" tabindex="-1">
                         Волонтёрство
                       </a>
                     </li>
                     <li class="main-header__nav-item">
-                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs" tabindex="-1">
                         Стажировки
                       </a>
                     </li>
                     <li class="main-header__nav-item">
-                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs" tabindex="-1">
                         Карьера
                       </a>
                     </li>
                     <li class="main-header__nav-item">
-                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs" tabindex="-1">
                         Путешествия
                       </a>
                     </li>
@@ -162,7 +162,6 @@
               <div class="hero-card__info-wrap">
                 <div class="container">
                   <!-- <div class="hero-card__info"> -->
-
                   <div class="hero-card__pagination-nebo-wrap nebo nebo--tr">
                     <div class="hero__slider-pagination swiper-pagination"></div>
                   </div>
@@ -184,10 +183,8 @@
                 </div>
                 <!-- </div> -->
               </div>
-
               <div class="hero-card__overlay"></div>
             </article>
-
           </li>
           <li class="hero__slider-item swiper-slide">
             <article class="hero-card hero-card--addition-photos">
@@ -211,27 +208,27 @@
               </div>
               <div class="hero-card__info-wrap">
                 <div class="container">
+                  <div class="hero-card__pagination-nebo-wrap nebo nebo--tr">
+                    <!-- <div class="hero__slider-pagination swiper-pagination"></div> -->
+                  </div>
                   <div class="hero-card__info">
-                    <div class="hero-card__nebo-wrap nebo nebo--tr">
-                      <div class="hero-card__title-nebo-wrap nebo nebo--br">
-                        <h2 class="hero-card__title">Волонтёрские программы&nbsp;&mdash; внесите свой вклад
-                          в&nbsp;общество</h2>
-                      </div>
-                      <div class="hero-card__content">
-                        <p>Возможности для преподавания, органического сельского хозяйства, устойчивого образа жизни
-                          и&nbsp;другое.</p>
-                      </div>
-                      <div class="hero-card__button-wrap nebo nebo--br">
-                        <!-- Чтобы кнопка  button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
-                        <a class="hero-card__primary-button primary-button" href="#">Подробнее</a>
-                      </div>
+                    <div class="hero-card__title-nebo-wrap nebo nebo--br">
+                      <h2 class="hero-card__title">Волонтёрские программы&nbsp;&mdash; внесите свой вклад
+                        в&nbsp;общество</h2>
+                    </div>
+                    <div class="hero-card__content">
+                      <p>Возможности для преподавания, органического сельского хозяйства, устойчивого образа жизни
+                        и&nbsp;другое.</p>
+                    </div>
+                    <div class="hero-card__button-wrap nebo nebo--br">
+                      <!-- Чтобы кнопка  button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
+                      <a class="hero-card__primary-button primary-button" href="#">Подробнее</a>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="hero-card__overlay"></div>
             </article>
-
           </li>
           <li class="hero__slider-item swiper-slide">
             <article class="hero-card">
@@ -255,29 +252,28 @@
               </div>
               <div class="hero-card__info-wrap">
                 <div class="container">
+                  <div class="hero-card__pagination-nebo-wrap nebo nebo--tr">
+                    <!-- <div class="hero__slider-pagination swiper-pagination"></div> -->
+                  </div>
                   <div class="hero-card__info">
-                    <div class="hero-card__nebo-wrap nebo nebo--tr">
-                      <div class="hero-card__title-nebo-wrap nebo nebo--br">
-                        <h2 class="hero-card__title">Программы стажировок в&nbsp;крупнейших компаниях мира</h2>
-                      </div>
-                      <div class="hero-card__content">
-                        <p>Получите незаменимый опыт работы в&nbsp;ведущих мировых компаниях и&nbsp;государственных
-                          организациях.</p>
-                      </div>
-                      <div class="hero-card__button-wrap nebo nebo--br">
-                        <!-- Чтобы кнопка  button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
-                        <a class="hero-card__primary-button primary-button" href="#">Подробнее</a>
-                      </div>
+                    <div class="hero-card__title-nebo-wrap nebo nebo--br">
+                      <h2 class="hero-card__title">Программы стажировок в&nbsp;крупнейших компаниях мира</h2>
+                    </div>
+                    <div class="hero-card__content">
+                      <p>Получите незаменимый опыт работы в&nbsp;ведущих мировых компаниях и&nbsp;государственных
+                        организациях.</p>
+                    </div>
+                    <div class="hero-card__button-wrap nebo nebo--br">
+                      <!-- Чтобы кнопка  button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
+                      <a class="hero-card__primary-button primary-button" href="#">Подробнее</a>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="hero-card__overlay"></div>
             </article>
-
           </li>
         </ul>
-
       </div>
     </section>
     <section class="about" id="about" data-test="about">

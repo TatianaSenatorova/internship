@@ -2,7 +2,8 @@ import {
   mainHeader,
   menuButton,
   body,
-  buttonsSubMenu
+  buttonsSubMenu,
+  navList
 } from './dom-elements';
 
 import {
@@ -11,16 +12,42 @@ import {
   SUB_MENU_PADDING_TOP
 } from './constants.js';
 
+let subLists = {};
+
+const getSubLinks = () => {
+  buttonsSubMenu.forEach((button) => {
+    const subListName = button.getAttribute('data-button');
+    console.log(subListName);
+    const subListItems = navList.querySelector(`[data-submenu=${subListName}]`).querySelectorAll('.main-header__nav-link--sub-link');
+    subLists[subListName] = subListItems;
+  })
+}
+getSubLinks();
+
+const changeTabindexSubLinks = (subLinks, isToAdd = true) => {
+  const currentSublinks = subLists[subLinks];
+  currentSublinks.forEach((subLink) => {
+    if (isToAdd) {
+      subLink.setAttribute('tabindex', '-1');
+    } else {
+      subLink.removeAttribute('tabindex', '-1');
+    }
+  })
+}
+
 const onButtonSubMenuClick = (evt) => {
   evt.target.classList.toggle(CLASS_SUB_MENU_BUTTON_ACTIVE);
   const subMenu = evt.target.closest('.main-header__nav-item').querySelector('.main-header__sub-nav-list');
   if (subMenu.style.maxHeight) {
     subMenu.style.maxHeight = null;
     subMenu.style.paddingTop = null;
-  } else {
-    subMenu.style.paddingTop = `${SUB_MENU_PADDING_TOP }px`;
-    subMenu.style.maxHeight = `${subMenu.scrollHeight }px`;
+    changeTabindexSubLinks(subMenu.getAttribute('data-submenu'));
+    return;
   }
+  subMenu.style.paddingTop = `${SUB_MENU_PADDING_TOP}px`;
+  subMenu.style.maxHeight = `${subMenu.scrollHeight}px`;
+  changeTabindexSubLinks(subMenu.getAttribute('data-submenu'), false);
+
 };
 
 const onMenuButtonClick = (evt) => {
