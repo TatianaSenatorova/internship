@@ -11,6 +11,7 @@ export const heroSwiper = new Swiper('.swiper-programs', {
   direction: 'horizontal',
   slidesPerView: 1,
   initialSlide: 0,
+  spaceBetween: 55,
 
   breakpoints: {
     768: {

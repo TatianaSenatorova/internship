@@ -1,5 +1,5 @@
 .programs {
-  padding: 50px 0;
+  padding: 55px 0 50px;
 }
 
 .programs__primary-button {
@@ -9,6 +9,8 @@
 
 .programs__wrap {
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .programs__section-title {
@@ -25,11 +27,12 @@
 
 .programs__slider {
   overflow: hidden;
+  margin-bottom: 30px;
 }
 
 .programs__slider-list {
   width: 100%;
-  margin: 0 auto 30px;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
   display: flex;
@@ -53,7 +56,8 @@
   }
 }
 
-// .tours__button-secondary {
-//   width: fit-content;
-//   margin: 0 auto;
-// }
+.programs__primary-button {
+  width: 205px;
+  min-height: 44px;
+  order: 1;
+}
