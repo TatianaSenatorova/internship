@@ -35,19 +35,19 @@
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
   border-radius: 12px;
-  padding: 38px 10px;
+  padding: 38px 10px 18px;
   background-color: rgba(49, 109, 194, 0.20);
 }
 
 .programs-card__info {
   align-self: flex-end;
-  column-gap: 16px;
   border-radius: 12px;
 }
 
 .programs-card__title {
   position: relative;
   z-index: $z-index-second;
+  min-height: 38px;
   margin: 0;
   padding: 18px 18px 6px 18px;
   border-radius: 12px 12px 0 0;
@@ -57,6 +57,7 @@
   line-height: 1.13;
   color: $color-cerulean-blue;
   background-color: $color-white;
+  word-break: break-all;
 }
 
 .programs-card__title-nebo-wrap {
@@ -74,7 +75,7 @@
   right: 0;
   --nb-r: 18px;
   --nb-w: 0px;
-  --nb-h: 0px;
+  --nb-h: -6px;
 }
 
 .programs-card__bottom-wrap {
@@ -97,7 +98,7 @@
     line-height: 1.17;
   }
 
-  p:not(:last-child) {
+  p:last-child {
     margin-bottom: 0;
   }
 }
