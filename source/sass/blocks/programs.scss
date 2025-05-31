@@ -6,3 +6,54 @@
   width: 205px;
   min-height: 44px;
 }
+
+.programs__wrap {
+  position: relative;
+}
+
+.programs__section-title {
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.programs__buttons-swiper-list {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: $z-index-first;
+}
+
+.programs__slider {
+  overflow: hidden;
+}
+
+.programs__slider-list {
+  width: 100%;
+  margin: 0 auto 30px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 10px;
+  }
+}
+
+.programs__slider-item {
+  display: flex;
+  justify-content: center;
+  height: auto;
+}
+
+.programs__scrollbar {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+}
+
+// .tours__button-secondary {
+//   width: fit-content;
+//   margin: 0 auto;
+// }

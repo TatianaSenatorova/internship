@@ -1,3 +1,51 @@
 .programs-card {
-  
+  min-width: 290px;
+  max-width: 290px;
+  min-height: 400px;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 12px;
+  background-color: $color-echo-blue;
+
+  @media (min-width: $tablet-width) {
+    min-width: 324px;
+    max-width: 324px;
+    min-height: 420px;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-width: 392px;
+    max-width: 392px;
+  }
+}
+
+.programs-card__image-wrap {
+  max-width: 100%;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.programs-card__image-wrap img {
+  display: block;
+  height: 100%;
+  object-fit: contain;
+}
+
+.programs-card__info-wrap {
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  border-radius: 12px;
+  padding: 38px 10px;
+  background-color: rgba(49, 109, 194, 0.20);
+}
+
+.programs-card__info {
+  align-self: flex-end;
+  border-radius: 12px;
+  background-color: $color-white;
+}
+
+.programs-card__title {
+  margin: 0;
+  margin-bottom: 6px;
+  padding: 18px 18px 0 18px;
 }

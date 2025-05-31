@@ -9,3 +9,4 @@ import './hero-slider.js';
 import './select.js';
 import './modal.js';
 import './validate-form.js';
+import './programs-slider.js';

@@ -337,119 +337,142 @@
     </section>
     <section class="programs" id="programs" data-test="programs">
       <div class="container">
-        <h2 class="programs__section-title section-title">Программы</h2>
-        <a class="programs__primary-button primary-button" href="#">Все программы</a>
-        <div class="programs__slider swiper-programs">
-          <ul class="programs__slider-list swiper-wrapper">
-            <li class="programs__slider-item swiper-slide">
-              <article class="programs-card">
-                <div class="programs-card__image-wrap">
-                  <picture>
-                    <source type="image/webp" media="(min-width: 1440px)" width="392" height="420"
-                      srcset="img/programs-photos/programs-desktop-1@1x.webp 1x, img/programs-photos/programs-desktop-1@2x.webp 2x">
-                    <source type="image/webp" media="(min-width: 768px)" width="324" height="420"
-                      srcset="img/programs-photos/programs-tablet-1@1x.webp 1x, img/programs-photos/programs-tablet-1@2x.webp 2x">
-                    <source type="image/webp" width="290" height="400"
-                      srcset="img/programs-photos/programs-mobile-1@1x.webp 1x, img//programs-photos/programs-mobile-1@2x.webp 2x">
+        <div class="programs__wrap">
+          <h2 class="programs__section-title section-title">Программы</h2>
+          <a class="programs__primary-button primary-button" href="#">Все программы</a>
+          <div class="programs__slider swiper-programs">
+            <ul class="programs__slider-list swiper-wrapper">
+              <li class="programs__slider-item swiper-slide">
+                <article class="programs-card">
+                  <div class="programs-card__image-wrap">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1440px)" width="392" height="420"
+                        srcset="img/programs-photos/programs-desktop-1@1x.webp 1x, img/programs-photos/programs-desktop-1@2x.webp 2x">
+                      <source type="image/webp" media="(min-width: 768px)" width="324" height="420"
+                        srcset="img/programs-photos/programs-tablet-1@1x.webp 1x, img/programs-photos/programs-tablet-1@2x.webp 2x">
+                      <source type="image/webp" width="290" height="400"
+                        srcset="img/programs-photos/programs-mobile-1@1x.webp 1x, img//programs-photos/programs-mobile-1@2x.webp 2x">
 
-                    <source media="(min-width: 1440px)" width="392" height="420" type="image/jpeg"
-                      srcset="img/programs-photos/programs-desktop-1@1x.jpg 1x, img/programs-photos/programs-desktop-1@2x.jpg 2x">
-                    <source media="(min-width: 768px)" width="324" height="420" type="image/jpeg"
-                      srcset="img/programs-photos/programs-tablet-1@1x.jpg 1x, img/programs-photos/programs-tablet-1@2x.jpg 2x">
-                    <img class="programs-card__image" src="img/programs-photos/programs-mobile-1@1x.jpg"
-                      srcset="img/programs-photos/programs-mobile-1@2x.jpg 2x"
-                      alt="Две девушки за ноутбуками во время стажировки" width="290" height="400">
-                  </picture>
-                </div>
-                <div class="programs-card__info-wrap">
-                  <h3 class="programs-card__title">Стажировки</h3>
-                  <div class="programs-card__content">
-                    <p>Получите незаменимый опыт работы в&nbsp;крупнейших мировых компаниях.</p>
+                      <source media="(min-width: 1440px)" width="392" height="420" type="image/jpeg"
+                        srcset="img/programs-photos/programs-desktop-1@1x.jpg 1x, img/programs-photos/programs-desktop-1@2x.jpg 2x">
+                      <source media="(min-width: 768px)" width="324" height="420" type="image/jpeg"
+                        srcset="img/programs-photos/programs-tablet-1@1x.jpg 1x, img/programs-photos/programs-tablet-1@2x.jpg 2x">
+                      <img class="programs-card__image" src="img/programs-photos/programs-mobile-1@1x.jpg"
+                        srcset="img/programs-photos/programs-mobile-1@2x.jpg 2x"
+                        alt="Две девушки за ноутбуками во время стажировки" width="290" height="400">
+                    </picture>
                   </div>
-                  <!-- Чтобы кнопка secondary-button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
-                  <a class="programs-card__secondary-button secondary-button" href="#">
-                    <span class="visually-hidden">Подробнее о программе</span>
-                    <svg aria-hidden="true" focusable="false" width="8" height="8">
-                      <use href="/__spritemap#sprite-button-arrow"></use>
-                    </svg>
-                  </a>
-                </div>
-                <div class="programs-card__overlay"></div>
-              </article>
-            </li>
-            <li class="programs__slider-item swiper-slide">
-              <article class="programs-card">
-                <div class="programs-card__image-wrap">
-                  <picture>
-                    <source type="image/webp" media="(min-width: 1440px)" width="392" height="420"
-                      srcset="img/programs-photos/programs-desktop-2@1x.webp 1x, img/programs-photos/programs-desktop-2@2x.webp 2x">
-                    <source type="image/webp" media="(min-width: 768px)" width="324" height="420"
-                      srcset="img/programs-photos/programs-tablet-2@1x.webp 1x, img/programs-photos/programs-tablet-2@2x.webp 2x">
-                    <source type="image/webp" width="290" height="400"
-                      srcset="img/programs-photos/programs-mobile-2@1x.webp 1x, img//programs-photos/programs-mobile-2@2x.webp 2x">
-
-                    <source media="(min-width: 1440px)" width="392" height="420" type="image/jpeg"
-                      srcset="img/programs-photos/programs-desktop-2@1x.jpg 1x, img/programs-photos/programs-desktop-2@2x.jpg 2x">
-                    <source media="(min-width: 768px)" width="324" height="420" type="image/jpeg"
-                      srcset="img/programs-photos/programs-tablet-2@1x.jpg 1x, img/programs-photos/programs-tablet-2@2x.jpg 2x">
-                    <img class="programs-card__image" src="img/programs-photos/programs-mobile-2@1x.jpg"
-                      srcset="img/programs-photos/programs-mobile-2@2x.jpg 2x"
-                      alt="Волонтер держит зеленый росток в руках" width="290" height="400">
-                  </picture>
-                </div>
-                <div class="programs-card__info-wrap">
-                  <h3 class="programs-card__title">Волонтёрство</h3>
-                  <div class="programs-card__content">
-                    <p>Помогайте другим и&nbsp;развивайте свои лидерские качества.</p>
+                  <div class="programs-card__info-wrap">
+                    <div class="programs-card__info">
+                      <h3 class="programs-card__title">Стажировки</h3>
+                      <div class="programs-card__content">
+                        <p>Получите незаменимый опыт работы в&nbsp;крупнейших мировых компаниях.</p>
+                      </div>
+                      <!-- Чтобы кнопка secondary-button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
+                      <a class="programs-card__secondary-button secondary-button" href="#">
+                        <span class="visually-hidden">Подробнее о программе</span>
+                        <svg aria-hidden="true" focusable="false" width="8" height="8">
+                          <use href="/__spritemap#sprite-button-arrow"></use>
+                        </svg>
+                      </a>
+                    </div>
                   </div>
-                  <!-- Чтобы кнопка secondary-button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
-                  <a class="programs-card__secondary-button secondary-button" href="#">
-                    <span class="visually-hidden">Подробнее о программе</span>
-                    <svg aria-hidden="true" focusable="false" width="8" height="8">
-                      <use href="/__spritemap#sprite-button-arrow"></use>
-                    </svg>
-                  </a>
-                </div>
-                <div class="programs-card__overlay"></div>
-              </article>
-            </li>
-            <li class="programs__slider-item swiper-slide">
-              <article class="programs-card">
-                <div class="programs-card__image-wrap">
-                  <picture>
-                    <source type="image/webp" media="(min-width: 1440px)" width="392" height="420"
-                      srcset="img/programs-photos/programs-desktop-3@1x.webp 1x, img/programs-photos/programs-desktop-3@2x.webp 2x">
-                    <source type="image/webp" media="(min-width: 768px)" width="324" height="420"
-                      srcset="img/programs-photos/programs-tablet-3@1x.webp 1x, img/programs-photos/programs-tablet-3@2x.webp 2x">
-                    <source type="image/webp" width="290" height="400"
-                      srcset="img/programs-photos/programs-mobile-3@1x.webp 1x, img//programs-photos/programs-mobile-3@2x.webp 2x">
+                  <!-- <div class="programs-card__overlay"></div> -->
+                </article>
+              </li>
+              <li class="programs__slider-item swiper-slide">
+                <article class="programs-card">
+                  <div class="programs-card__image-wrap">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1440px)" width="392" height="420"
+                        srcset="img/programs-photos/programs-desktop-2@1x.webp 1x, img/programs-photos/programs-desktop-2@2x.webp 2x">
+                      <source type="image/webp" media="(min-width: 768px)" width="324" height="420"
+                        srcset="img/programs-photos/programs-tablet-2@1x.webp 1x, img/programs-photos/programs-tablet-2@2x.webp 2x">
+                      <source type="image/webp" width="290" height="400"
+                        srcset="img/programs-photos/programs-mobile-2@1x.webp 1x, img//programs-photos/programs-mobile-2@2x.webp 2x">
 
-                    <source media="(min-width: 1440px)" width="392" height="420" type="image/jpeg"
-                      srcset="img/programs-photos/programs-desktop-3@1x.jpg 1x, img/programs-photos/programs-desktop-3@2x.jpg 2x">
-                    <source media="(min-width: 768px)" width="324" height="420" type="image/jpeg"
-                      srcset="img/programs-photos/programs-tablet-3@1x.jpg 1x, img/programs-photos/programs-tablet-3@2x.jpg 2x">
-                    <img class="programs-card__image" src="img/programs-photos/programs-mobile-3@1x.jpg"
-                      srcset="img/programs-photos/programs-mobile-3@2x.jpg 2x" alt="Студент учится в библиотеке"
-                      width="290" height="400">
-                  </picture>
-                </div>
-                <div class="programs-card__info-wrap">
-                  <h3 class="programs-card__title">Учёба</h3>
-                  <div class="programs-card__content">
-                    <p>Получите образование и&nbsp;измените своё будущее.</p>
+                      <source media="(min-width: 1440px)" width="392" height="420" type="image/jpeg"
+                        srcset="img/programs-photos/programs-desktop-2@1x.jpg 1x, img/programs-photos/programs-desktop-2@2x.jpg 2x">
+                      <source media="(min-width: 768px)" width="324" height="420" type="image/jpeg"
+                        srcset="img/programs-photos/programs-tablet-2@1x.jpg 1x, img/programs-photos/programs-tablet-2@2x.jpg 2x">
+                      <img class="programs-card__image" src="img/programs-photos/programs-mobile-2@1x.jpg"
+                        srcset="img/programs-photos/programs-mobile-2@2x.jpg 2x"
+                        alt="Волонтер держит зеленый росток в руках" width="290" height="400">
+                    </picture>
                   </div>
-                  <!-- Чтобы кнопка secondary-button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
-                  <a class="programs-card__secondary-button secondary-button" href="#">
-                    <span class="visually-hidden">Подробнее о программе</span>
-                    <svg aria-hidden="true" focusable="false" width="8" height="8">
-                      <use href="/__spritemap#sprite-button-arrow"></use>
-                    </svg>
-                  </a>
-                </div>
-                <div class="programs-card__overlay"></div>
-              </article>
-            </li>
+                  <div class="programs-card__info-wrap">
+                    <h3 class="programs-card__title">Волонтёрство</h3>
+                    <div class="programs-card__content">
+                      <p>Помогайте другим и&nbsp;развивайте свои лидерские качества.</p>
+                    </div>
+                    <!-- Чтобы кнопка secondary-button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
+                    <a class="programs-card__secondary-button secondary-button" href="#">
+                      <span class="visually-hidden">Подробнее о программе</span>
+                      <svg aria-hidden="true" focusable="false" width="8" height="8">
+                        <use href="/__spritemap#sprite-button-arrow"></use>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="programs-card__overlay"></div>
+                </article>
+              </li>
+              <li class="programs__slider-item swiper-slide">
+                <article class="programs-card">
+                  <div class="programs-card__image-wrap">
+                    <picture>
+                      <source type="image/webp" media="(min-width: 1440px)" width="392" height="420"
+                        srcset="img/programs-photos/programs-desktop-3@1x.webp 1x, img/programs-photos/programs-desktop-3@2x.webp 2x">
+                      <source type="image/webp" media="(min-width: 768px)" width="324" height="420"
+                        srcset="img/programs-photos/programs-tablet-3@1x.webp 1x, img/programs-photos/programs-tablet-3@2x.webp 2x">
+                      <source type="image/webp" width="290" height="400"
+                        srcset="img/programs-photos/programs-mobile-3@1x.webp 1x, img//programs-photos/programs-mobile-3@2x.webp 2x">
 
+                      <source media="(min-width: 1440px)" width="392" height="420" type="image/jpeg"
+                        srcset="img/programs-photos/programs-desktop-3@1x.jpg 1x, img/programs-photos/programs-desktop-3@2x.jpg 2x">
+                      <source media="(min-width: 768px)" width="324" height="420" type="image/jpeg"
+                        srcset="img/programs-photos/programs-tablet-3@1x.jpg 1x, img/programs-photos/programs-tablet-3@2x.jpg 2x">
+                      <img class="programs-card__image" src="img/programs-photos/programs-mobile-3@1x.jpg"
+                        srcset="img/programs-photos/programs-mobile-3@2x.jpg 2x" alt="Студент учится в библиотеке"
+                        width="290" height="400">
+                    </picture>
+                  </div>
+                  <div class="programs-card__info-wrap">
+                    <h3 class="programs-card__title">Учёба</h3>
+                    <div class="programs-card__content">
+                      <p>Получите образование и&nbsp;измените своё будущее.</p>
+                    </div>
+                    <!-- Чтобы кнопка secondary-button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
+                    <a class="programs-card__secondary-button secondary-button" href="#">
+                      <span class="visually-hidden">Подробнее о программе</span>
+                      <svg aria-hidden="true" focusable="false" width="8" height="8">
+                        <use href="/__spritemap#sprite-button-arrow"></use>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="programs-card__overlay"></div>
+                </article>
+              </li>
+            </ul>
+
+          </div>
+          <div class="programs__scrollbar programs-swiper-scrollbar"></div>
+          <ul class="programs__buttons-swiper-list buttons-swiper-list">
+            <li>
+              <button class="button-swiper swiper-button-programs-prev" type="button">
+                <span class="visually-hidden">Посмотреть слайд предыдущий слайд</span>
+                <svg aria-hidden="true" focusable="false" width="14" height="9">
+                  <use href="/__spritemap#sprite-arrow-swiper"></use>
+                </svg>
+              </button>
+            </li>
+            <li>
+              <button class="button-swiper button-swiper--next swiper-button-programs-next" type="button">
+                <span class="visually-hidden">Посмотреть следующий слайд</span>
+                <svg aria-hidden="true" focusable="false" width="14" height="9">
+                  <use href="/__spritemap#sprite-arrow-swiper"></use>
+                </svg>
+              </button>
+            </li>
           </ul>
         </div>
       </div>
