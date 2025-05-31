@@ -336,10 +336,12 @@
       </div>
     </section>
     <section class="programs" id="programs" data-test="programs">
-      <div class="container">
+      <div class="container container--wider-on-tablet">
         <div class="programs__wrap">
-          <h2 class="programs__section-title section-title">Программы</h2>
-          <a class="programs__primary-button primary-button" href="#">Все программы</a>
+          <div class="programs__top-wrap">
+            <h2 class="programs__section-title section-title">Программы</h2>
+            <a class="programs__primary-button primary-button" href="#">Все программы</a>
+          </div>
           <div class="programs__slider swiper-programs">
             <ul class="programs__slider-list swiper-wrapper">
               <li class="programs__slider-item swiper-slide">
@@ -473,25 +475,27 @@
               </li>
             </ul>
           </div>
-          <div class="programs__scrollbar programs-swiper-scrollbar"></div>
-          <ul class="programs__buttons-swiper-list buttons-swiper-list">
-            <li>
-              <button class="button-swiper swiper-button-programs-prev" type="button">
-                <span class="visually-hidden">Посмотреть слайд предыдущий слайд</span>
-                <svg aria-hidden="true" focusable="false" width="10" height="10">
-                  <use href="/__spritemap#sprite-button-arrow"></use>
-                </svg>
-              </button>
-            </li>
-            <li>
-              <button class="button-swiper button-swiper--next swiper-button-programs-next" type="button">
-                <span class="visually-hidden">Посмотреть следующий слайд</span>
-                <svg aria-hidden="true" focusable="false" width="10" height="10">
-                  <use href="/__spritemap#sprite-button-arrow"></use>
-                </svg>
-              </button>
-            </li>
-          </ul>
+          <div class="programs__bottom-wrap">
+            <div class="programs__scrollbar programs-swiper-scrollbar"></div>
+            <ul class="programs__buttons-swiper-list buttons-swiper-list">
+              <li>
+                <button class="button-swiper swiper-button-programs-prev" type="button">
+                  <span class="visually-hidden">Посмотреть слайд предыдущий слайд</span>
+                  <svg aria-hidden="true" focusable="false" width="10" height="10">
+                    <use href="/__spritemap#sprite-button-arrow"></use>
+                  </svg>
+                </button>
+              </li>
+              <li>
+                <button class="button-swiper button-swiper--next swiper-button-programs-next" type="button">
+                  <span class="visually-hidden">Посмотреть следующий слайд</span>
+                  <svg aria-hidden="true" focusable="false" width="10" height="10">
+                    <use href="/__spritemap#sprite-button-arrow"></use>
+                  </svg>
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

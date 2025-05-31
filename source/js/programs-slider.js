@@ -15,13 +15,12 @@ export const heroSwiper = new Swiper('.swiper-programs', {
 
   breakpoints: {
     768: {
-      slidesPerView: 2,
+      slidesPerView: 'auto',
     },
     1440: {
       slidesPerView: 3,
       allowTouchMove: false,
     }
-
   },
 
   scrollbar: {
