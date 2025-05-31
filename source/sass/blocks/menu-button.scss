@@ -16,7 +16,7 @@
   line-height: 1;
   letter-spacing: 0.28px;
   text-transform: uppercase;
-  transition: background-color 0.3s, color 0.3s, min-width 0.3s, grid-column 0.3s;
+  transition: background-color 0.3s, color 0.3s, min-width 0.3s;
 
   &:hover {
     background-color: $color-cerulean-blue;
