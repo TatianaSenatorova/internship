@@ -1,0 +1,43 @@
+.button-swiper {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  padding: 4px;
+  background-color: transparent;
+  transform: rotate(180deg);
+  color: $color-cerulean-blue;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: rgba(49, 109, 194, 0.7);
+  }
+
+  &:focus {
+    background-color: $color-white;
+    color: $color-cerulean-blue;
+  }
+
+  &:active {
+    background-color: $color-white;
+    color: rgba(49, 109, 194, 0.7);
+  }
+
+  &:disabled {
+    pointer-events: none;
+    color: $color-mischka;
+  }
+}
+
+.button-swiper svg {
+  display: block;
+}
+
+.button-swiper--next svg {
+  transform: rotate(180deg);
+}
