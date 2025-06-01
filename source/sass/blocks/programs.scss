@@ -12,6 +12,10 @@
 .programs__wrap {
   position: relative;
   padding-bottom: 74px;
+
+  @media (min-width: $tablet-width) {
+    padding-bottom: unset;
+  }
 }
 
 .programs__top-wrap {
@@ -49,6 +53,10 @@
 .programs__slider {
   overflow: hidden;
   margin-bottom: 30px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: unset;
+  }
 }
 
 .programs__slider-list {
@@ -88,7 +96,7 @@
 .programs__bottom-wrap {
 
   @media (min-width: $tablet-width) {
-   width: 100%;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 74px;
     gap: 62px;
