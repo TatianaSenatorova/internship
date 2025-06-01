@@ -1,7 +1,11 @@
 .programs {
-  padding: 55px 0 50px;
+  padding: 50px 0;
 
   --padding-tablet: 45px;
+
+  @media (min-width: $desktop-width) {
+    padding: 60px 0;
+  }
 }
 
 .programs__wrap {
@@ -17,12 +21,14 @@
     display: flex;
     justify-content: space-between;
   }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 40px;
+  }
 }
 
 .programs__section-title {
   margin: 0;
-
-  @media (min-width: $tablet-width) {}
 }
 
 .programs__primary-button {
@@ -52,7 +58,7 @@
   display: flex;
 
   @media (min-width: $tablet-width) {
-    margin-bottom: 10px;
+    margin-bottom: 40px;
   }
 }
 
@@ -75,19 +81,45 @@
   @media (min-width: $tablet-width) {
     position: unset;
   }
+
 }
 
 .programs__bottom-wrap {
 
   @media (min-width: $tablet-width) {
-    display: flex;
+    max-width: 678px;
+    display: grid;
+    grid-template-columns: 1fr 54px;
+    gap: 62px;
+    align-items: center;
   }
 }
 
 .programs__scrollbar {
   display: none;
+  height: 20px;
+  background-image: linear-gradient(to bottom, transparent 9px, rgba(49, 109, 194, 0.2) 9px, rgba(49, 109, 194, 0.2) 11px, transparent 11px);
+  max-width: 562px;
+  cursor: pointer;
+  transition: background-image 0.3s;
+
+  &:hover {
+    background-image: linear-gradient(to bottom, transparent 9px, rgba(49, 109, 194, 0.5) 9px, rgba(49, 109, 194, 0.5) 11px, transparent 11px);
+  }
 
   @media (min-width: $tablet-width) {
     display: block;
+  }
+}
+
+
+.programs__scrollbar-drag {
+  height: 20px;
+  background-image: linear-gradient(to bottom, transparent 9px, $color-cerulean-blue 9px, $color-cerulean-blue 11px, transparent 11px);
+  width: 326px;
+  transition: background-image 0.3s;
+
+  &:hover {
+    background-image: linear-gradient(to bottom, transparent 9px, $color-endeavour 9px, $color-endeavour 11px, transparent 11px);
   }
 }

@@ -58,11 +58,21 @@
   color: $color-cerulean-blue;
   background-color: $color-white;
   word-break: break-all;
+
+  @media (min-width: $tablet-width) {
+    width: 173px;
+    font-size: 20px;
+    line-height: 0.7;
+  }
 }
 
 .programs-card__title-nebo-wrap {
   position: relative;
   width: 182px;
+
+  @media (min-width: $tablet-width) {
+    width: 209px;
+  }
 }
 
 .programs-card__title-nebo {
@@ -81,10 +91,15 @@
 .programs-card__bottom-wrap {
   display: grid;
   grid-template-columns: 1fr 30px;
+  gap: 20px;
   align-items: center;
   border-radius: 0px 12px 12px 12px;
   padding: 12px 18px 15px 18px;
   background-color: $color-white;
+
+   @media (min-width: $tablet-width) {
+     gap: 42px;
+  }
 }
 
 .programs-card__content {
@@ -100,5 +115,15 @@
 
   p:last-child {
     margin-bottom: 0;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 1.43;
+
+    p {
+      font-size: 14px;
+      line-height: 1.43;
+    }
   }
 }

@@ -1,41 +1,71 @@
 .secondary-button {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 42px;
+  height: 42px;
   text-decoration: none;
   color: $color-white;
   border-radius: 50%;
-  background-color: $color-cerulean-blue;
+
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, transform 0.3s;
 
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $color-cerulean-blue;
+  }
+
   &:hover {
-    background-color: $color-white;
     color: $color-cerulean-blue;
   }
 
+  &:hover::after {
+    background-color: $color-white;
+  }
+
   &:focus {
-    background-color: $color-cerulean-blue;
     color: $color-white;
   }
 
+  &:focus::after {
+    background-color: $color-cerulean-blue;
+  }
+
   &:active {
-    background-color: $color-white;
     color: rgba(49, 109, 194, 0.7);
+  }
+
+  &:active::after {
+    background-color: $color-white;
   }
 
   &:disabled {
     pointer-events: none;
-    background-color: $color-mischka;
     color: rgba(255, 255, 255, 0.6);
+  }
+
+  &:disabled::after {
+    background-color: $color-mischka;
   }
 
   &--is-disabled {
     pointer-events: none;
-    background-color: $color-mischka;
     color: rgba(255, 255, 255, 0.6);
+  }
+
+  &--is-disabled::after {
+    background-color: $color-mischka;
   }
 }
 

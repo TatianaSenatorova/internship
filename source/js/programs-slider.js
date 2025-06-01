@@ -6,7 +6,7 @@ import { Navigation, Scrollbar } from 'swiper/modules';
 //   heroPagination
 // } from './dom-elements.js';
 
-export const heroSwiper = new Swiper('.swiper-programs', {
+export const programsSwiper = new Swiper('.swiper-programs', {
   modules: [Navigation, Scrollbar],
   direction: 'horizontal',
   slidesPerView: 1,
@@ -25,8 +25,8 @@ export const heroSwiper = new Swiper('.swiper-programs', {
 
   scrollbar: {
     el: '.programs-swiper-scrollbar',
+    dragClass: 'programs__scrollbar-drag',
     draggable: true,
-    hide: false,
   },
 
   navigation: {
