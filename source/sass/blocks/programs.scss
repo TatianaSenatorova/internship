@@ -2,6 +2,7 @@
   padding: 50px 0;
 
   --padding-tablet: 45px;
+  --additional-padding-click-zone: 10px;
 
   @media (min-width: $desktop-width) {
     padding: 60px 0;
@@ -74,22 +75,22 @@
 
 .programs__buttons-swiper-list {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: calc(var(--additional-padding-click-zone) * -1);
+  top: calc(var(--additional-padding-click-zone) * -0.5);
   z-index: $z-index-first;
 
   @media (min-width: $tablet-width) {
-    position: unset;
+    position: relative;
+    top: unset;
   }
-
 }
 
 .programs__bottom-wrap {
 
   @media (min-width: $tablet-width) {
-    max-width: 678px;
+   width: 100%;
     display: grid;
-    grid-template-columns: 1fr 54px;
+    grid-template-columns: 1fr 74px;
     gap: 62px;
     align-items: center;
   }
@@ -99,7 +100,7 @@
   display: none;
   height: 20px;
   background-image: linear-gradient(to bottom, transparent 9px, rgba(49, 109, 194, 0.2) 9px, rgba(49, 109, 194, 0.2) 11px, transparent 11px);
-  max-width: 562px;
+  width: 100%;
   cursor: pointer;
   transition: background-image 0.3s;
 
