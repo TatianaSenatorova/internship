@@ -12,6 +12,10 @@
   line-height: 1;
 }
 
+.grant__top-wrap {
+  margin-bottom: 30px;
+}
+
 .grant__content {
   margin-bottom: 30px;
   font-size: 14px;
@@ -29,4 +33,32 @@
   p:last-child {
     margin-bottom: 0;
   }
+}
+
+.grant__image-wrap {
+  width: 290px;
+  height: 200px;
+  border-radius: 16px;
+  background-color: $color-chambray;
+
+  @media (min-width: $tablet-width) {
+    width: 678px;
+    height: 375px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 498px;
+    height: 363px;
+  }
+}
+
+.grant__image-wrap img {
+  border-radius: 16px;
+  display: block;
+  object-fit: cover;
+  text-indent: -100vw;
+}
+
+.grant__list-title {
+  
 }
