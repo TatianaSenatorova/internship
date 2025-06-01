@@ -51,7 +51,7 @@
   margin: 0;
   padding: 18px 18px 6px 18px;
   border-radius: 12px 12px 0 0;
-  width: 146px;
+  min-width: 146px;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.13;
@@ -60,18 +60,30 @@
   word-break: break-all;
 
   @media (min-width: $tablet-width) {
-    width: 173px;
+    min-width: 173px;
     font-size: 20px;
     line-height: 0.7;
+  }
+
+    @media (min-width: $desktop-width) {
+    min-width: 194px;
+    font-size: 24px;
+    line-height: 0.71;
   }
 }
 
 .programs-card__title-nebo-wrap {
   position: relative;
-  width: 182px;
+  padding-right: 36px;
+  width: fit-content;
+  // width: 182px;
 
   @media (min-width: $tablet-width) {
-    width: 209px;
+    // width: 209px;
+  }
+
+  @media (min-width: $tablet-width) {
+    // width: 230px;
   }
 }
 
@@ -124,6 +136,14 @@
     p {
       font-size: 14px;
       line-height: 1.43;
+    }
+  }
+
+    @media (min-width: $tablet-width) {
+     line-height: 1.29;
+
+    p {
+        line-height: 1.29;
     }
   }
 }

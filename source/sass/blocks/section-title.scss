@@ -4,6 +4,10 @@
   line-height: 1;
   color: $color-cerulean-blue;
 
+  &--light {
+      color: $color-white;
+  }
+
   @media (min-width: $tablet-width) {
     font-size: 34px;
     font-weight: 400;
