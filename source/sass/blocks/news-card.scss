@@ -41,7 +41,6 @@
 .news-card__info {
   align-self: flex-end;
   padding-top: 40px;
-  padding-top: 15px;
 }
 
 .news-card__date-nebo-wrap {
@@ -79,6 +78,9 @@
 .news-card__date {
   display: block;
   width: fit-content;
+  min-height: 30px;
+  min-width: 30px;
+  max-width: 170px;
   padding: 12px 12px 6px 0;
   border-radius: 0px 12px 0px 0px;
   font-weight: 400;
@@ -97,11 +99,11 @@
 .news-card__title {
   position: relative;
   min-height: 38px;
+  min-width: 200px;
   max-width: 220px;
   margin: 0;
   padding: 10px 18px 4px 0;
   border-radius: 0px 12px 0px 0px;
-  min-width: 146px;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.13;
@@ -125,7 +127,9 @@
   position: relative;
   width: fit-content;
   max-width: 263px;
-  display: flex;
+  min-width: 263px;
+  display: grid;
+  grid-template-columns: 1fr 42px;
   align-items: center;
   gap: 10px;
   padding: 12px 10px 10px 0;
