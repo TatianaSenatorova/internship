@@ -96,27 +96,27 @@
                   <ul class="main-header__sub-nav-list" id="news-submenu" data-submenu="news">
                     <!-- Чтобы отобразить ссылку в состоянии disable надо добавить класс-модификатор is-disabled к элементу с классом nav-link. -->
                     <li class="main-header__nav-item">
-                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs" tabindex="-1">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#news" tabindex="-1">
                         Общее
                       </a>
                     </li>
                     <li class="main-header__nav-item">
-                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs" tabindex="-1">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#news" tabindex="-1">
                         Волонтёрство
                       </a>
                     </li>
                     <li class="main-header__nav-item">
-                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs" tabindex="-1">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#news" tabindex="-1">
                         Стажировки
                       </a>
                     </li>
                     <li class="main-header__nav-item">
-                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs" tabindex="-1">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#news" tabindex="-1">
                         Карьера
                       </a>
                     </li>
                     <li class="main-header__nav-item">
-                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#programs" tabindex="-1">
+                      <a class="main-header__nav-link main-header__nav-link--sub-link" href="#news" tabindex="-1">
                         Путешествия
                       </a>
                     </li>
@@ -564,10 +564,10 @@
                   srcset="img/grant-photos/grant-mobile@1x.webp 1x, img/grant-photos/grant-mobile@2x.webp 2x">
 
                 <source media="(min-width: 1440px)" width="498" height="363" type="image/png"
-                  srcset="img/grant-photos/grant-desktop@1x.jpg 1x, img/grant-photos/grant-desktop@2x.jpg 2x">
+                  srcset="img/grant-photos/grant-desktop@1x.png 1x, img/grant-photos/grant-desktop@2x.png 2x">
                 <source media="(min-width: 768px)" width="678" height="375" type="image/png"
-                  srcset="img/grant-photos/grant-tablet@1x.jpg 1x, img/grant-photos/grant-tablet@2x.jpg 2x">
-                <img src="img/grant-photos/grant-mobile@1x.jpg" srcset="img/grant-photos/grant-mobile@2x.jpg 2x"
+                  srcset="img/grant-photos/grant-tablet@1x.png 1x, img/grant-photos/grant-tablet@2x.png 2x">
+                <img src="img/grant-photos/grant-mobile@1x.png" srcset="img/grant-photos/grant-mobile@2x.png 2x"
                   alt="Фотография столба с указателями" width="290" height="200">
               </picture>
             </div>
@@ -599,6 +599,82 @@
               </li>
             </ol>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="news" id="news" data-test="news">
+      <div class="container">
+        <h2 class="news__section-title section-title">Новости и&nbsp;материалы</h2>
+        <ul class="news__buttons-list" data-tabs="controls">
+          <li class="news__buttons-item">
+            <!-- Чтобы отобразить кнопку в состоянии текущая надо добавить класс-модификатор is-active к элементу с классом tab-button. -->
+            <button class="tab-button tab-button--is-active" type="button" data-tabs="control">Общее</button>
+          </li>
+          <li class="news__buttons-item">
+            <button class="tab-button" type="button" data-tabs="control">Волонтёрство</button>
+          </li>
+          <li class="news__buttons-item">
+            <button class="tab-button" type="button" data-tabs="control">Стажировки</button>
+          </li>
+          <li class="news__buttons-item">
+            <button class="tab-button" type="button" data-tabs="control">Карьера</button>
+          </li>
+          <li class="news__buttons-item">
+            <button class="tab-button" type="button" data-tabs="control">Путешествия</button>
+          </li>
+        </ul>
+        <div class="news__slider swiper-news">
+          <ul class="news__slider-list swiper-wrapper">
+            <li class="news__slider-item swiper-slide">
+              <article class="news-card">
+                <div class="news-card__image-wrap">
+                  <picture>
+                    <source type="image/webp" media="(min-width: 1440px)" width="604" height="400"
+                      srcset="img/news-photos/news-desktop-slide-1@1x.webp 1x, img/news-photos/news-desktop-slide-1@2x.webp 2x">
+                    <source type="image/webp" media="(min-width: 768px)" width="324" height="350"
+                      srcset="img/news-photos/news-tablet-slide-1@1x.webp 1x, img/news-photos/news-tablet-slide-1@2x.webp 2x">
+                    <source type="image/webp" width="290" height="330"
+                      srcset="img/news-photos/news-mobile-slide-1@1x.webp 1x, img/news-photos/news-mobile-slide-1@2x.webp 2x">
+
+                    <source media="(min-width: 1440px)" width="604" height="400" type="image/jpeg"
+                      srcset="img/news-photos/news-desktop-slide-1@1x.jpg 1x, img/news-photos/news-dektop-slide-1@2x.jpg 2x">
+                    <source media="(min-width: 768px)" width="324" height="350" type="image/jpeg"
+                      srcset="img/news-photos/news-tablet-slide-1@1x.jpg 1x, img/news-photos/news-tablet-slide-1@2x.jpg 2x">
+                    <img class="news-card__image" src="img/news-photos/news-mobile-slide-1@1x.jpg"
+                      srcset="img/news-photos/news-mobile-slide-1@2x.jpg 2x" alt="Девушка дает интервью" width="290"
+                      height="330">
+                  </picture>
+                </div>
+                <div class="news-card__info-wrap">
+                  <div class="news-card__info">
+                    <div class="news-card__date-nebo-wrap">
+                      <time class="news-card__date" datetime="2023-03-23">23/03/2023</time>
+                      <div class="news-card__date-top-left-rounding nebo nebo--tr"></div>
+                      <div class="news-card__date-bottom-right-rounding nebo nebo--tr"></div>
+                    </div>
+                    <div class="news-card__title-nebo-wrap">
+                      <h3 class="news-card__title">Интервью с&nbsp;участницей программы стажировки</h3>
+                         <div class="news-card__title-bottom-right-rounding nebo nebo--tr"></div>
+                    </div>
+                    <div class="news-card__content">
+                      <p>Саша рассказывает, как попала в&nbsp;программу и&nbsp;как прошла 6-месячная стажировка
+                        в&nbsp;ISOFound</p>
+                    </div>
+                    <!-- Чтобы кнопка  secondary-button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
+                    <a class="news-card__secondary-button secondary-button" href="#">
+                      <span class="visually-hidden">Узнать подробнее</span>
+                      <svg class="secondary-button__icon" aria-hidden="true" focusable="false" width="10" height="10">
+                        <use href="/__spritemap#sprite-button-arrow"></use>
+                      </svg>
+                    </a>
+                    <!-- </div> -->
+                  </div>
+                </div>
+              </article>
+            </li>
+
+          </ul>
         </div>
       </div>
     </section>
