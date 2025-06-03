@@ -150,20 +150,19 @@
 }
 
 .news-card__bottom-wrap {
-  display: grid;
-  grid-template-columns: 1fr 30px;
-  gap: 20px;
+  position: relative;
+  width: fit-content;
+  max-width: 263px;
+  display: flex;
   align-items: center;
-  border-radius: 0px 12px 12px 12px;
-  padding: 12px 18px 15px 18px;
-  background-color: $color-white;
-
-  @media (min-width: $tablet-width) {
-    gap: 42px;
-  }
+  gap: 10px;
+  padding: 12px 10px 10px 0;
+  border-radius: 0 12px 0 0;
+  background-color: $color-alabaster;
 }
 
 .news-card__content {
+  max-width: 200px;
   font-weight: 400;
   line-height: 1.17;
 
@@ -196,3 +195,17 @@
     }
   }
 }
+
+.news-card__bottom-wrap-right-rounding {
+  position: absolute;
+  right: -32px;
+  bottom: 0;
+  width: 32px;
+  height: 32px;
+  --nb-r: 16px;
+  --nb-w: 0px;
+  --nb-h: 0px;
+  background-color: $color-alabaster;
+}
+
+
