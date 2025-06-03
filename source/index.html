@@ -787,8 +787,8 @@
                     <source media="(min-width: 768px)" width="324" height="350" type="image/jpeg"
                       srcset="img/news-photos/news-mobile-tablet-slide-4@1x.jpg 1x, img/news-photos/news-mobile-tablet-slide-4@2x.jpg 2x">
                     <img class="news-card__image" src="img/news-photos/news-mobile-tablet-slide-4@1x.jpg"
-                      srcset="img/news-photos/news-mobile-tablet-slide-4@2x.jpg 2x" alt="Ноутбуки на столе"
-                      width="290" height="240">
+                      srcset="img/news-photos/news-mobile-tablet-slide-4@2x.jpg 2x" alt="Ноутбуки на столе" width="290"
+                      height="240">
                   </picture>
                 </div>
                 <div class="news-card__info-wrap">
@@ -821,6 +821,26 @@
             </li>
 
           </ul>
+          <div class="news__slider-pagination swiper-pagination"></div>
+          <ul class="news__buttons-swiper-list buttons-swiper-list">
+            <li>
+              <button class="button-swiper swiper-button-news-prev" type="button">
+                <span class="visually-hidden">Посмотреть слайд предыдущий слайд</span>
+                <svg aria-hidden="true" focusable="false" width="10" height="10">
+                  <use href="/__spritemap#sprite-button-arrow"></use>
+                </svg>
+              </button>
+            </li>
+            <li>
+              <button class="button-swiper button-swiper--next swiper-button-news-next" type="button">
+                <span class="visually-hidden">Посмотреть следующий слайд</span>
+                <svg aria-hidden="true" focusable="false" width="10" height="10">
+                  <use href="/__spritemap#sprite-button-arrow"></use>
+                </svg>
+              </button>
+            </li>
+          </ul>
+
         </div>
       </div>
     </section>

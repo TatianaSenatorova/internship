@@ -12,3 +12,14 @@ export const modal = document.querySelector('.modal');
 export const buttonOpenModal = document.querySelector('.about__primary-button');
 export const buttonCloseModal = document.querySelector('.modal__close-button');
 export const modalForm = modal.querySelector('.form');
+
+
+  // slidesPerView: 1,
+  // slidesPerColumn: 2,
+  // initialSlide: 0,
+  // spaceBetween: 30,
+
+  // grid: {
+  //   rows: 2,
+  //   // fill: 'row',
+  // },

@@ -16,14 +16,13 @@ export const newsSwiper = new Swiper('.swiper-news', {
   initialSlide: 0,
   spaceBetween: 30,
 
-  grid: {
-    rows: 2,
-    fill: 'row',
-  },
+  // grid: {
+  //   rows: 2,
+  //   fill: 'row',
+  // },
 
   breakpoints: {
     1440: {
-
     }
   },
 
@@ -34,11 +33,15 @@ export const newsSwiper = new Swiper('.swiper-news', {
     type: 'bullets',
     clickable: true,
     renderBullet: function (index, bulletClass) {
-      return `<button class=${bulletClass}><span class="visually-hidden">Перейти к странице ${index + 1
+      return `<button class=${bulletClass}><span class="visually-hidden">Перейти к слайду ${index + 1
         }</span></button>`;
     },
     enabled: true,
   },
+    navigation: {
+    nextEl: '.swiper-button-news-next',
+    prevEl: '.swiper-button-news-prev'
+  }
 });
 
 
