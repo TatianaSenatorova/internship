@@ -1,19 +1,25 @@
 import Swiper from 'swiper';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Navigation, Grid } from 'swiper/modules';
 import {
-//   slidesHero,
-//   slidesHeroInfoContent,
-//   heroPagination
+  //   slidesHero,
+  //   slidesHeroInfoContent,
+  //   heroPagination
 } from './dom-elements.js';
 import {
-// HTML_FOR_PAGINATION
+  // HTML_FOR_PAGINATION
 } from './constants.js';
 
 export const newsSwiper = new Swiper('.swiper-news', {
-  modules: [Pagination],
+  modules: [Pagination, Navigation, Grid],
   direction: 'horizontal',
   slidesPerView: 1,
   initialSlide: 0,
+  spaceBetween: 30,
+
+  grid: {
+    rows: 2,
+    fill: 'row',
+  },
 
   breakpoints: {
     1440: {
