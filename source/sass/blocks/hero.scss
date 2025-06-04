@@ -36,7 +36,7 @@
 .hero__slider .hero__slider-pagination {
   position: static;
   background-color: $color-white;
-  padding: 6px 12px 0;
+  padding: 6px 12px;
   border-radius: 12px 12px 0 0;
 
   // z-index: $z-index-first;
@@ -46,18 +46,9 @@
   align-items: center;
   gap: 4px;
   width: fit-content;
-  max-width: 300px;
-
-  // transition: bottom 0.3s;
-  // --nb-r: 14px;
-  // --nb-w: 6px;
-  // --nb-h: 6px;
-  // --nb-curve-rw: 10px;
-  // --nb-curve-rh: 10px;
-  // --nb-cor2-rw: 12px;
-  // --nb-cor2-rh: 12px;
-  // --nb-cor1-rw: 16px;
-  // --nb-cor1-rh: 16px;
+  max-width: 250px;
+  min-width: 40px;
+  min-height: 28px;
 }
 
 .hero__pagination-control {

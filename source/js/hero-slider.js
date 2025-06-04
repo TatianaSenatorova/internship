@@ -42,16 +42,16 @@ const unfocusNonActiveSlide = () => {
   slidesHero[heroSwiper.previousIndex].querySelector('.hero-card__primary-button').setAttribute('tabindex', '-1');
 };
 
-const changePaginationPlace = () => {
-    slidesHero[heroSwiper.previousIndex].querySelector('.hero-card__pagination-nebo-wrap').innerHTML = '';
-    console.log(slidesHero[heroSwiper.previousIndex].querySelector('.hero-card__pagination-nebo-wrap'));
-    slidesHero[heroSwiper.activeIndex].querySelector('.hero-card__pagination-nebo-wrap').innerHTML = HTML_FOR_PAGINATION;
-    heroSwiper.renderBullet;
-}
+// const changePaginationPlace = () => {
+//     slidesHero[heroSwiper.previousIndex].querySelector('.hero-card__pagination-nebo-wrap').innerHTML = '';
+//     console.log(slidesHero[heroSwiper.previousIndex].querySelector('.hero-card__pagination-nebo-wrap'));
+//     slidesHero[heroSwiper.activeIndex].querySelector('.hero-card__pagination-nebo-wrap').innerHTML = HTML_FOR_PAGINATION;
+//     heroSwiper.renderBullet;
+// }
 
 const onSliderSlideChange = () => {
   unfocusNonActiveSlide();
-  changePaginationPlace();
+  // changePaginationPlace();
 };
 
 heroSwiper.on('slideChange', onSliderSlideChange);

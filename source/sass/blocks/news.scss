@@ -65,7 +65,8 @@
   // }
 }
 
-.news__slider .news__slider-pagination {
+.news__slider-pagination {
+  position: static;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
