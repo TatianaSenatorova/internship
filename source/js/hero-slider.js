@@ -24,8 +24,8 @@ export const heroSwiper = new Swiper('.swiper-hero', {
 
   pagination: {
     el: '.hero__slider-pagination',
-    bulletClass: 'hero__pagination-control',
-    bulletActiveClass: 'hero__pagination-control--is-active',
+    bulletClass: 'pagination-bullet',
+    bulletActiveClass: 'pagination-bullet--is-active',
     type: 'bullets',
     clickable: true,
     renderBullet: function (index, bulletClass) {

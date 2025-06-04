@@ -1,0 +1,30 @@
+.pagination-bullet {
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  flex-shrink: 0;
+  padding: 0;
+  background-color: transparent;
+  background-image: radial-gradient(circle, transparent 2px, $color-cerulean-blue 3px, $color-cerulean-blue 5px, transparent 6px);
+  cursor: pointer;
+  transition: background-image 0.3s;
+
+  &:hover {
+    background-image: radial-gradient(circle, rgba(49, 109, 194, 0.7) 2px, $color-white 3px, $color-white 5px, transparent 6px);
+  }
+
+  &:focus {
+    background-image: radial-gradient(circle, $color-cerulean-blue 5px, transparent 6px);
+  }
+
+  &:active {
+    background-image: radial-gradient(circle, $color-endeavour 5px, transparent 6px);
+  }
+
+  &--is-active {
+    background-image: radial-gradient(circle, $color-endeavour 5px, transparent 6px);
+  }
+}

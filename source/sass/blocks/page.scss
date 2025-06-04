@@ -16,12 +16,15 @@
   flex-direction: column;
 }
 
-.page__body:has(.main-header--nav-is-opened) {
-  overflow: hidden;
-  background-color: rgba(13, 29, 51, 0.4);
-}
-
+.page__body:has(.main-header--nav-is-opened),
 .page__body:has(.modal--is-opened) {
   overflow: hidden;
-  background-color: rgba(13, 29, 51, 0.4);
+  &::after {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(13, 29, 51, 0.4);
+  }
 }
+
