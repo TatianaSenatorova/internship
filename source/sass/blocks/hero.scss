@@ -35,7 +35,6 @@
 
 .hero__slider .hero__slider-pagination {
   position: static;
-
   background-color: $color-white;
   padding: 6px 12px;
   border-radius: 12px 12px 0 0;
@@ -45,6 +44,12 @@
   align-items: center;
   gap: 4px;
   width: fit-content;
+
+  @media (min-width: $tablet-width) {
+    border-radius: 20px 20px 0px 0px;
+  }
+
+  @media (min-width: $desktop-width) {}
 
 }
 
