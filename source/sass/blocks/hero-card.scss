@@ -66,14 +66,18 @@
   min-height: 299px;
 }
 
-.hero-card__title-nebo-wrap {
+// .hero-card__title-nebo-wrap {
+//   position: relative;
+//   width: fit-content;
+//   border-radius: 0 16px 16px 0;
+//   background-color: $color-white;
+// }
+
+.hero-card__title {
   position: relative;
   width: fit-content;
   border-radius: 0 16px 16px 0;
   background-color: $color-white;
-}
-
-.hero-card__title {
   padding: 20px 16px 16px 14px;
   margin: 0;
   font-size: 22px;
