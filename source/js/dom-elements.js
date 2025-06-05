@@ -10,7 +10,6 @@ export const slidesHeroInfoContent = sliderHero.querySelectorAll('.hero-card__in
 export const heroPagination = sliderHero.querySelector('.hero__slider-pagination');
 export const heroFalsePaginations = sliderHero.querySelectorAll('.hero-card__false-pagination');
 export const realPagination = sliderHero.querySelector('.hero__slider-pagination');
-
 export const modal = document.querySelector('.modal');
 export const buttonOpenModal = document.querySelector('.about__primary-button');
 export const buttonCloseModal = document.querySelector('.modal__close-button');
