@@ -2,11 +2,9 @@ import Swiper from 'swiper';
 import { Pagination } from 'swiper/modules';
 import {
   slidesHero,
-  sliderHero,
   heroFalsePaginations,
   realPagination,
-  slidesHeroInfoContent,
-  heroPagination
+  slidesHeroInfoContent
 } from './dom-elements.js';
 import {
   PADDING_TOP_SLIDE_CONTENT
@@ -39,11 +37,6 @@ export const heroSwiper = new Swiper('.swiper-hero', {
   },
 });
 
-
-// const setPaginationPosition = () => {
-//   console.log('123');
-// }
-
 const resizeObserver = new ResizeObserver((entries) => {
   for (const entry of entries) {
     if (entry.target.closest('.swiper-slide-active')) {
@@ -66,27 +59,14 @@ const unfocusNonActiveSlide = () => {
   slidesHero[heroSwiper.previousIndex].querySelector('.hero-card__primary-button').setAttribute('tabindex', '-1');
 };
 
-// const changeRealPaginationPosition = () => {
-//     slidesHero[heroSwiper.previousIndex].querySelector('.hero-card__pagination-nebo-wrap').innerHTML = '';
-//     console.log(slidesHero[heroSwiper.previousIndex].querySelector('.hero-card__pagination-nebo-wrap'));
-//     slidesHero[heroSwiper.activeIndex].querySelector('.hero-card__pagination-nebo-wrap').innerHTML = HTML_FOR_PAGINATION;
-//     heroSwiper.renderBullet;
-// }
-
-const onSliderSlideChange = () => {
-  unfocusNonActiveSlide();
-  observeHeight();
-};
-
-
 const renderFalseBullets = () => {
   const numberOfSlides = heroSwiper.slides.length;
   for (let index = 0; index < numberOfSlides; index++) {
     for (let j = 0; j < numberOfSlides; j++) {
       if (index === j) {
-        heroFalsePaginations[index].insertAdjacentHTML('beforeend', `<button class="pagination-bullet pagination-bullet--is-active"></button>`);
+        heroFalsePaginations[index].insertAdjacentHTML('beforeend', `<span class="pagination-bullet pagination-bullet--is-active"></span>`);
       } else {
-        heroFalsePaginations[index].insertAdjacentHTML('beforeend', `<button class="pagination-bullet"></button>`);
+        heroFalsePaginations[index].insertAdjacentHTML('beforeend', `<span class="pagination-bullet"></span>`);
       }
     }
   }
@@ -110,5 +90,10 @@ const showRealPagination = () => {
   realPagination.style.display = 'flex';
 }
 
-heroSwiper.on('slideChange', hideRealPagination);
+const onSlideChange = () => {
+  hideRealPagination();
+  unfocusNonActiveSlide();
+}
+
+heroSwiper.on('slideChange', onSlideChange);
 heroSwiper.on('transitionEnd', showRealPagination);
