@@ -27,4 +27,24 @@
   &--is-active {
     background-image: radial-gradient(circle, $color-endeavour 4px, transparent 5px);
   }
+
+  @media (min-width: $tablet-width) {
+    background-image: radial-gradient(circle, transparent 4px, $color-cerulean-blue 5px, $color-cerulean-blue 6px, transparent 7px);
+
+    &:hover {
+      background-image: radial-gradient(circle, rgba(49, 109, 194, 0.7) 4px, $color-white 5px, $color-white 6px, transparent 7px);
+    }
+
+    &:focus {
+      background-image: radial-gradient(circle, $color-cerulean-blue 6px, transparent 7px);
+    }
+
+    &:active {
+      background-image: radial-gradient(circle, $color-endeavour 6px, transparent 7px);
+    }
+
+    &--is-active {
+      background-image: radial-gradient(circle, $color-endeavour 6px, transparent 7px);
+    }
+  }
 }
