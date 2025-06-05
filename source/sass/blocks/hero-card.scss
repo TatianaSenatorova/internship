@@ -3,7 +3,8 @@
   min-height: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  --bottom-wrap-padding-right: 40px;
+  --bottom-wrap-padding-right-tablet: 40px;
+  --bottom-wrap-padding-right-desktop: 50px;
   --radius-10: 10px;
   --radius-20: 20px;
   --radius-26: 26px;
@@ -202,6 +203,10 @@
     border-radius: unset;
     background-color: unset;
   }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 10px;
+  }
 }
 
 .hero-card__button-right-rounding {
@@ -214,8 +219,12 @@
   @media (min-width: $tablet-width) {
     @include radius-rounding($radius: 26px);
     --nb-r: var(--radius-26);
-    right: calc(var(--radius-26) * -2 - var(--bottom-wrap-padding-right));
+    right: calc(var(--radius-26) * -2 - var(--bottom-wrap-padding-right-tablet));
     top: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    right: calc(var(--radius-26) * -2 - var(--bottom-wrap-padding-right-desktop));
   }
 }
 
