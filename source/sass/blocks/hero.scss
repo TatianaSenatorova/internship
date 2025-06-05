@@ -3,6 +3,9 @@
   --mobile-padding-top: 20px;
   --tablet-header-height: 56px;
   --tablet-padding-top: 30px;
+  --mobile-padding-left: 15px;
+  --tablet-padding-left: 45px;
+  --desktop-padding-left: 100px;
   position: relative;
   top: calc((var(--mobile-header-height) + var(--mobile-padding-top))* -1);
   margin-bottom: calc((var(--mobile-header-height) + var(--mobile-padding-top))* -1);
@@ -33,22 +36,28 @@
 }
 
 .hero__slider .hero__slider-pagination {
-  position: static;
+  display: flex;
+  z-index: $z-index-first;
+  position: absolute;
+  height: fit-content;
+  left: calc($mobile-width / 2 - 50vw + var(--mobile-padding-left));
   background-color: $color-white;
   padding: 6px 12px;
   border-radius: 12px 12px 0 0;
   list-style: none;
-  display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 4px;
   width: fit-content;
 
   @media (min-width: $tablet-width) {
+    left: calc($tablet-width / 2 - 50vw + var(--tablet-padding-left));
     border-radius: 20px 20px 0px 0px;
     gap: 8px;
     padding: 12px 18px;
   }
 
-  @media (min-width: $desktop-width) {}
+  @media (min-width: $desktop-width) {
+    left: calc($desktop-width / 2 - 50vw + var(--desktop-padding-left));
+  }
 }
