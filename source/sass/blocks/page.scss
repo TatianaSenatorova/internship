@@ -18,7 +18,7 @@
 
 .page__body:has(.main-header--nav-is-opened),
 .page__body:has(.modal--is-opened) {
-  overflow: hidden;
+  overflow-y: hidden;
   &::after {
     z-index: 1;
     content: '';

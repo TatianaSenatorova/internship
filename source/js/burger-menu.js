@@ -14,6 +14,8 @@ import {
 
 let subLists = {};
 
+const scrollWidth = window.innerWidth - document.documentElement.clientWidth;
+
 const getSubLinks = () => {
   buttonsSubMenu.forEach((button) => {
     const subListName = button.getAttribute('data-button');
@@ -51,14 +53,18 @@ const onButtonSubMenuClick = (evt) => {
 
 const onMenuButtonClick = (evt) => {
   evt.stopPropagation();
+
+  console.log(body);
   mainHeader.classList.toggle(CLASS_MENU_IS_OPENED);
   if (mainHeader.classList.contains(CLASS_MENU_IS_OPENED)) {
+    body.style.paddingRight = `${scrollWidth}px`;
     body.addEventListener('click', onBodyClick);
     buttonsSubMenu.forEach((buttonSubMenu) => {
       buttonSubMenu.addEventListener('click', onButtonSubMenuClick);
     });
     return;
   }
+  body.style.paddingRight = '0px';
   body.removeEventListener('click', onBodyClick);
 };
 
