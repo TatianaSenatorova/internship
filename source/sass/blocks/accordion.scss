@@ -34,6 +34,8 @@
 }
 
 .accordion__content {
+  position: relative;
+  z-index: $z-index-first;
   max-height: 0;
   overflow: hidden;
   font-size: 14px;
@@ -64,6 +66,7 @@
 
   p:not(:last-child) {
     margin-bottom: 8px;
+
   }
 
   @media (min-width: $tablet-width) {
@@ -75,26 +78,31 @@
     }
   }
 
-  @media (min-width: $desktop-width) {}
+  @media (min-width: $desktop-width) {
+    line-height: 1.63;
+
+    .accordion__element--is-active & {
+      margin-top: -19px;
+    }
+  }
 }
 
 .accordion__wrapper {
-  padding: 0 17px 22px 17px;
+  padding: 0 15px 20px 15px;
 
   @media (min-width: $tablet-width) {
-    // padding-bottom: ;
+    padding: 0 32px 32px 32px;
   }
 
-  // @media (min-width: $desktop-width) {
-  //   max-width: 660px;
-  //   padding-top: 23px;
-  // }
+  @media (min-width: $desktop-width) {
+    padding: 0 72px 42px 42px;
+  }
 }
 
 .accordion__button {
   width: 100%;
   position: relative;
-  padding: 22px 17px;
+  padding: 20px 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -195,9 +203,11 @@
     padding: 32px;
     font-size: 22px;
     line-height: 1.18;
+  }
 
-    //  .accordion__element--is-active & {
-    //   padding: 32px 32px 27px 32px;
-    //  }
+  @media (min-width: $desktop-width) {
+    padding: 42px;
+    font-size: 28px;
+    line-height: 1.21;
   }
 }
