@@ -11,3 +11,4 @@ import './modal.js';
 import './validate-form.js';
 import './programs-slider.js';
 import './news-slider.js';
+import './accordion.js';

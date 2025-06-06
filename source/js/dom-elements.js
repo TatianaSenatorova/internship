@@ -15,6 +15,8 @@ export const modal = document.querySelector('.modal');
 export const buttonOpenModal = document.querySelector('.about__primary-button');
 export const buttonCloseModal = document.querySelector('.modal__close-button');
 export const modalForm = modal.querySelector('.form');
+export const accordion = document.querySelector('.accordion');
+export const activeAccordions = accordion.querySelectorAll('.accordion__element--is-active');
 
 
   // slidesPerView: 1,

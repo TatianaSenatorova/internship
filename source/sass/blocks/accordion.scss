@@ -31,29 +31,11 @@
     opacity: 0.3;
     pointer-events: none;
   }
-
-  // @media (min-width: $tablet-width) {
-  //   font-size: 22px;
-  //   padding: 24px 0 23px;
-
-  //   &::after {
-  //     bottom: 0;
-  //   }
-  // }
-
-  // @media (min-width: $desktop-width) {
-  //   padding: 23px 0;
-  //   font-size: 24px;
-
-  //   &::after {
-  //     bottom: 1px;
-  //   }
-  // }
 }
 
 .accordion__content {
   max-height: 0;
-  padding: 0 17px 0;
+  // padding: 0 17px 0 17px;
   overflow: hidden;
   font-size: 14px;
   font-weight: 400;
@@ -63,7 +45,7 @@
 
   .accordion__element--is-active & {
     max-height: 100%;
-    padding-bottom: 22px;
+    // padding-bottom: 22px;
   }
 
   .accordion__element--is-disabled & {
@@ -86,19 +68,14 @@
     margin-bottom: 8px;
   }
 
-  @media (min-width: $tablet-width) {
-    // font-size: 18px;
-    // line-height: 1.33;
-  }
+  @media (min-width: $tablet-width) {}
 
-  @media (min-width: $desktop-width) {
-    // font-size: 18px;
-    // line-height: 1.33;
-  }
+  @media (min-width: $desktop-width) {}
 }
 
 .accordion__wrapper {
-  padding-top: 20px;
+  padding: 0 17px 22px 17px;
+  // padding-top: 20px;
   // max-width: 238px;
 
   // @media (min-width: $tablet-width) {
@@ -185,18 +162,27 @@
   }
 
   .accordion__element--is-active &::after {
+    border-color: transparent;
     background-color: $color-white;
     background-image: linear-gradient(to right, $color-cerulean-blue 0%, $color-cerulean-blue 100%);
     background-size: 20px 1px;
   }
 
-  .accordion__element--is-active &:hover,
-  .accordion__element--is-active &:focus {
+
+  .accordion__element--is-active &:hover {
     background-color: $color-cerulean-blue;
   }
 
-    .accordion__element--is-active &:active {
+  .accordion__element--is-active &:hover::after,
+  .accordion__element--is-active &:focus::after {
+    background-color: $color-cerulean-blue;
+    border-color: $color-white;
+      background-image: linear-gradient(to right, $color-white 0%,  $color-white 100%);
+  }
+
+  .accordion__element--is-active &:active {
     background-color: $color-endeavour;
+
   }
 
   .accordion__element--is-active &:active::after {
@@ -205,20 +191,3 @@
     background-image: linear-gradient(to right, $color-endeavour 0%, $color-endeavour 100%);
   }
 }
-
-// .accordion__button:focus {
-//   &::after {
-//     background-image:
-//       linear-gradient(to right, $color-white 0%, $color-white 100%),
-//       linear-gradient(to bottom, $color-white 0%, $color-white 100%);
-//     // background-color: $color-light-slate-grey;
-//   }
-// }
-
-// .accordion__element--is-disabled button {
-//   pointer-events: none;
-
-//   &::after {
-//     opacity: 0.3;
-//   }
-// }
