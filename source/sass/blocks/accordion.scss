@@ -5,6 +5,7 @@
 }
 
 .accordion__element {
+  display: block;
   position: relative;
   border-radius: 14px;
   border: 2px solid $color-cerulean-blue;
@@ -33,15 +34,11 @@
   }
 }
 
-.accordion__content {
+.accordion__wrapper-content {
   position: relative;
   z-index: $z-index-first;
   max-height: 0;
   overflow: hidden;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.43;
-  color: $color-alabaster;
   transition: max-height 0.5s, margin-top 0.3s;
 
   .accordion__element--is-active & {
@@ -60,42 +57,57 @@
     max-height: 0;
   }
 
+  @media (min-width: $tablet-width) {
+    .accordion__element--is-active & {
+      margin-top: -11px;
+    }
+
+
+  }
+
+  @media (min-width: $desktop-width) {
+
+
+
+
+    .accordion__element--is-active & {
+      margin-top: -21px;
+    }
+  }
+}
+
+.accordion__content {
+  padding: 0 15px 20px 15px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  color: $color-alabaster;
+
   p {
     margin: 0;
   }
 
   p:not(:last-child) {
     margin-bottom: 8px;
-
   }
 
   @media (min-width: $tablet-width) {
     font-size: 16px;
     line-height: 1.25;
+    padding: 0 31px 31px 30px;
 
-    .accordion__element--is-active & {
-      margin-top: -5px;
+    br {
+      display: block;
     }
   }
 
   @media (min-width: $desktop-width) {
     line-height: 1.63;
+    padding: 0 68px 39px 42px;
 
-    .accordion__element--is-active & {
-      margin-top: -19px;
+    br {
+      display: none;
     }
-  }
-}
-
-.accordion__wrapper {
-  padding: 0 15px 20px 15px;
-
-  @media (min-width: $tablet-width) {
-    padding: 0 32px 32px 32px;
-  }
-
-  @media (min-width: $desktop-width) {
-    padding: 0 72px 42px 42px;
   }
 }
 
@@ -117,6 +129,10 @@
   color: $color-cerulean-blue;
   cursor: pointer;
   transition: background-color 0.3s;
+
+  br {
+    display: none;
+  }
 
   &::after {
     content: "";
@@ -200,14 +216,25 @@
   }
 
   @media (min-width: $tablet-width) {
-    padding: 32px;
+    padding: 30px;
     font-size: 22px;
     line-height: 1.18;
+
+    &::after {
+      align-self: start;
+    }
+
+    br {
+      display: block;
+    }
   }
 
   @media (min-width: $desktop-width) {
-    padding: 42px;
+    padding: 40px;
     font-size: 28px;
     line-height: 1.21;
+     br {
+      display: none;
+    }
   }
 }

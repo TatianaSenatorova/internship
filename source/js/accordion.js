@@ -7,7 +7,7 @@ let windowWidth;
 
 const updateAccordionsHeight = () => {
   activeAccordions.forEach((accordion) => {
-    const contentElement = accordion.querySelector('.accordion__content');
+    const contentElement = accordion.querySelector('.accordion__wrapper-content');
     const openHeight = contentElement.scrollHeight;
     contentElement.style.maxHeight = `${openHeight}px`;
   });
@@ -21,7 +21,7 @@ const setInitialSizes = () => {
 setInitialSizes();
 
 const closeAccordion = (accordionElement) => {
-  const contentAccordion = accordionElement.querySelector('.accordion__content');
+  const contentAccordion = accordionElement.querySelector('.accordion__wrapper-content');
   if (!contentAccordion) {
     return;
   }
@@ -30,7 +30,7 @@ const closeAccordion = (accordionElement) => {
 };
 
 const openAccordion = (accordionElement) => {
-  const contentElement = accordionElement.querySelector('.accordion__content');
+  const contentElement = accordionElement.querySelector('.accordion__wrapper-content');
   const openHeight = contentElement.scrollHeight;
   accordionElement.classList.add('accordion__element--is-active');
   contentElement.style.maxHeight = `${openHeight}px`;

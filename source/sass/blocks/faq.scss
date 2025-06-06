@@ -1,9 +1,9 @@
 .faq {
   padding: 50px 0;
 
-
-
-  @media (min-width: $desktop-width) {}
+  @media (min-width: $desktop-width) {
+    padding: 60px 0;
+  }
 }
 
 .faq__section-title {
@@ -12,6 +12,10 @@
   text-align: center;
 
   @media (min-width: $tablet-width) {
-      margin-bottom: 40px;
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 71px;
   }
 }
