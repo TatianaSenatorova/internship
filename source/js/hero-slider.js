@@ -4,7 +4,8 @@ import {
   slidesHero,
   heroFalsePaginations,
   realPagination,
-  slidesHeroInfoContent
+  slidesHeroInfoContent,
+  heroWrapsPagination
 } from './dom-elements.js';
 import {
   PADDING_TOP_SLIDE_CONTENT
@@ -41,21 +42,6 @@ export const heroSwiper = new Swiper('.swiper-hero', {
   },
 });
 
-const resizeObserver = new ResizeObserver((entries) => {
-  for (const entry of entries) {
-    if (entry.target.closest('.swiper-slide-active')) {
-      setRealPaginationPosition();
-    }
-  }
-});
-
-const observeHeight = () => {
-  slidesHeroInfoContent.forEach((infoContent) => {
-    resizeObserver.observe(infoContent);
-  });
-};
-
-observeHeight();
 
 const unfocusNonActiveSlide = () => {
   slidesHero[heroSwiper.activeIndex].querySelector('.hero-card__primary-button').removeAttribute('tabindex');
@@ -75,28 +61,25 @@ const renderFalseBullets = () => {
   }
 }
 
-const setRealPaginationPosition = () => {
-  const top = slidesHeroInfoContent[heroSwiper.activeIndex].offsetTop;
-  realPagination.style.top = `${top + PADDING_TOP_SLIDE_CONTENT}px`;
+const renderRealPagination = () => {
+  heroWrapsPagination[heroSwiper.activeIndex].insertAdjacentElement('beforeend', realPagination);
 }
 
 renderFalseBullets();
-setRealPaginationPosition();
+renderRealPagination();
 
 const hideRealPagination = () => {
-  console.log('none')
   realPagination.style.display = 'none';
 }
 
 const onSlideChangeTransitionEnd = () => {
-    console.log('show')
   realPagination.style.display = 'flex';
 }
 
 const onBeforeTransitionStart = () => {
   hideRealPagination();
   unfocusNonActiveSlide();
-  setRealPaginationPosition();
+  renderRealPagination();
 }
 
 const onWindowResize = () => {
@@ -106,7 +89,7 @@ const onWindowResize = () => {
     return;
   }
   hideRealPagination();
-  setRealPaginationPosition();
+  renderRealPagination();
   onSlideChangeTransitionEnd();
 }
 
