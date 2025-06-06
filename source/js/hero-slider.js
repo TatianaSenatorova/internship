@@ -10,6 +10,8 @@ import {
   PADDING_TOP_SLIDE_CONTENT
 } from './constants.js';
 
+let windowWidth = document.documentElement.clientWidth;
+
 export const heroSwiper = new Swiper('.swiper-hero', {
   modules: [Pagination],
   direction: 'horizontal',
@@ -18,6 +20,8 @@ export const heroSwiper = new Swiper('.swiper-hero', {
   initialSlide: 0,
 
   breakpoints: {
+    768: {
+    },
     1440: {
       allowTouchMove: false,
     }
@@ -40,7 +44,6 @@ export const heroSwiper = new Swiper('.swiper-hero', {
 const resizeObserver = new ResizeObserver((entries) => {
   for (const entry of entries) {
     if (entry.target.closest('.swiper-slide-active')) {
-      console.log(entry.borderBoxSize[0].blockSize);
       setRealPaginationPosition();
     }
   }
@@ -75,25 +78,38 @@ const renderFalseBullets = () => {
 const setRealPaginationPosition = () => {
   const top = slidesHeroInfoContent[heroSwiper.activeIndex].offsetTop;
   realPagination.style.top = `${top + PADDING_TOP_SLIDE_CONTENT}px`;
-  console.log(top, slidesHeroInfoContent[heroSwiper.activeIndex]);
 }
 
 renderFalseBullets();
 setRealPaginationPosition();
 
 const hideRealPagination = () => {
+  console.log('none')
   realPagination.style.display = 'none';
 }
 
-const showRealPagination = () => {
-  setRealPaginationPosition();
+const onSlideChangeTransitionEnd = () => {
+    console.log('show')
   realPagination.style.display = 'flex';
 }
 
-const onSlideChange = () => {
+const onBeforeTransitionStart = () => {
   hideRealPagination();
   unfocusNonActiveSlide();
+  setRealPaginationPosition();
 }
 
-heroSwiper.on('slideChange', onSlideChange);
-heroSwiper.on('transitionEnd', showRealPagination);
+const onWindowResize = () => {
+  const currentWindowWidth = document.documentElement.clientWidth;
+  if ((currentWindowWidth < 768 && windowWidth < 768) || (768 >= currentWindowWidth < 1440 && 768 >= windowWidth < 1440) || (currentWindowWidth >= 1440 && windowWidth >= 1440)) {
+    windowWidth = currentWindowWidth;
+    return;
+  }
+  hideRealPagination();
+  setRealPaginationPosition();
+  onSlideChangeTransitionEnd();
+}
+
+heroSwiper.on('slideChangeTransitionStart', onBeforeTransitionStart);
+heroSwiper.on('slideChangeTransitionEnd', onSlideChangeTransitionEnd);
+window.addEventListener('resize', onWindowResize);

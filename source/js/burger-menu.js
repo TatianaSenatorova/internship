@@ -17,7 +17,6 @@ let subLists = {};
 const getSubLinks = () => {
   buttonsSubMenu.forEach((button) => {
     const subListName = button.getAttribute('data-button');
-    console.log(subListName);
     const subListItems = navList.querySelector(`[data-submenu=${subListName}]`).querySelectorAll('.main-header__nav-link--sub-link');
     subLists[subListName] = subListItems;
   })
