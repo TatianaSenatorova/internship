@@ -35,17 +35,15 @@
 
 .accordion__content {
   max-height: 0;
-  // padding: 0 17px 0 17px;
   overflow: hidden;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.43;
   color: $color-alabaster;
-  transition: max-height 0.5s;
+  transition: max-height 0.5s, margin-top 0.3s;
 
   .accordion__element--is-active & {
     max-height: 100%;
-    // padding-bottom: 22px;
   }
 
   .accordion__element--is-disabled & {
@@ -68,22 +66,24 @@
     margin-bottom: 8px;
   }
 
-  @media (min-width: $tablet-width) {}
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 1.25;
+
+    .accordion__element--is-active & {
+      margin-top: -5px;
+    }
+  }
 
   @media (min-width: $desktop-width) {}
 }
 
 .accordion__wrapper {
   padding: 0 17px 22px 17px;
-  // padding-top: 20px;
-  // max-width: 238px;
 
-  // @media (min-width: $tablet-width) {
-  //   max-width: 550px;
-  //   padding-top: 10px;
-  //   font-size: 18px;
-  //   line-height: 1.33;
-  // }
+  @media (min-width: $tablet-width) {
+    // padding-bottom: ;
+  }
 
   // @media (min-width: $desktop-width) {
   //   max-width: 660px;
@@ -177,7 +177,7 @@
   .accordion__element--is-active &:focus::after {
     background-color: $color-cerulean-blue;
     border-color: $color-white;
-      background-image: linear-gradient(to right, $color-white 0%,  $color-white 100%);
+    background-image: linear-gradient(to right, $color-white 0%, $color-white 100%);
   }
 
   .accordion__element--is-active &:active {
@@ -189,5 +189,15 @@
     border-color: $color-white;
     background-color: $color-white;
     background-image: linear-gradient(to right, $color-endeavour 0%, $color-endeavour 100%);
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 32px;
+    font-size: 22px;
+    line-height: 1.18;
+
+    //  .accordion__element--is-active & {
+    //   padding: 32px 32px 27px 32px;
+    //  }
   }
 }

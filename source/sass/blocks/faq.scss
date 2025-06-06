@@ -1,9 +1,17 @@
 .faq {
   padding: 50px 0;
+
+
+
+  @media (min-width: $desktop-width) {}
 }
 
 .faq__section-title {
   margin: 0;
   margin-bottom: 30px;
   text-align: center;
+
+  @media (min-width: $tablet-width) {
+      margin-bottom: 40px;
+  }
 }
