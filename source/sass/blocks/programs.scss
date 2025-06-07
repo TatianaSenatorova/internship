@@ -19,6 +19,10 @@
 }
 
 .programs__top-wrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  min-height: var(--slider-nav-buttons-height);
   margin-bottom: 35px;
 
   @media (min-width: $tablet-width) {

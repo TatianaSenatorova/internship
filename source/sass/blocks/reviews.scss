@@ -1,5 +1,5 @@
 .reviews {
-  padding: 50px 0;
+  padding: 50px 0 50px;
 
   --padding-tablet: 45px;
   --additional-padding-click-zone: 10px;
@@ -11,7 +11,6 @@
 
 .reviews__wrap {
   position: relative;
-  padding-bottom: 74px;
 
   @media (min-width: $tablet-width) {
     padding-bottom: unset;
@@ -19,8 +18,10 @@
 }
 
 .reviews__top-wrap {
-  margin-bottom: 30px;
-  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 28px;
+  min-height: var(--slider-nav-buttons-height);
 
   // @media (min-width: $tablet-width) {
   //   padding-right: var(--padding-tablet);
@@ -35,6 +36,7 @@
 
 .reviews__section-title {
   margin: 0;
+
 }
 
 .reviews__slider {
@@ -67,7 +69,7 @@
   position: absolute;
   right: calc(var(--additional-padding-click-zone) * -1);
   // top: calc(var(--additional-padding-click-zone) * -0.5);
-  top: -1px;
+  bottom: 0;
   z-index: $z-index-first;
 
   // @media (min-width: $tablet-width) {
