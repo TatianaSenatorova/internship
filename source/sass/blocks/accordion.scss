@@ -70,7 +70,7 @@
   @media (min-width: $desktop-width) {
 
     .accordion__element--is-active & {
-      margin-top: -21px;
+      margin-top: -19px;
     }
   }
 }
@@ -102,7 +102,7 @@
 
   @media (min-width: $desktop-width) {
     line-height: 1.63;
-    padding: 0 68px 39px 42px;
+    padding: 0 68px 39px 40px;
 
     br {
       display: none;
