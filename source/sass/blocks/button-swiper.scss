@@ -1,21 +1,40 @@
 .button-swiper {
+  position: relative;
   width: 32px;
   height: 32px;
-    padding: 5px 10px 5px 0;
+  padding: 6px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   border-radius: 50%;
   border: none;
   outline: none;
   background-color: transparent;
-  transform: rotate(180deg);
   color: $color-cerulean-blue;
   cursor: pointer;
   transition: color 0.3s;
 
   &--next {
-  padding: 5px 0 5px 10px;
+    justify-content: flex-start;
+  }
+
+  &::after {
+    position: absolute;
+    z-index: $z-index-minus-first;
+    content: '';
+    width: 22px;
+    height: 22px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s;
+  }
+
+  &--next::after {
+    left: 0;
+    right: unset;
   }
 
   &:hover {
@@ -23,13 +42,19 @@
   }
 
   &:focus {
-    background-color: $color-white;
     color: $color-cerulean-blue;
   }
 
-  &:active {
+  &:focus::after {
     background-color: $color-white;
+  }
+
+  &:active {
     color: rgba(49, 109, 194, 0.7);
+  }
+
+  &:active::after {
+    background-color: $color-white;
   }
 
   &:disabled {
@@ -43,6 +68,6 @@
   display: block;
 }
 
-.button-swiper--next svg {
+.button-swiper--prev svg {
   transform: rotate(180deg);
 }
