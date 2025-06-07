@@ -1,0 +1,134 @@
+.reviewss {
+  padding: 50px 0;
+
+  --padding-tablet: 45px;
+  --additional-padding-click-zone: 10px;
+
+  @media (min-width: $desktop-width) {
+    padding: 60px 0;
+  }
+}
+
+.reviewss__wrap {
+  position: relative;
+  padding-bottom: 74px;
+
+  @media (min-width: $tablet-width) {
+    padding-bottom: unset;
+  }
+}
+
+.reviewss__top-wrap {
+  margin-bottom: 35px;
+
+  @media (min-width: $tablet-width) {
+    padding-right: var(--padding-tablet);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 40px;
+  }
+}
+
+.reviewss__section-title {
+  margin: 0;
+}
+
+.reviewss__primary-button {
+  width: 205px;
+  min-height: 44px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  @media (min-width: $tablet-width) {
+    position: unset;
+    width: 234px;
+    min-height: 56px;
+  }
+}
+
+.reviewss__slider {
+  overflow: hidden;
+  margin-bottom: 30px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: unset;
+  }
+}
+
+.reviewss__slider-list {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 40px;
+  }
+}
+
+.reviewss__slider-item {
+  display: flex;
+  justify-content: center;
+  height: auto;
+
+  @media (min-width: $tablet-width) {
+    width: fit-content;
+  }
+}
+
+.reviewss__buttons-swiper-list {
+  position: absolute;
+  right: calc(var(--additional-padding-click-zone) * -1);
+  top: calc(var(--additional-padding-click-zone) * -0.5);
+  z-index: $z-index-first;
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+    top: unset;
+  }
+}
+
+.reviewss__bottom-wrap {
+
+  @media (min-width: $tablet-width) {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 74px;
+    gap: 62px;
+    align-items: center;
+  }
+}
+
+.reviewss__scrollbar {
+  display: none;
+  height: 20px;
+  background-image: linear-gradient(to bottom, transparent 9px, rgba(49, 109, 194, 0.2) 9px, rgba(49, 109, 194, 0.2) 11px, transparent 11px);
+  width: 100%;
+  cursor: pointer;
+  transition: background-image 0.3s;
+
+  &:hover {
+    background-image: linear-gradient(to bottom, transparent 9px, rgba(49, 109, 194, 0.5) 9px, rgba(49, 109, 194, 0.5) 11px, transparent 11px);
+  }
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+}
+
+
+.reviewss__scrollbar-drag {
+  height: 20px;
+  background-image: linear-gradient(to bottom, transparent 9px, $color-cerulean-blue 9px, $color-cerulean-blue 11px, transparent 11px);
+  width: 326px;
+  transition: background-image 0.3s;
+
+  &:hover {
+    background-image: linear-gradient(to bottom, transparent 9px, $color-endeavour 9px, $color-endeavour 11px, transparent 11px);
+  }
+}
