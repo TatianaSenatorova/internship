@@ -36,13 +36,13 @@
 
 .accordion__wrapper-content {
   position: relative;
-  z-index: $z-index-first;
-  max-height: 0;
+   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s, margin-top 0.3s;
+  transition: max-height 0.3s, margin-top 0.3s;
 
   .accordion__element--is-active & {
     max-height: 100%;
+     z-index: $z-index-first;
   }
 
   .accordion__element--is-disabled & {
@@ -66,9 +66,6 @@
   }
 
   @media (min-width: $desktop-width) {
-
-
-
 
     .accordion__element--is-active & {
       margin-top: -21px;
