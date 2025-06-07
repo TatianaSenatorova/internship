@@ -2,7 +2,7 @@
   min-width: 290px;
   max-width: 290px;
   min-height: 250px;
-  margin: 0 auto;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
@@ -12,9 +12,10 @@
 
   @media (min-width: $tablet-width) {
     // grid-template-rows: auto auto 1fr;
-    // min-width: 500px;
-    // max-width: 500px;
-    // min-height: 242px;
+    min-width: 560px;
+    max-width: 560px;
+    min-height: 320px;
+    padding: 50px;
     // grid-template-columns: 80px 1fr;
     // column-gap: 40px;
     // padding: 40px 30px;
@@ -29,11 +30,26 @@
   }
 }
 
+.reviews-card__top-wrap {
+  @media (min-width: $tablet-width) {
+    margin-bottom: 31px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
 .reviews-card__name-img-wrap {
   margin-bottom: 15px;
   display: flex;
   align-items: center;
   gap: 10px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: unset;
+    gap: 15px;
+  }
 }
 
 .reviews-card__image-wrap {
@@ -41,6 +57,11 @@
   height: 60px;
   background-color: $color-zumthor;
   border-radius: 50%;
+
+  @media (min-width: $tablet-width) {
+    width: 90px;
+    height: 90px;
+  }
 }
 
 .reviews-card img {
@@ -59,12 +80,22 @@
   font-weight: 400;
   line-height: 1.29;
   color: $color-cerulean-blue;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 1.2;
+  }
 }
 
 .reviews-card__publication-data-wrap {
   margin-bottom: 25px;
   display: flex;
   gap: 25px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: unset;
+  gap: 27px;
+  }
 }
 
 .reviews-card__publication-data {
@@ -81,12 +112,22 @@
   letter-spacing: 0.12px;
   text-transform: uppercase;
   color: $color-cerulean-blue;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 11px;
+  }
 }
 
 .reviews-card__publication-info {
   font-weight: 400;
   line-height: 1.17;
   color: rgba(72, 72, 72, 0.9);
+
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 1.43;
+  }
 }
 
 .reviews-card__info-highlight {
@@ -96,6 +137,12 @@
   font-weight: 400;
   line-height: 1.13;
   color: $color-cerulean-blue;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 24px;
+    font-size: 20px;
+    line-height: 1.2;
+  }
 }
 
 .reviews-card__content {
@@ -110,5 +157,15 @@
 
   p:not(:last-child) {
     margin-bottom: 8px;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 1.25;
+
+    p {
+      font-size: 16px;
+      line-height: 1.25;
+    }
   }
 }

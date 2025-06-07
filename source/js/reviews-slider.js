@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
 import { Navigation, Scrollbar } from 'swiper/modules';
 
-export const programsSwiper = new Swiper('.swiper-reviews', {
+export const reviewsSwiper = new Swiper('.swiper-reviews', {
   modules: [Navigation, Scrollbar],
   direction: 'horizontal',
   slidesPerView: 1,
@@ -13,8 +13,7 @@ export const programsSwiper = new Swiper('.swiper-reviews', {
       slidesPerView: 'auto',
     },
     1440: {
-      slidesPerView: 3,
-      allowTouchMove: false,
+      slidesPerView: 2,
     }
   },
 
