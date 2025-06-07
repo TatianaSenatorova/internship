@@ -1,12 +1,7 @@
 import Swiper from 'swiper';
 import { Navigation, Scrollbar } from 'swiper/modules';
-// import {
-//   slidesHero,
-//   slidesHeroInfoContent,
-//   heroPagination
-// } from './dom-elements.js';
 
-export const programsSwiper = new Swiper('.swiper-programs', {
+export const programsSwiper = new Swiper('.swiper-reviews', {
   modules: [Navigation, Scrollbar],
   direction: 'horizontal',
   slidesPerView: 1,
@@ -24,14 +19,14 @@ export const programsSwiper = new Swiper('.swiper-programs', {
   },
 
   scrollbar: {
-    el: '.programs-swiper-scrollbar',
+    el: '.reviews-swiper-scrollbar',
     dragClass: 'scrollbar__drag',
     draggable: true,
   },
 
   navigation: {
-    nextEl: '.swiper-button-programs-next',
-    prevEl: '.swiper-button-programs-prev'
+    nextEl: '.swiper-button-reviews-next',
+    prevEl: '.swiper-button-reviews-prev'
   }
 });
 

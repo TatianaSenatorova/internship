@@ -1,0 +1,20 @@
+.scrollbar {
+  background-image: linear-gradient(to bottom, transparent 9px, rgba(49, 109, 194, 0.2) 9px, rgba(49, 109, 194, 0.2) 11px, transparent 11px);
+  cursor: pointer;
+  transition: background-image 0.3s;
+
+  &:hover {
+    background-image: linear-gradient(to bottom, transparent 9px, rgba(49, 109, 194, 0.5) 9px, rgba(49, 109, 194, 0.5) 11px, transparent 11px);
+  }
+}
+
+.scrollbar__drag {
+  height: 20px;
+  background-image: linear-gradient(to bottom, transparent 9px, $color-cerulean-blue 9px, $color-cerulean-blue 11px, transparent 11px);
+  width: 326px;
+  transition: background-image 0.3s;
+
+  &:hover {
+    background-image: linear-gradient(to bottom, transparent 9px, $color-endeavour 9px, $color-endeavour 11px, transparent 11px);
+  }
+}
