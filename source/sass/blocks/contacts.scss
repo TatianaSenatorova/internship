@@ -1,19 +1,15 @@
 .contacts {
-  padding: 70px 0;
+  padding: 75px 0 70px;
   background-color: $color-cerulean-blue;
 
-  @media (min-width: $tablet-width) {
-    // padding: 0 0 40px;
-  }
+  @media (min-width: $tablet-width) {}
 
-  @media (min-width: $desktop-width) {
-    // padding: 0 0 95px;
-  }
+  @media (min-width: $desktop-width) {}
 }
 
 .contacts__top-wrapper {
-  padding-bottom: 52px;
-  background-image: linear-gradient(to top, transparent 30px, rgba(255, 255, 255, 0.2) 32px, transparent 32px);
+  padding-bottom: 51px;
+  background-image: linear-gradient(to top, transparent 30px, rgba(255, 255, 255, 0.2) 30px, rgba(255, 255, 255, 0.2) 32px, transparent 32px);
 }
 
 .contacts__title {
@@ -26,44 +22,32 @@
 }
 
 .contacts__items-wrapper {
-  // display: flex;
-  // flex-direction: column;
-  // gap: 20px;
+  @media (min-width: $tablet-width) {
+    // display: flex;
+    // flex-direction: column;
+    // gap: 20px;
+  }
+
 }
 
 .contacts__item {
   &:has(.contacts__address-text) {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
   }
 
   &:not(:last-child):has(.contacts__link) {
-  margin-bottom: 10px;
-  }
-  // margin-bottom: 20px;
-  // padding-left: 32px;
-  // background-size: 22px 22px;
-  // background-position: top left;
-  // background-repeat: no-repeat;
-
-  &:last-child {
-    // margin-bottom: 0;
+    margin-bottom: 10px;
   }
 
-  @media (min-width: $tablet-width) {
-    // margin-bottom: 0;
-    // padding-left: 34px;
-  }
+  @media (min-width: $tablet-width) {}
 
-  @media (min-width: $desktop-width) {
-    // padding-left: 56px;
-    // background-position: center left;
-    // background-size: 26px 26px;
-  }
+  @media (min-width: $desktop-width) {}
 }
 
 .contacts__item-title {
   margin: 0;
   margin-bottom: 5px;
+  font-size: 12px;
   font-weight: 400;
   font-style: normal;
   line-height: 1;
@@ -71,6 +55,10 @@
   text-transform: uppercase;
   color: rgba(240, 239, 233, 0.8);
   word-break: break-word;
+
+  .contacts__item:has(.contacts__address-text) & {
+    margin-bottom: 15px;
+  }
 
   @media (min-width: $tablet-width) {}
 
@@ -121,20 +109,20 @@
 
   &--is-disabled {
     pointer-events: none;
-     color: $color-mischka;
+    color: $color-mischka;
   }
 
-  @media (min-width: $tablet-width) {
-
-  }
+  @media (min-width: $tablet-width) {}
 
   @media (min-width: $desktop-width) {}
 }
 
 .contacts__wrap-image {
-  // background-color: $color-lime-green;
+  border-radius: 16px;
+  background-color: $color-lime-green;
 }
 
-.contacts__image {
+.contacts__wrap-image img {
   display: block;
+  border-radius: 16px;
 }
