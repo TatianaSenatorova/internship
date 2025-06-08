@@ -3,6 +3,10 @@
   margin: 0 auto;
   padding: 0 15px;
 
+  &--wide-on-mobile {
+    padding: 0 10px;
+  }
+
   @media (min-width: $tablet-width) {
     width: $tablet-width;
     padding: 0 45px;
