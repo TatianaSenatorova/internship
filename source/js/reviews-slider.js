@@ -14,6 +14,7 @@ export const reviewsSwiper = new Swiper('.swiper-reviews', {
     },
     1440: {
       slidesPerView: 2,
+      spaceBetween: 32,
     }
   },
 
