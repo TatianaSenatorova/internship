@@ -1527,7 +1527,95 @@
     <section class="section-form" data-test="form">
       <div class="container container--wide-on-mobile">
         <h2 class="visually-hidden">Заполните форму для получения ответов на Ваши вопросы</h2>
-        <form class="form" action="https://echo.htmlacademy.ru/" method="post" autocomplete="off" novalidate>
+        <form class="form form--dark-background" action="https://echo.htmlacademy.ru/" method="post" autocomplete="off"
+          novalidate>
+          <h3 class="form__title">Напишите нам</h3>
+          <p class="form__description">Оставьте ваши контакты, если&nbsp;у&nbsp;вас остались вопросы&nbsp;&mdash;
+            мы&nbsp;на&nbsp;них ответим!</p>
+          <fieldset class="form__user-data">
+            <legend class="visually-hidden">Введите Ваши данные</legend>
+            <ul class="form__inputs-list">
+              <li class="form__list-item">
+                <!-- Чтобы отобразить инпут в состоянии ошибки надо добавить класс-модификатор error к элементу с классом input". -->
+                <label class="input input--dark-background">
+                  <span class="input__label">Имя</span>
+                  <input class="input__field" type="text" id="name" name="name" required>
+                </label>
+              </li>
+              <li class="form__list-item">
+                <label class="input input--dark-background">
+                  <span class="input__label">Телефон</span>
+                  <input class="input__field" type="tel" name="phone" pattern="^(?=(?:.*\d){10,})[0-9\(\)\+\-\s]+$"
+                    required>
+                </label>
+              </li>
+              <li class="form__list-item">
+                <label class="input input--dark-background input--textarea">
+                  <span class="input__label">Ваше сообщение</span>
+                  <textarea class="input__field" name="comment" required></textarea>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <!-- Чтобы открыть кастомный селект необходимо добавить класс-модификатор  is-opened к элементу с классом select. Для состояния disable добавляем класс-модификатор is-disabled элементу select. -->
+          <div class="form__select select select--dark-background" data-select="select" data-validate-type="select" data-name="select"
+            data-id="select">
+            <span class="select__label">Выберите город</span>
+            <button class="select__button" type="button" aria-label="Выберите одну из опций" tabindex="0"></button>
+            <ul class="select__list" role="listbox">
+              <!-- Если надо сделать состояние disable опции - добавляем элементу с классом select__item класс-модификатор is-disabled -->
+              <li class="select__item" tabindex="0" data-select-value="id-1" aria-selected="false" role="option">
+                <span class="select__text">
+                  Санкт-Петербург
+                </span>
+              </li>
+              <li class="select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">
+                <span class="select__text">
+                  Санкт-Петербург
+                </span>
+              </li>
+              <li class="select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">
+                <span class="select__text">
+                  Санкт-Петербург
+                </span>
+              </li>
+              <li class="select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">
+                <span class="select__text">
+                  Санкт-Петербург
+                </span>
+              </li>
+            </ul>
+            <select id="select" name="select" tabindex="-1" aria-hidden="true">
+              <option value="id-1" selected="">Санкт-Петербург</option>
+              <option value="id-2">Санкт-Петербург</option>
+              <option value="id-3">Санкт-Петербург</option>
+              <option value="id-4">Санкт-Петербург</option>
+            </select>
+          </div>
+          <label class="form__checkbox checkbox">
+            <input class="visually-hidden checkbox__input" type="checkbox" name="confirmation" value="1" required>
+            <span class="checkbox__mark"></span>
+            <span class="checkbox__label">Я&nbsp;согласен на&nbsp;обработку моих персональных данных</span>
+          </label>
+          <button class="form__primary-button primary-button primary-button--wide" type="submit">Отправить</button>
+        </form>
+      </div>
+
+    </section>
+
+  </main>
+  <footer></footer>
+  <section class="modal">
+    <div class="modal__container">
+      <div class="modal__content">
+        <h2 class="visually-hidden">Заполните форму для получения ответов на Ваши вопросы</h2>
+        <button class="modal__close-button" type="button">
+          <span class="visually-hidden">Закрыть форму</span>
+          <svg aria-hidden="true" focusable="false" width="12" height="12">
+            <use href="/__spritemap#sprite-close-icon"></use>
+          </svg>
+        </button>
+        <form class="modal__form form" action="https://echo.htmlacademy.ru/" method="post" autocomplete="off" novalidate>
           <h3 class="form__title">Напишите нам</h3>
           <p class="form__description">Оставьте ваши контакты, если&nbsp;у&nbsp;вас остались вопросы&nbsp;&mdash;
             мы&nbsp;на&nbsp;них ответим!</p>
@@ -1593,87 +1681,7 @@
           <button class="form__primary-button primary-button primary-button--wide" type="submit">Отправить</button>
         </form>
       </div>
-
-    </section>
-
-  </main>
-  <footer></footer>
-  <section class="modal">
-    <div class="modal__container">
-      <section class="modal__content">
-        <h2 class="visually-hidden">Заполните форму для получения ответов на Ваши вопросы</h2>
-        <button class="modal__close-button" type="button">
-          <span class="visually-hidden">Закрыть форму</span>
-          <svg aria-hidden="true" focusable="false" width="12" height="12">
-            <use href="/__spritemap#sprite-close-icon"></use>
-          </svg>
-        </button>
-        <form class="form" action="https://echo.htmlacademy.ru/" method="post" autocomplete="off" novalidate>
-          <h3 class="form__title">Напишите нам</h3>
-          <p class="form__description">Оставьте ваши контакты, если&nbsp;у&nbsp;вас остались вопросы&nbsp;&mdash;
-            мы&nbsp;на&nbsp;них ответим!</p>
-          <fieldset class="form__user-data">
-            <legend class="visually-hidden">Введите Ваши данные</legend>
-            <ul class="form__inputs-list">
-              <li class="form__list-item">
-                <!-- Чтобы отобразить инпут в состоянии ошибки надо добавить класс-модификатор error к элементу с классом input". -->
-                <label class="input">
-                  <span class="input__label">Имя</span>
-                  <input class="input__field" type="text" id="name" name="name" required>
-                </label>
-              </li>
-              <li class="form__list-item">
-                <label class="input">
-                  <span class="input__label">Телефон</span>
-                  <input class="input__field" type="tel" name="phone" pattern="^(?=(?:.*\d){10,})[0-9\(\)\+\-\s]+$"
-                    required>
-                </label>
-              </li>
-            </ul>
-          </fieldset>
-          <!-- Чтобы открыть кастомный селект необходимо добавить класс-модификатор  is-opened к элементу с классом select. Для состояния disable добавляем класс-модификатор is-disabled элементу select. -->
-          <div class="form__select select" data-select="select" data-validate-type="select" data-name="select"
-            data-id="select">
-            <span class="select__label">Выберите город</span>
-            <button class="select__button" type="button" aria-label="Выберите одну из опций" tabindex="0"></button>
-            <ul class="select__list" role="listbox">
-              <!-- Если надо сделать состояние disable опции - добавляем элементу с классом select__item класс-модификатор is-disabled -->
-              <li class="select__item" tabindex="0" data-select-value="id-1" aria-selected="false" role="option">
-                <span class="select__text">
-                  Санкт-Петербург
-                </span>
-              </li>
-              <li class="select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">
-                <span class="select__text">
-                  Санкт-Петербург
-                </span>
-              </li>
-              <li class="select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">
-                <span class="select__text">
-                  Санкт-Петербург
-                </span>
-              </li>
-              <li class="select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">
-                <span class="select__text">
-                  Санкт-Петербург
-                </span>
-              </li>
-            </ul>
-            <select id="select" name="select" tabindex="-1" aria-hidden="true">
-              <option value="id-1" selected="">Санкт-Петербург</option>
-              <option value="id-2">Санкт-Петербург</option>
-              <option value="id-3">Санкт-Петербург</option>
-              <option value="id-4">Санкт-Петербург</option>
-            </select>
-          </div>
-          <label class="form__checkbox checkbox">
-            <input class="visually-hidden checkbox__input" type="checkbox" name="confirmation" value="1" required>
-            <span class="checkbox__mark"></span>
-            <span class="checkbox__label">Я&nbsp;согласен на&nbsp;обработку моих персональных данных</span>
-          </label>
-          <button class="form__primary-button primary-button primary-button--wide" type="submit">Отправить</button>
-        </form>
-      </section>
+    </div>
   </section>
 
   <script type="module" src="js/main.js"></script>

@@ -22,6 +22,10 @@
 .select__label {
   @include label-form-field;
 
+  .select--dark-background & {
+    color: rgba(240, 239, 233, 0.8);
+  }
+
   .select:has(.select__button:not(:disabled):hover) & {
     color: $color-charcoal;
   }
@@ -38,6 +42,12 @@
     color: $color-mischka;
   }
 
+  .select--dark-background:has(.select__button:not(:disabled):hover) &,
+  .select--dark-background:has(.select__button:not(:disabled):focus) &,
+  .select--dark-background:has(.select__button:not(:disabled):active) & {
+    color: $color-alabaster;
+  }
+
   @media (min-width: $tablet-width) {
     margin-bottom: 12px;
     line-height: 1.43;
@@ -51,6 +61,11 @@
 .select__button {
   @include form-field;
 
+  .select--dark-background & {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+
   &::after {
     position: absolute;
     top: 50%;
@@ -59,10 +74,15 @@
     content: "";
     width: 16px;
     height: 16px;
-    background-image: url("/__spritemap#sprite-arrow-down-view");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
+    mask-image: url("/__spritemap#sprite-arrow-down-view");
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: $color-charcoal;
+  }
+
+  .select--dark-background &::after {
+    background-color: $color-white;
   }
 
   &:hover,
@@ -96,6 +116,12 @@
   .select--is-disabled &:focus::after,
   .select--is-disabled &:active::after {
     transform: translateY(-50%) rotate(180deg);
+  }
+
+  .select--dark-background &:hover,
+  .select--dark-background &:focus,
+  .select--dark-background &:active {
+    border-color: $color-white;
   }
 }
 

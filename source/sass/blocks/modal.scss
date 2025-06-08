@@ -45,18 +45,7 @@
 
 .modal__content {
   position: relative;
-  min-height: 531px;
-  padding: 37px 15px 40px;
-  border-radius: 16px;
-  background-color: $color-white;
 
-  @media (min-width: $tablet-width) {
-    padding: 55px 80px 60px;
-  }
-
-  @media (min-width: $desktop-width) {
-    padding: 53px 80px 60px;
-  }
 }
 
 .modal__close-button {
@@ -108,4 +97,8 @@
     width: 18px;
     height: 18px;
   }
+}
+
+.modal__form {
+  min-height: 531px;
 }
