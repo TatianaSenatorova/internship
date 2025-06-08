@@ -55,9 +55,11 @@
   top: -16px;
   width: 32px;
   height: 32px;
+
   --nb-r: 16px;
   --nb-w: 0px;
   --nb-h: 0px;
+
   background-color: $color-alabaster;
 }
 
@@ -69,9 +71,11 @@
   bottom: 0;
   width: 32px;
   height: 32px;
+
   --nb-r: 16px;
   --nb-w: 0px;
   --nb-h: 0px;
+
   background-color: $color-alabaster;
 }
 
@@ -82,7 +86,7 @@
   min-width: 30px;
   max-width: 140px;
   padding: 12px 12px 6px 0;
-  border-radius: 0px 12px 0px 0px;
+  border-radius: 0 12px 0 0;
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.12px;
@@ -103,7 +107,7 @@
   max-width: 200px;
   margin: 0;
   padding: 10px 18px 4px 0;
-  border-radius: 0px 12px 0px 0px;
+  border-radius: 0 12px 0 0;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.13;
@@ -133,7 +137,7 @@
   grid-template-columns: 1fr 42px;
   align-items: center;
   gap: 10px;
-  padding: 12px 0 10px 0;
+  padding: 12px 0 10px;
   border-radius: 0 12px 0 0;
   background-color: $color-alabaster;
 }

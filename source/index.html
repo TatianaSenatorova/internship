@@ -600,22 +600,26 @@
             <ol class="grant__list">
               <li class="grant__item">
                 <article class="grant-card">
+                  <h3 class="visually-hidden">Возраст</h3>
                   <p class="grant-card__info">Быть в&nbsp;возрасте от&nbsp;16&nbsp;до&nbsp;30&nbsp;лет</p>
                 </article>
               </li>
               <li class="grant__item">
                 <article class="grant-card">
+                  <h3 class="visually-hidden">Образование</h3>
                   <p class="grant-card__info">Иметь оконченное среднее образование</p>
                 </article>
               </li>
               <li class="grant__item">
                 <article class="grant-card">
+                  <h3 class="visually-hidden">Консульская проверка</h3>
                   <p class="grant-card__info">Иметь документально подтверждённое отсутствие судимости и&nbsp;пройти
                     консульскую проверку</p>
                 </article>
               </li>
               <li class="grant__item">
                 <article class="grant-card">
+                  <h3 class="visually-hidden">Время нахождения в странах</h3>
                   <p class="grant-card__info">За&nbsp;последние 2&nbsp;года быть не&nbsp;больше 3х&nbsp;месяцев подряд
                     непрерывно в&nbsp;одной стране</p>
                 </article>
@@ -1298,8 +1302,8 @@
           </li>
           <li class="accordion__element">
             <button class="accordion__button" type="button">
-              <span class="visually-hidden">Открыть ответ</span>
-              Признаётся&nbsp;ли учёба в&nbsp;рамках проекта <br> для дальнейшего обучения?</button>
+              <span class="visually-hidden">Открыть ответ</span>Признаётся&nbsp;ли учёба в&nbsp;рамках проекта <br>для
+              дальнейшего обучения?</button>
             <div class="accordion__wrapper-content">
               <div class="accordion__content">
                 <p>Студенты, участвующие в&nbsp;проекте, могут использовать полученные знания и&nbsp;навыки в&nbsp;своей
@@ -1492,7 +1496,7 @@
           <h2 class="contacts__title section-title section-title--light">Контакты</h2>
           <div class="contacts__items-wrapper">
             <address class="contacts__item">
-              <h3 class="contacts__item-title">Центральный офис</h3>
+              <p class="contacts__item-title">Центральный офис</p>
               <p class="contacts__address-text">г. Новосибирск, ул. Щетинкина&nbsp;68, культурный центр</p>
             </address>
             <div class="contacts__item">
@@ -1523,6 +1527,7 @@
               alt="Карта с указанием местонахождения фирмы" width="290" height="240" loading="lazy">
           </picture>
         </div>
+      </div>
     </section>
     <section class="section-form" data-test="form">
       <div class="container container--wide-on-mobile">
@@ -1539,7 +1544,7 @@
                 <!-- Чтобы отобразить инпут в состоянии ошибки надо добавить класс-модификатор error к элементу с классом input". -->
                 <label class="input input--dark-background">
                   <span class="input__label">Имя</span>
-                  <input class="input__field" type="text" id="name" name="name" required>
+                  <input class="input__field" type="text" id="username" name="name" required>
                 </label>
               </li>
               <li class="form__list-item">
@@ -1550,20 +1555,21 @@
                 </label>
               </li>
               <li class="form__list-item">
-                <label class="input input--dark-background input--textarea">
-                  <span class="input__label">Ваше сообщение</span>
-                  <textarea class="input__field" name="comment" required></textarea>
-                </label>
+                <p class="input input--dark-background input--textarea">
+                  <label class="input__label" for="textarea">Ваше сообщение</label>
+                  <textarea class="input__field" name="comment" id="textarea" required></textarea>
+                </p>
               </li>
             </ul>
           </fieldset>
           <!-- Чтобы открыть кастомный селект необходимо добавить класс-модификатор  is-opened к элементу с классом select.
            Для состояния disable добавляем класс-модификатор is-disabled элементу select. -->
-          <div class="form__select select select--dark-background" data-select="select" data-validate-type="select" data-name="select"
-            data-id="select">
-            <label for="select-button" class="select__label">Выберите город</label>
-            <button class="select__button" id="select-button" type="button" aria-label="Выберите одну из опций" tabindex="0"></button>
-            <ul class="select__list" role="listbox">
+          <div class="form__select select select--dark-background" data-select="select" data-validate-type="select"
+            data-name="select" data-id="select">
+            <label class="select__label" for="select-button">Выберите город</label>
+            <button class="select__button" id="select-button" type="button" aria-label="Выберите одну из опций"
+              tabindex="0"></button>
+            <ul class="select__list">
               <!-- Если надо сделать состояние disable опции - добавляем элементу с классом select__item класс-модификатор is-disabled -->
               <li class="select__item" tabindex="0" data-select-value="id-1" aria-selected="false" role="option">
                 <span class="select__text">
@@ -1587,13 +1593,13 @@
               </li>
             </ul>
             <select id="select" name="select" tabindex="-1" aria-hidden="true">
-              <option value="id-1" selected="">Санкт-Петербург</option>
+              <option value="id-1" selected>Санкт-Петербург</option>
               <option value="id-2">Санкт-Петербург</option>
               <option value="id-3">Санкт-Петербург</option>
               <option value="id-4">Санкт-Петербург</option>
             </select>
           </div>
-          <label class="form__checkbox checkbox">
+          <label class="form__checkbox checkbox checkbox--dark-background">
             <input class="visually-hidden checkbox__input" type="checkbox" name="confirmation" value="1" required>
             <span class="checkbox__mark"></span>
             <span class="checkbox__label">Я&nbsp;согласен на&nbsp;обработку моих персональных данных</span>
@@ -1601,9 +1607,7 @@
           <button class="form__primary-button primary-button primary-button--wide" type="submit">Отправить</button>
         </form>
       </div>
-
     </section>
-
   </main>
   <footer></footer>
   <section class="modal">
@@ -1616,7 +1620,8 @@
             <use href="/__spritemap#sprite-close-icon"></use>
           </svg>
         </button>
-        <form class="modal__form form" action="https://echo.htmlacademy.ru/" method="post" autocomplete="off" novalidate>
+        <form class="modal__form form" action="https://echo.htmlacademy.ru/" method="post" autocomplete="off"
+          novalidate>
           <h3 class="form__title">Напишите нам</h3>
           <p class="form__description">Оставьте ваши контакты, если&nbsp;у&nbsp;вас остались вопросы&nbsp;&mdash;
             мы&nbsp;на&nbsp;них ответим!</p>
@@ -1644,7 +1649,7 @@
             data-id="select">
             <span class="select__label">Выберите город</span>
             <button class="select__button" type="button" aria-label="Выберите одну из опций" tabindex="0"></button>
-            <ul class="select__list" role="listbox">
+            <ul class="select__list">
               <!-- Если надо сделать состояние disable опции - добавляем элементу с классом select__item класс-модификатор is-disabled -->
               <li class="select__item" tabindex="0" data-select-value="id-1" aria-selected="false" role="option">
                 <span class="select__text">
@@ -1667,8 +1672,8 @@
                 </span>
               </li>
             </ul>
-            <select id="select" name="select" tabindex="-1" aria-hidden="true">
-              <option value="id-1" selected="">Санкт-Петербург</option>
+            <select id="modal-select" name="select" tabindex="-1" aria-hidden="true">
+              <option value="id-1" selected>Санкт-Петербург</option>
               <option value="id-2">Санкт-Петербург</option>
               <option value="id-3">Санкт-Петербург</option>
               <option value="id-4">Санкт-Петербург</option>

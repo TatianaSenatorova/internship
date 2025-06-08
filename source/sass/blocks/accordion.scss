@@ -68,7 +68,6 @@
   }
 
   @media (min-width: $desktop-width) {
-
     .accordion__element--is-active & {
       margin-top: -19px;
     }
@@ -76,7 +75,7 @@
 }
 
 .accordion__content {
-  padding: 0 15px 20px 15px;
+  padding: 0 15px 20px;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.43;
@@ -205,7 +204,6 @@
 
   .accordion__element--is-active &:active {
     background-color: $color-endeavour;
-
   }
 
   .accordion__element--is-active &:active::after {

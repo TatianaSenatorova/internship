@@ -43,13 +43,14 @@
 }
 
 @mixin label-form-disabled-dark-background {
-   color: rgba(240, 239, 233, 0.6);
+  color: rgba(240, 239, 233, 0.6);
 }
 
 @mixin radius-rounding($radius: 10px) {
   position: absolute;
   width: calc($radius * 2);
   height: calc($radius * 2);
+
   --nb-w: 0px;
   --nb-h: 0px;
 }

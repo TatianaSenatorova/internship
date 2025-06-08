@@ -1,5 +1,5 @@
 .reviews {
-  padding: 50px 0 50px;
+  padding: 50px 0;
 
   --padding-tablet: 45px;
   --padding-desktop: 100px;
@@ -76,7 +76,6 @@
 }
 
 .reviews__bottom-wrap {
-
   @media (min-width: $tablet-width) {
     width: 100%;
     max-width: calc($tablet-width - var(--padding-tablet) * 2);

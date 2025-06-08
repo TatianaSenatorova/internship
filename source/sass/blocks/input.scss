@@ -1,5 +1,6 @@
 .input {
   display: block;
+  margin: 0;
   margin-bottom: 15px;
 
   @media (min-width: $tablet-width) {
@@ -8,7 +9,6 @@
 }
 
 .input__label {
-
   @include label-form-field;
 
   .input--dark-background & {
@@ -96,7 +96,7 @@
   }
 
   &--dark-background:disabled {
-    background-image: rgba(255, 255, 255, 0.20);
+    background-image: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.4);
   }
 }
