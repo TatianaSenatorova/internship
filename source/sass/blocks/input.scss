@@ -28,8 +28,7 @@
   }
 
   .input:has(.input__field:disabled) & {
-    pointer-events: none;
-    color: $color-mischka;
+    @include label-form-disabled;
   }
 
   .input--error & {
@@ -43,7 +42,7 @@
   }
 
   .input--dark-background:has(.input__field:disabled) {
-    color: rgba(240, 239, 233, 0.6);
+    @include label-form-disabled-dark-background;
   }
 
   .input--dark-background.input--error & {

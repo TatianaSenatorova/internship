@@ -4,6 +4,10 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1;
+
+  &--dark-background {
+    max-width: 260px;
+  }
 }
 
 .select select {
@@ -26,26 +30,28 @@
     color: rgba(240, 239, 233, 0.8);
   }
 
-  .select:has(.select__button:not(:disabled):hover) & {
+  .select:not(.select--is-disabled):hover &,
+  .select:not(.select--is-disabled):focus &,
+  .select:not(.select--is-disabled):active & {
     color: $color-charcoal;
   }
 
-  .select:has(.select__button:not(:disabled):focus) & {
+  .select--is-opened:not(.select--is-disabled) & {
     color: $color-charcoal;
   }
 
-  .select:has(.select__button:not(:disabled):active) & {
-    color: $color-charcoal;
-  }
-
-  .input:has(.input__field:disabled) & {
-    color: $color-mischka;
-  }
-
-  .select--dark-background:has(.select__button:not(:disabled):hover) &,
-  .select--dark-background:has(.select__button:not(:disabled):focus) &,
-  .select--dark-background:has(.select__button:not(:disabled):active) & {
+  .select--dark-background:has(.select__button:hover) &,
+  .select--dark-background:has(.select__button:focus) &,
+  .select--dark-background:has(.select__button:active) & {
     color: $color-alabaster;
+  }
+
+  .select--is-opened.select--dark-background:not(.select--is-disabled) & {
+    color: $color-alabaster;
+  }
+
+  .select--is-disabled & {
+    @include label-form-disabled;
   }
 
   @media (min-width: $tablet-width) {
@@ -64,7 +70,6 @@
   .select--dark-background & {
     border-color: rgba(255, 255, 255, 0.3);
   }
-
 
   &::after {
     position: absolute;
@@ -91,37 +96,42 @@
     border-color: $color-charcoal;
   }
 
-  &:not(:disabled):focus::after,
-  &:not(:disabled):active::after {
+  &:focus::after,
+  &:active::after {
     transform: translateY(-50%);
-  }
-
-  &:disabled {
-    @include disabled-field;
-  }
-
-  .select--is-opened & {
-    border-color: $color-charcoal;
-  }
-
-  .select--is-opened &::after {
-    transform: translateY(-50%);
-  }
-
-  .select--is-disabled & {
-    @include disabled-field;
-  }
-
-  .select--is-disabled &:hover::after,
-  .select--is-disabled &:focus::after,
-  .select--is-disabled &:active::after {
-    transform: translateY(-50%) rotate(180deg);
   }
 
   .select--dark-background &:hover,
   .select--dark-background &:focus,
   .select--dark-background &:active {
     border-color: $color-white;
+
+  }
+
+  .select--is-opened:not(.select--is-disabled) & {
+    border-color: $color-charcoal;
+  }
+
+  .select--is-opened:not(.select--is-disabled) &::after {
+    transform: translateY(-50%);
+  }
+
+   .select--is-opened.select--dark-background:not(.select--is-disabled) & {
+      border-color: $color-white;
+  }
+
+  .select--is-disabled & {
+    @include disabled-field;
+  }
+
+  .select--is-disabled &::after {
+    background-color: rgba(72, 72, 72, 0.6);
+  }
+
+  .select--is-disabled &:hover::after,
+  .select--is-disabled &:focus::after,
+  .select--is-disabled &:active::after {
+    transform: translateY(-50%) rotate(180deg);
   }
 }
 
@@ -140,7 +150,12 @@
   visibility: hidden;
   opacity: 0;
 
-  .select--is-opened & {
+  .select--dark-background & {
+    border-color: transparent;
+  }
+
+  .select--is-opened:not(.select--is-disabled) & {
+    z-index: $z-index-first;
     visibility: visible;
     opacity: 1;
   }

@@ -37,6 +37,15 @@
   transition: color 0.3s;
 }
 
+@mixin label-form-disabled {
+  pointer-events: none;
+  color: rgba(169, 175, 183, 0.6);
+}
+
+@mixin label-form-disabled-dark-background {
+   color: rgba(240, 239, 233, 0.6);
+}
+
 @mixin radius-rounding($radius: 10px) {
   position: absolute;
   width: calc($radius * 2);
@@ -44,4 +53,3 @@
   --nb-w: 0px;
   --nb-h: 0px;
 }
-
