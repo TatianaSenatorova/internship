@@ -14,6 +14,11 @@
     &--wider-on-tablet {
       padding: 0 0 0 45px;
     }
+
+    &--slim-on-tablet {
+      width: 652px;
+      padding: unset;
+    }
   }
 
   @media (min-width: $desktop-width) {

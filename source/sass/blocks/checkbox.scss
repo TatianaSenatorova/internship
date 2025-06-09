@@ -15,12 +15,19 @@
     br {
       display: block;
     }
+
     color: rgba(255, 255, 255, 0.9);
   }
 
   @media (min-width: $tablet-width) {
     line-height: 1;
+
+    br {
+      display: none;
+    }
   }
+
+  @media (min-width: $desktop-width) {}
 }
 
 .checkbox__input+.checkbox__mark {

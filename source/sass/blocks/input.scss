@@ -1,11 +1,10 @@
 .input {
   display: block;
   margin: 0;
-  // margin-bottom: 15px;
 
-  @media (min-width: $tablet-width) {
-    margin-bottom: 20px;
-  }
+  // @media (min-width: $tablet-width) {
+  //   margin-bottom: 20px;
+  // }
 }
 
 .input__label {
@@ -59,6 +58,11 @@
   @media (min-width: $tablet-width) {
     line-height: 1.43;
     margin-bottom: 12px;
+
+    .input--dark-background & {
+      font-size: 14px;
+      line-height: 1.43;
+    }
   }
 
   @media (min-width: $desktop-width) {
@@ -107,5 +111,11 @@
   &--dark-background:disabled {
     background-image: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  @media (min-width: $tablet-width) {
+   .input--textarea & {
+      min-height: 88px;
+    }
   }
 }

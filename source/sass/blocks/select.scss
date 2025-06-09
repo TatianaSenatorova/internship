@@ -64,6 +64,11 @@
   @media (min-width: $tablet-width) {
     margin-bottom: 12px;
     line-height: 1.43;
+
+    .select--dark-background & {
+      font-size: 14px;
+      line-height: 1.43;
+    }
   }
 
   @media (min-width: $desktop-width) {
