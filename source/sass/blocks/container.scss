@@ -28,5 +28,10 @@
     &--slim-on-desktop {
       padding: 0 206px;
     }
+
+    &--slim-on-tablet {
+      width: 1240px;
+      padding: unset;
+    }
   }
 }

@@ -67,6 +67,10 @@
 
   @media (min-width: $desktop-width) {
     line-height: 1.29;
+
+       .input--dark-background & {
+      line-height: 1.29;
+    }
   }
 }
 

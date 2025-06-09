@@ -12,13 +12,16 @@
     padding: 55px 80px 60px;
 
     &--dark-background {
-      max-width: 442px;
       padding: 38px 40px 36px;
     }
   }
 
   @media (min-width: $desktop-width) {
     padding: 53px 80px 60px;
+
+    &--dark-background {
+      padding: 43px 70px 38px;
+    }
   }
 }
 
@@ -51,6 +54,10 @@
     margin-bottom: 14px;
     font-size: 32px;
     line-height: 1.13;
+
+    .form--dark-background & {
+      margin-bottom: 32px;
+    }
   }
 }
 
@@ -173,6 +180,12 @@
       margin: unset;
       width: 352px;
       max-width: unset;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+      .form--dark-background & {
+      width: 100%;
     }
   }
 }
