@@ -1,7 +1,7 @@
 .input {
   display: block;
   margin: 0;
-  margin-bottom: 15px;
+  // margin-bottom: 15px;
 
   @media (min-width: $tablet-width) {
     margin-bottom: 20px;
@@ -12,6 +12,9 @@
   @include label-form-field;
 
   .input--dark-background & {
+    margin-bottom: 12px;
+    font-size: 12px;
+    line-height: 1.17;
     color: rgba(240, 239, 233, 0.8);
   }
 
@@ -33,6 +36,10 @@
 
   .input--error & {
     color: $color-charcoal;
+  }
+
+  .input--error.input--dark-background & {
+    color: rgba(240, 239, 233, 0.8);
   }
 
   .input--dark-background:has(.input__field:not(:disabled)):hover &,
@@ -63,7 +70,9 @@
   @include form-field;
 
   .input--dark-background & {
+    min-height: 50px;
     border-color: rgba(255, 255, 255, 0.3);
+    color: $color-white;
   }
 
   .input--textarea & {

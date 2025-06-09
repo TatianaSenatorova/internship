@@ -1532,7 +1532,7 @@
     <section class="section-form" data-test="form">
       <div class="container container--wide-on-mobile">
         <h2 class="visually-hidden">Заполните форму для получения ответов на Ваши вопросы</h2>
-        <form class="form form--dark-background" action="https://echo.htmlacademy.ru/" method="post" autocomplete="off"
+        <form class="section-form__form form form--dark-background" action="https://echo.htmlacademy.ru/" method="post" autocomplete="off"
           novalidate>
           <h3 class="form__title">Напишите нам</h3>
           <p class="form__description">Оставьте ваши контакты, если&nbsp;у&nbsp;вас остались вопросы&nbsp;&mdash;
@@ -1599,12 +1599,13 @@
               <option value="id-4">Санкт-Петербург</option>
             </select>
           </div>
+           <!-- Чтобы отобразить checkbox в состоянии ошибки надо добавить класс-модификатор error к элементу с классом checkbox". -->
           <label class="form__checkbox checkbox checkbox--dark-background">
             <input class="visually-hidden checkbox__input" type="checkbox" name="confirmation" value="1" required>
             <span class="checkbox__mark"></span>
-            <span class="checkbox__label">Я&nbsp;согласен на&nbsp;обработку моих персональных данных</span>
+            <span class="checkbox__label">Я&nbsp;согласен на&nbsp;обработку моих персональных<br>данных</span>
           </label>
-          <button class="form__primary-button primary-button primary-button--wide" type="submit">Отправить</button>
+          <button class="form__primary-button form__primary-button--thick primary-button primary-button--dark-background" type="submit">Отправить</button>
         </form>
       </div>
     </section>
@@ -1679,6 +1680,7 @@
               <option value="id-4">Санкт-Петербург</option>
             </select>
           </div>
+            <!-- Чтобы отобразить checkbox в состоянии ошибки надо добавить класс-модификатор error к элементу с классом checkbox". -->
           <label class="form__checkbox checkbox">
             <input class="visually-hidden checkbox__input" type="checkbox" name="confirmation" value="1" required>
             <span class="checkbox__mark"></span>

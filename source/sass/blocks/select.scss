@@ -27,6 +27,9 @@
   @include label-form-field;
 
   .select--dark-background & {
+    margin-bottom: 12px;
+    font-size: 12px;
+    line-height: 1.17;
     color: rgba(240, 239, 233, 0.8);
   }
 
@@ -54,6 +57,10 @@
     @include label-form-disabled;
   }
 
+  .select--error.select--dark-background & {
+    color: rgba(240, 239, 233, 0.8);
+  }
+
   @media (min-width: $tablet-width) {
     margin-bottom: 12px;
     line-height: 1.43;
@@ -68,6 +75,7 @@
   @include form-field;
 
   .select--dark-background & {
+    min-height: 52px;
     border-color: rgba(255, 255, 255, 0.3);
   }
 
@@ -131,6 +139,11 @@
   .select--is-disabled &:focus::after,
   .select--is-disabled &:active::after {
     transform: translateY(-50%) rotate(180deg);
+  }
+
+  .select--error & {
+    border-color: $color-wild-watermelon;
+    background: rgba(255, 94, 102, 0.20);
   }
 }
 

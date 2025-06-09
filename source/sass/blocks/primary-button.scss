@@ -94,9 +94,9 @@
     padding-left: 30px;
   }
 
-  &--dark {
-    background-color: #316dc2;
+  &--dark-background {
     color: $color-white;
+    border-color: $color-white;
 
     &::before {
       background-color: $color-white;
@@ -123,7 +123,7 @@
     &:focus {
       background-color: $color-cerulean-blue;
       color: $color-white;
-      border-color: $color-cerulean-blue;
+     border-color: $color-white;
     }
 
     &:focus::before {

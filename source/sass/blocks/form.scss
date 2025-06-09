@@ -57,6 +57,7 @@
   .form--dark-background & {
     margin: 0;
     margin-bottom: 20px;
+    max-width: unset;
     text-align: left;
     color: rgba(240, 239, 233, 0.9);
   }
@@ -87,8 +88,21 @@
   flex-direction: column;
 }
 
+.form__list-item {
+  display: block;
+  margin-bottom: 15px;
+
+  .form--dark-background & {
+    margin-bottom: 20px;
+  }
+}
+
 .form__select {
   margin-bottom: 15px;
+
+  .form--dark-background & {
+    margin-bottom: 20px;
+  }
 
   @media (min-width: $tablet-width) {
     margin-bottom: 24px;
@@ -102,6 +116,10 @@
 .form__checkbox {
   margin-bottom: 25px;
 
+  .form--dark-background & {
+    margin-bottom: 20px;
+  }
+
   @media (min-width: $tablet-width) {
     margin-bottom: 34px;
   }
@@ -110,6 +128,14 @@
 .form__primary-button {
   width: 100%;
   min-height: 42px;
+
+  &--thick {
+    min-height: 44px;
+  }
+
+  .form--dark-background & {
+    max-width: 260px;
+  }
 
   @media (min-width: $tablet-width) {
     min-height: 54px;
