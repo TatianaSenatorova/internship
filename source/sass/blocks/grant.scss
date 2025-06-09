@@ -1,5 +1,5 @@
 .grant {
-  padding: 70px 0;
+  padding: 71px 0 70px;
   background-color: $color-cerulean-blue;
   color: $color-white;
 
@@ -22,7 +22,7 @@
 
 .grant__section-title {
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
 
   @media (min-width: $tablet-width) {
     margin-bottom: 30px;
@@ -30,7 +30,7 @@
 }
 
 .grant__top-wrap {
-  margin-bottom: 30px;
+  margin-bottom: 41px;
 
   @media (min-width: $tablet-width) {
     margin-bottom: 60px;
@@ -38,7 +38,7 @@
 }
 
 .grant__content {
-  margin-bottom: 30px;
+  margin-bottom: 29px;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.43;
@@ -114,7 +114,7 @@
 
 .grant__list-title {
   margin: 0;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.22;
@@ -133,12 +133,15 @@
 }
 
 .grant__list {
-  padding: 0;
+  max-width: 275px;
+   padding: 0;
   margin: 0;
+  margin-left: auto;
   list-style: none;
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 10px;
+  row-gap: 15px;
+  justify-content: flex-end;
   counter-reset: grant-item;
 
   @media (min-width: $tablet-width) {
@@ -154,9 +157,12 @@
 
 .grant__item {
   display: block;
+  position: relative;
 
   &::before {
-    position: relative;
+    position: absolute;
+    top: -5px;
+    left: -15px;
     background-color: $color-cerulean-blue;
     z-index: $z-index-first;
     display: flex;
@@ -182,9 +188,23 @@
       letter-spacing: 0.22px;
     }
   }
+}
+
+.grant__info {
+  margin: 0;
+  padding: 24px 25px;
+  border: 1px solid $color-alabaster;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 400;
+
+  @media (min-width: $tablet-width) {
+    line-height: 1.25;
+    padding: 31px 50px 31px 26px;
+  }
 
   @media (min-width: $desktop-width) {
-
-
+    line-height: 1.63;
+    padding-right: 67px;
   }
 }
