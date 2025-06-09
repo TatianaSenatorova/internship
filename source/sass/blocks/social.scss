@@ -1,8 +1,9 @@
 .social {
-   display: flex;
+  display: flex;
   justify-content: center;
+
   @media (min-width: $tablet-width) {
-      justify-content: flex-end;
+    justify-content: flex-end;
   }
 }
 
@@ -16,9 +17,9 @@
   flex-wrap: wrap;
   max-width: 250px;
 
-  @media (min-width: $tablet-width) {}
-
-  @media (min-width: $desktop-width) {}
+  @media (min-width: $desktop-width) {
+    gap: 20px;
+  }
 }
 
 .social__link {
