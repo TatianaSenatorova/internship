@@ -63,7 +63,8 @@
 
   @media (min-width: $tablet-width) {
     .accordion__element--is-active & {
-      margin-top: -10px;
+      // margin-top: -11px;
+      margin-top: -12px;
     }
   }
 
@@ -91,7 +92,7 @@
 
   @media (min-width: $tablet-width) {
     font-size: 16px;
-    line-height: 1.25;
+    line-height: 1.26;
     padding: 0 31px 31px 30px;
 
     br {
@@ -216,7 +217,7 @@
     padding: 30px;
     border-radius: 16px;
     font-size: 22px;
-    line-height: 1.18;
+    line-height: 1.19;
 
     &::after {
       align-self: start;
