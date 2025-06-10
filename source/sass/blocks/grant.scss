@@ -1,10 +1,10 @@
 .grant {
   padding: 71px 0 70px;
   background-color: $color-cerulean-blue;
-  color: $color-white;
+
 
   @media (min-width: $tablet-width) {
-    padding: 100px 0;
+    padding: 101px 0 100px;
   }
 
   @media (min-width: $desktop-width) {
@@ -25,7 +25,7 @@
   margin-bottom: 14px;
 
   @media (min-width: $tablet-width) {
-    margin-bottom: 30px;
+    margin-bottom: 29px;
   }
 }
 
@@ -33,7 +33,7 @@
   margin-bottom: 41px;
 
   @media (min-width: $tablet-width) {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
   }
 }
 
@@ -68,7 +68,7 @@
     }
   }
 
-  @media (min-width: $tablet-width) {
+  @media (min-width: $desktop-width) {
     line-height: 1.63;
 
     p {
@@ -118,8 +118,10 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 1.22;
+  color: $color-white;
 
   @media (min-width: $tablet-width) {
+    margin-bottom: 45px;
     font-size: 28px;
     line-height: 1;
   }
@@ -134,7 +136,7 @@
 
 .grant__list {
   max-width: 275px;
-   padding: 0;
+  padding: 0;
   margin: 0;
   margin-left: auto;
   list-style: none;
@@ -145,8 +147,10 @@
   counter-reset: grant-item;
 
   @media (min-width: $tablet-width) {
+    max-width: 658px;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 28px;
+    column-gap: 48px;
+    row-gap: 25px;
   }
 
   @media (min-width: $desktop-width) {
@@ -177,10 +181,14 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 1;
+    color: $color-white;
   }
 
   @media (min-width: $tablet-width) {
+
     &::before {
+      top: -15px;
+      left: -20px;
       min-width: 42px;
       height: 42px;
       padding: 10px;
@@ -197,10 +205,13 @@
   border-radius: 16px;
   font-size: 14px;
   font-weight: 400;
+  color: $color-alabaster;
 
   @media (min-width: $tablet-width) {
+    height: 100%;
+    font-size: 16px;
     line-height: 1.25;
-    padding: 31px 50px 31px 26px;
+    padding: 30px 40px 30px 25px;
   }
 
   @media (min-width: $desktop-width) {
