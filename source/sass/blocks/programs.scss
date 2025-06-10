@@ -4,6 +4,10 @@
   --padding-tablet: 45px;
   --additional-padding-click-zone: 10px;
 
+  @media (min-width: $tablet-width) {
+    padding: 50px 0 45px;
+  }
+
   @media (min-width: $desktop-width) {
     padding: 60px 0;
   }
@@ -25,8 +29,9 @@
   margin-bottom: 22px;
 
   @media (min-width: $tablet-width) {
+    margin-bottom: 40px;
+    padding-top: unset;
     padding-right: var(--padding-tablet);
-    display: flex;
     justify-content: space-between;
   }
 
@@ -72,7 +77,7 @@
   display: flex;
 
   @media (min-width: $tablet-width) {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
   }
 }
 
@@ -102,8 +107,8 @@
   @media (min-width: $tablet-width) {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 74px;
-    gap: 62px;
+    grid-template-columns: 562px 74px;
+    gap: 43px;
     align-items: center;
   }
 }

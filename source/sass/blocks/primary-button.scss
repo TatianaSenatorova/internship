@@ -181,7 +181,8 @@
 
   @media (min-width: $tablet-width) {
     grid-template-columns: 1fr 48px;
-    column-gap: 27px;
+    column-gap: 29px;
+      padding: 3px 4px 3px 29px;
     font-size: 14px;
     letter-spacing: 0.28px;
 

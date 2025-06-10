@@ -39,6 +39,10 @@
   border-radius: 12px;
   padding: 38px 10px 17px;
   background-color: rgba(49, 109, 194, 0.2);
+
+  @media (min-width: $tablet-width) {
+    padding: 38px 20px 10px;
+  }
 }
 
 .programs-card__info {
@@ -50,11 +54,11 @@
   position: relative;
   width: fit-content;
   max-width: 230px;
-  min-width: 70px;
+  min-width: 146px;
   z-index: $z-index-second;
   min-height: 38px;
   margin: 0;
-  padding: 18px 35px 6px 18px;
+  padding: 18px 18px 6px 18px;
   border-radius: 12px 12px 0 0;
   font-size: 16px;
   font-weight: 400;
@@ -64,6 +68,7 @@
   word-break: break-all;
 
   @media (min-width: $tablet-width) {
+    min-width: 173px;
     font-size: 20px;
     line-height: 0.7;
   }
@@ -97,7 +102,10 @@
   background-color: $color-white;
 
   @media (min-width: $tablet-width) {
-    gap: 42px;
+      grid-template-columns: 195px 36px;
+        gap: 17px;
+    // padding: 12px 18px 15px;
+    // gap: 42px;
   }
 }
 
@@ -126,7 +134,7 @@
     }
   }
 
-  @media (min-width: $tablet-width) {
+  @media (min-width: $desktop-width) {
     line-height: 1.29;
 
     p {
