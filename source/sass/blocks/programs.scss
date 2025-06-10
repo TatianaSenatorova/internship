@@ -1,5 +1,5 @@
 .programs {
-  padding: 50px 0;
+  padding: 48px 0 50px;
 
   --padding-tablet: 45px;
   --additional-padding-click-zone: 10px;
@@ -11,7 +11,7 @@
 
 .programs__wrap {
   position: relative;
-  padding-bottom: 74px;
+  padding-bottom: 44px;
 
   @media (min-width: $tablet-width) {
     padding-bottom: unset;
@@ -21,8 +21,8 @@
 .programs__top-wrap {
   display: flex;
   align-items: center;
-  min-height: var(--slider-nav-buttons-height);
-  margin-bottom: 35px;
+  padding-top: 7px;
+  margin-bottom: 22px;
 
   @media (min-width: $tablet-width) {
     padding-right: var(--padding-tablet);
@@ -36,6 +36,7 @@
 }
 
 .programs__section-title {
+  min-height: var(--slider-nav-buttons-height);
   margin: 0;
   max-width: 200px;
 }
@@ -56,7 +57,7 @@
 
 .programs__slider {
   overflow: hidden;
-  margin-bottom: 30px;
+  margin-bottom: 31px;
 
   @media (min-width: $tablet-width) {
     margin-bottom: unset;
@@ -88,12 +89,12 @@
 .programs__buttons-swiper-list {
   position: absolute;
   right: calc(var(--additional-padding-click-zone) * -1);
-  top: calc(var(--additional-padding-click-zone) * -0.5);
+  top: 0;
   z-index: $z-index-first;
 
   @media (min-width: $tablet-width) {
     position: relative;
-    top: unset;
+    bottom: top;
   }
 }
 

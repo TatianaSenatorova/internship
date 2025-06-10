@@ -6,6 +6,8 @@
   grid-template-columns: 1fr;
   border-radius: 12px;
   background-color: $color-echo-blue;
+  --radius-18: 18px;
+
 
   @media (min-width: $tablet-width) {
     min-width: 324px;
@@ -35,7 +37,7 @@
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
   border-radius: 12px;
-  padding: 38px 10px 18px;
+  padding: 38px 10px 17px;
   background-color: rgba(49, 109, 194, 0.2);
 }
 
@@ -46,12 +48,14 @@
 
 .programs-card__title {
   position: relative;
+  width: fit-content;
+  max-width: 230px;
+  min-width: 70px;
   z-index: $z-index-second;
   min-height: 38px;
   margin: 0;
-  padding: 18px 18px 6px;
+  padding: 18px 35px 6px 18px;
   border-radius: 12px 12px 0 0;
-  min-width: 146px;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.13;
@@ -60,13 +64,11 @@
   word-break: break-all;
 
   @media (min-width: $tablet-width) {
-    min-width: 173px;
     font-size: 20px;
     line-height: 0.7;
   }
 
   @media (min-width: $desktop-width) {
-    min-width: 194px;
     font-size: 24px;
     line-height: 0.71;
   }
@@ -74,38 +76,21 @@
 
 .programs-card__title-nebo-wrap {
   position: relative;
-  padding-right: 36px;
   width: fit-content;
-
-  // width: 182px;
-
-  @media (min-width: $tablet-width) {
-    // width: 209px;
-  }
-
-  @media (min-width: $tablet-width) {
-    // width: 230px;
-  }
 }
 
 .programs-card__title-nebo {
-  position: absolute;
-  z-index: $z-index-first;
-  background-color: $color-white;
-  height: 30px;
+  @include radius-rounding($radius: 18px);
+  --nb-r: var(--radius-18);
   bottom: 0;
-  left: 0;
-  right: 0;
-
-  --nb-r: 18px;
-  --nb-w: 0px;
-  --nb-h: -6px;
+  right: calc(var(--radius-18) * -2);
+  background-color: $color-white;
 }
 
 .programs-card__bottom-wrap {
   display: grid;
-  grid-template-columns: 1fr 30px;
-  gap: 20px;
+  grid-template-columns: 188px 36px;
+  gap: 10px;
   align-items: center;
   border-radius: 0 12px 12px;
   padding: 12px 18px 15px;
