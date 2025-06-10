@@ -15,8 +15,8 @@
 .grant__wrap {
   @media (min-width: $desktop-width) {
     display: grid;
-    grid-template-columns: 498px 483px;
-    justify-content: space-between;
+    grid-template-columns: 498px 498px;
+    column-gap: 138px;
   }
 }
 
@@ -34,6 +34,10 @@
 
   @media (min-width: $tablet-width) {
     margin-bottom: 50px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: unset;
   }
 }
 
@@ -154,8 +158,9 @@
   }
 
   @media (min-width: $desktop-width) {
+    max-width: 478px;
     grid-template-columns: 1fr;
-    row-gap: 8px;
+    row-gap: 23px;
   }
 }
 
@@ -216,6 +221,6 @@
 
   @media (min-width: $desktop-width) {
     line-height: 1.63;
-    padding-right: 67px;
+    padding-right: 57px;
   }
 }
