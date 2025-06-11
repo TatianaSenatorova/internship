@@ -2,6 +2,7 @@
   min-width: 290px;
   max-width: 290px;
   min-height: 240px;
+  height: fit-content;
   display: grid;
   grid-template-columns: 1fr;
   border-radius: 12px;
@@ -10,8 +11,8 @@
   @media (min-width: $tablet-width) {
     min-width: 324px;
     max-width: 324px;
-    min-height: 420px;
   }
+
 
   // @media (min-width: $desktop-width) {
   //   min-width: 392px;
@@ -103,8 +104,7 @@
 .news-card__title {
   position: relative;
   min-height: 32px;
-  min-width: 180px;
-  max-width: 200px;
+  width: 200px;
   margin: 0;
   padding: 10px 18px 4px 0;
   border-radius: 0 12px 0 0;
@@ -117,7 +117,7 @@
   @media (min-width: $tablet-width) {
     min-width: 173px;
     font-size: 20px;
-    line-height: 0.7;
+    line-height: 1.2;
   }
 
   @media (min-width: $desktop-width) {
@@ -134,12 +134,17 @@
   max-width: 263px;
   min-width: 263px;
   display: grid;
-  grid-template-columns: 1fr 42px;
+  grid-template-columns: 1fr 40px;
   align-items: center;
   gap: 10px;
-  padding: 12px 0 10px;
+  padding: 12px 0 8px;
   border-radius: 0 12px 0 0;
   background-color: $color-alabaster;
+
+   @media (min-width: $tablet-width) {
+ padding: 12px 18px 15px 0;
+   gap: 16px;
+  }
 }
 
 .news-card__content {
@@ -168,7 +173,7 @@
     }
   }
 
-  @media (min-width: $tablet-width) {
+  @media (min-width: $desktop-width) {
     line-height: 1.29;
 
     p {

@@ -1,12 +1,19 @@
 .news {
   position: relative;
-  padding: 50px 0;
+  padding: 51px 0 50px;
 }
 
 .news__section-title {
   margin: 0;
   margin-bottom: 24px;
   text-align: center;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 29px;
+    overflow: unset;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 }
 
 .news__buttons-list {
@@ -16,8 +23,18 @@
   margin-bottom: 11px;
   list-style: none;
   display: flex;
-  gap: 12px;
+  gap: 9px;
   overflow: auto;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 18px;
+    width: 100%;
+    overflow: unset;
+    justify-content: space-between;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+
 }
 
 .news__slider {
@@ -30,7 +47,8 @@
 }
 
 .news__slider .news__slider-item {
-  height: auto;
+  // height: auto;
+  min-height: fit-content;
 }
 
 .news__slider-list {

@@ -7,14 +7,14 @@ import {
   // HTML_FOR_PAGINATION
 } from './constants.js';
 
- let windowWidth = document.documentElement.clientWidth;
+let windowWidth = document.documentElement.clientWidth;
 
 export const newsSwiper = new Swiper('.swiper-news', {
   modules: [Pagination, Navigation, Grid],
   direction: 'horizontal',
   slidesPerView: 1,
   initialSlide: 0,
-  spaceBetween: 30,
+  spaceBetween: 18,
   //  autoHeight: true,
   // slidesPerColumn: 2,
   // autoHeight: false,
@@ -26,6 +26,7 @@ export const newsSwiper = new Swiper('.swiper-news', {
 
   breakpoints: {
     768: {
+      spaceBetween: 30,
       slidesPerView: 2,
       slidesPerGroup: 4,
       grid: {
