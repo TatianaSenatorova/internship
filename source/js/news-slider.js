@@ -15,14 +15,20 @@ export const newsSwiper = new Swiper('.swiper-news', {
   slidesPerView: 1,
   initialSlide: 0,
   spaceBetween: 30,
+  // slidesPerColumn: 2,
+  // autoHeight: false,
 
-  // grid: {
-  //   rows: 2,
-  //   fill: 'row',
-  // },
+  grid: {
+    rows: 2,
+    fill: 'column',
+  },
 
   breakpoints: {
+    768: {
+      slidesPerView: 2,
+    },
     1440: {
+      slidesPerView: 3,
     }
   },
 
@@ -38,7 +44,7 @@ export const newsSwiper = new Swiper('.swiper-news', {
     },
     enabled: true,
   },
-    navigation: {
+  navigation: {
     nextEl: '.swiper-button-news-next',
     prevEl: '.swiper-button-news-prev'
   }

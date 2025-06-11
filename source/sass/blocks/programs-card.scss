@@ -2,6 +2,7 @@
   min-width: 290px;
   max-width: 290px;
   min-height: 400px;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr;
   border-radius: 12px;
@@ -43,11 +44,23 @@
   @media (min-width: $tablet-width) {
     padding: 38px 20px 10px;
   }
+ @media (min-width: $desktop-width) {
+  height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
 }
 
 .programs-card__info {
   align-self: flex-end;
   border-radius: 12px;
+   @media (min-width: $desktop-width) {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
 }
 
 .programs-card__title {

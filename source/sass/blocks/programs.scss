@@ -80,16 +80,25 @@
   @media (min-width: $tablet-width) {
     margin-bottom: 35px;
   }
+
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-auto-flow: column;
+  }
 }
 
 .programs__slider-item {
   display: flex;
   justify-content: center;
-  height: auto;
+  height: 100%;
 
   @media (min-width: $tablet-width) {
     width: fit-content;
   }
+  @media (min-width: $desktop-width) {
+     display: grid;
+  }
+
 }
 
 .programs__buttons-swiper-list {
