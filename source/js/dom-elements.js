@@ -12,12 +12,14 @@ export const heroFalsePaginations = sliderHero.querySelectorAll('.hero-card__fal
 export const heroWrapsPagination = sliderHero.querySelectorAll('.hero-card__pagination-nebo-wrap');
 export const realPagination = sliderHero.querySelector('.hero__slider-pagination');
 export const modal = document.querySelector('.modal');
+
 export const buttonOpenModal = document.querySelector('.about__primary-button');
 export const buttonCloseModal = document.querySelector('.modal__close-button');
 export const modalForm = modal.querySelector('.form');
 export const accordion = document.querySelector('.accordion');
 export const activeAccordions = accordion.querySelectorAll('.accordion__element--is-active');
 
+export const newsSlider = document.querySelector('.news__slider-list');
 
   // slidesPerView: 1,
   // slidesPerColumn: 2,

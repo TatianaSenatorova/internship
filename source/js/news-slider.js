@@ -1,13 +1,13 @@
 import Swiper from 'swiper';
 import { Pagination, Navigation, Grid } from 'swiper/modules';
 import {
-  //   slidesHero,
-  //   slidesHeroInfoContent,
-  //   heroPagination
+  newsSlider
 } from './dom-elements.js';
 import {
   // HTML_FOR_PAGINATION
 } from './constants.js';
+
+ let windowWidth = document.documentElement.clientWidth;
 
 export const newsSwiper = new Swiper('.swiper-news', {
   modules: [Pagination, Navigation, Grid],
@@ -15,6 +15,7 @@ export const newsSwiper = new Swiper('.swiper-news', {
   slidesPerView: 1,
   initialSlide: 0,
   spaceBetween: 30,
+  //  autoHeight: true,
   // slidesPerColumn: 2,
   // autoHeight: false,
 
@@ -26,6 +27,13 @@ export const newsSwiper = new Swiper('.swiper-news', {
   breakpoints: {
     768: {
       slidesPerView: 2,
+      slidesPerGroup: 4,
+      grid: {
+        // rows: 2,
+        // fill: 'row',
+        // snapGrid: 2,
+      },
+
     },
     1440: {
       slidesPerView: 3,
@@ -34,13 +42,15 @@ export const newsSwiper = new Swiper('.swiper-news', {
 
   pagination: {
     el: '.news__slider-pagination',
-    bulletClass: 'news__pagination-control',
-    bulletActiveClass: 'news__pagination-control--is-active',
+    bulletClass: 'pagination-button',
+    bulletActiveClass: 'pagination-button--is-active',
     type: 'bullets',
     clickable: true,
+    dynamicBullets: true,
+    dynamicMainBullets: 4,
     renderBullet: function (index, bulletClass) {
       return `<button class=${bulletClass}><span class="visually-hidden">Перейти к слайду ${index + 1
-        }</span></button>`;
+        }</span>${index + 1}</button>`;
     },
     enabled: true,
   },
@@ -68,4 +78,31 @@ export const newsSwiper = new Swiper('.swiper-news', {
 //   changePaginationPlace();
 // };
 
-// heroSwiper.on('slideChange', onSliderSlideChange);
+// newsSwiper.on('slideChange', onSliderSlideChange);
+
+const changeSlidesPlace = () => {
+  const slidesNumber = newsSwiper.slides.length;
+  const slidesDom = newsSlider.querySelectorAll('.news__slider-item');
+  let numberGridColumn = 2;
+  console.log(slidesNumber)
+  for (let index = 2; index < slidesNumber; index += 4) {
+    slidesDom[index].style.gridColumn = `${numberGridColumn} / ${numberGridColumn + 1}`;
+    slidesDom[index + 1].style.gridColumn = `${numberGridColumn - 1} / ${numberGridColumn}`;
+    numberGridColumn += 2;
+  }
+}
+
+checkWindowWidth();
+
+
+function checkWindowWidth() {
+  if (document.documentElement.clientWidth < 1440 && document.documentElement.clientWidth >= 768) {
+    changeSlidesPlace();
+  }
+}
+
+const onWindowResizeEvent = () => {
+  checkWindowWidth();
+}
+
+window.addEventListener('resize', onWindowResizeEvent);

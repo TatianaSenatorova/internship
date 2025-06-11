@@ -7,11 +7,11 @@
   border-radius: 12px;
   background-color: $color-sandrift;
 
-  // @media (min-width: $tablet-width) {
-  //   min-width: 324px;
-  //   max-width: 324px;
-  //   min-height: 420px;
-  // }
+  @media (min-width: $tablet-width) {
+    min-width: 324px;
+    max-width: 324px;
+    min-height: 420px;
+  }
 
   // @media (min-width: $desktop-width) {
   //   min-width: 392px;

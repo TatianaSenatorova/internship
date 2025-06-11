@@ -5,38 +5,103 @@
   height: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  border-radius: 12px;
+  align-content: flex-end;
+   border-radius: 12px;
   background-color: $color-echo-blue;
   --radius-18: 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
+  &--internship {
+    background-image:
+      image-set(url("../../img/programs-photos/programs-mobile-1@1x.webp") type("image/webp") 1x,
+        url("../../img/programs-photos/programs-mobile-1@2x.webp") type("image/webp") 2x,
+        url("../../img/programs-photos/programs-mobile-1@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/programs-photos/programs-mobile-1@2x.jpg") type("image/jpeg") 2x);
+  }
+
+  &--volunteering {
+    background-image:
+      image-set(url("../../img/programs-photos/programs-mobile-2@1x.webp") type("image/webp") 1x,
+        url("../../img/programs-photos/programs-mobile-2@2x.webp") type("image/webp") 2x,
+        url("../../img/programs-photos/programs-mobile-2@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/programs-photos/programs-mobile-2@2x.jpg") type("image/jpeg") 2x);
+  }
+
+  &--studies {
+    background-image:
+      image-set(url("../../img/programs-photos/programs-mobile-3@1x.webp") type("image/webp") 1x,
+        url("../../img/programs-photos/programs-mobile-3@2x.webp") type("image/webp") 2x,
+        url("../../img/programs-photos/programs-mobile-3@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/programs-photos/programs-mobile-3@2x.jpg") type("image/jpeg") 2x);
+  }
 
   @media (min-width: $tablet-width) {
     min-width: 324px;
     max-width: 324px;
     min-height: 420px;
+
+    &--intership {
+      background-image:
+        image-set(url("../../img/programs-photos/programs-tablet-1@1x.webp") type("image/webp") 1x,
+          url("../../img/programs-photos/programs-tablet-1@2x.webp") type("image/webp") 2x,
+          url("../../img/programs-photos/programs-tablet-1@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/programs-photos/programs-tablet-1@2x.jpg") type("image/jpeg") 2x);
+    }
+
+    &--volunteering {
+      background-image:
+        image-set(url("../../img/programs-photos/programs-tablet-2@1x.webp") type("image/webp") 1x,
+          url("../../img/programs-photos/programs-tablet-2@2x.webp") type("image/webp") 2x,
+          url("../../img/programs-photos/programs-tablet-2@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/programs-photos/programs-tablet-2@2x.jpg") type("image/jpeg") 2x);
+    }
+
+    &--studies {
+      background-image:
+        image-set(url("../../img/programs-photos/programs-tablet-3@1x.webp") type("image/webp") 1x,
+          url("../../img/programs-photos/programs-tablet-3@2x.webp") type("image/webp") 2x,
+          url("../../img/programs-photos/programs-tablet-3@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/programs-photos/programs-tablet-3@2x.jpg") type("image/jpeg") 2x);
+    }
   }
 
   @media (min-width: $desktop-width) {
     min-width: 392px;
     max-width: 392px;
+
+    &--intership {
+      background-image:
+        image-set(url("../../img/programs-photos/programs-desktop-1@1x.webp") type("image/webp") 1x,
+          url("../../img/programs-photos/programs-desktop-1@2x.webp") type("image/webp") 2x,
+          url("../../img/programs-photos/programs-desktop-1@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/programs-photos/programs-desktop-1@2x.jpg") type("image/jpeg") 2x);
+    }
+
+
+    &--volunteering {
+      background-image:
+        image-set(url("../../img/programs-photos/programs-desktop-2@1x.webp") type("image/webp") 1x,
+          url("../../img/programs-photos/programs-desktop-2@2x.webp") type("image/webp") 2x,
+          url("../../img/programs-photos/programs-desktop-2@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/programs-photos/programs-desktop-2@2x.jpg") type("image/jpeg") 2x);
+    }
+
+    &--studies {
+      background-image:
+        image-set(url("../../img/programs-photos/programs-desktop-3@1x.webp") type("image/webp") 1x,
+          url("../../img/programs-photos/programs-desktop-3@2x.webp") type("image/webp") 2x,
+          url("../../img/programs-photos/programs-desktop-3@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/programs-photos/programs-desktop-3@2x.jpg") type("image/jpeg") 2x);
+    }
   }
 }
 
-.programs-card__image-wrap {
-  max-width: 100%;
-  grid-area: 1 / 1 / 2 / 2;
-}
+.programs-card__info {
 
-.programs-card__image-wrap img {
-  display: block;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 12px;
-}
-
-.programs-card__info-wrap {
-  grid-area: 1 / 1 / 2 / 2;
-  display: flex;
+  display: grid;
+  grid-template-rows: auto 1fr;
   border-radius: 12px;
   padding: 38px 10px 17px;
   background-color: rgba(49, 109, 194, 0.2);
@@ -44,23 +109,8 @@
   @media (min-width: $tablet-width) {
     padding: 38px 20px 10px;
   }
- @media (min-width: $desktop-width) {
-  height: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
 
-}
-
-.programs-card__info {
-  align-self: flex-end;
-  border-radius: 12px;
-   @media (min-width: $desktop-width) {
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-  }
+  @media (min-width: $desktop-width) {}
 }
 
 .programs-card__title {
@@ -115,10 +165,8 @@
   background-color: $color-white;
 
   @media (min-width: $tablet-width) {
-      grid-template-columns: 195px 36px;
-        gap: 17px;
-    // padding: 12px 18px 15px;
-    // gap: 42px;
+    grid-template-columns: 195px 36px;
+    gap: 17px;
   }
 }
 
