@@ -62,17 +62,6 @@
 
   @media (min-width: $tablet-width) {
     grid-template-columns: repeat(auto-fit, minmax(324px, 1fr));
-    gap: 30px;
-    //  grid-auto-flow: column;
-    // display: flex;
-    // flex-direction: row-reverse;
-    // &:nth-child(odd) {
-    //   grid-row: unset;
-    // }
-
-    // &:nth-child(even) {
-    //   grid-row: unset;
-    // }
   }
 }
 
