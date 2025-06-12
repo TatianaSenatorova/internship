@@ -1,10 +1,11 @@
 import Swiper from 'swiper';
 import { Pagination, Navigation, Grid } from 'swiper/modules';
 import {
-  newsSlider
+  newsSlider,
+  newsSlides
 } from './dom-elements.js';
 import {
-  // HTML_FOR_PAGINATION
+  MIN_SLIDES_NUMBER_SLIDER_NEWS
 } from './constants.js';
 
 let windowWidth = document.documentElement.clientWidth;
@@ -15,9 +16,6 @@ export const newsSwiper = new Swiper('.swiper-news', {
   slidesPerView: 1,
   initialSlide: 0,
   spaceBetween: 18,
-  //  autoHeight: true,
-  // slidesPerColumn: 2,
-  // autoHeight: false,
 
   grid: {
     rows: 2,
@@ -29,15 +27,13 @@ export const newsSwiper = new Swiper('.swiper-news', {
       spaceBetween: 30,
       slidesPerView: 2,
       slidesPerGroup: 4,
-      grid: {
-        // rows: 2,
-        // fill: 'row',
-        // snapGrid: 2,
-      },
-
     },
+
     1440: {
+      grid: false,
+      spaceBetween: 32,
       slidesPerView: 3,
+      slidesPerGroup: 3,
     }
   },
 
@@ -58,6 +54,12 @@ export const newsSwiper = new Swiper('.swiper-news', {
   navigation: {
     nextEl: '.swiper-button-news-next',
     prevEl: '.swiper-button-news-prev'
+  },
+
+  on: {
+    afterInit: function (newsSwiper) {
+      checkSlidesNumber(newsSwiper);
+    }
   }
 });
 
@@ -66,20 +68,6 @@ export const newsSwiper = new Swiper('.swiper-news', {
 //   slidesHero[heroSwiper.activeIndex].querySelector('.hero-card__primary-button').removeAttribute('tabindex');
 //   slidesHero[heroSwiper.previousIndex].querySelector('.hero-card__primary-button').setAttribute('tabindex', '-1');
 // };
-
-// const changePaginationPlace = () => {
-//     slidesHero[heroSwiper.previousIndex].querySelector('.hero-card__pagination-nebo-wrap').innerHTML = '';
-//     console.log(slidesHero[heroSwiper.previousIndex].querySelector('.hero-card__pagination-nebo-wrap'));
-//     slidesHero[heroSwiper.activeIndex].querySelector('.hero-card__pagination-nebo-wrap').innerHTML = HTML_FOR_PAGINATION;
-//     heroSwiper.renderBullet;
-// }
-
-// const onSliderSlideChange = () => {
-//   unfocusNonActiveSlide();
-//   changePaginationPlace();
-// };
-
-// newsSwiper.on('slideChange', onSliderSlideChange);
 
 const changeSlidesPlace = () => {
   const slidesNumber = newsSwiper.slides.length;
@@ -97,6 +85,7 @@ checkWindowWidth();
 
 
 function checkWindowWidth() {
+  console.log(document.documentElement.clientWidth );
   if (document.documentElement.clientWidth < 1440 && document.documentElement.clientWidth >= 768) {
     changeSlidesPlace();
   }
@@ -106,4 +95,23 @@ const onWindowResizeEvent = () => {
   checkWindowWidth();
 }
 
+function checkSlidesNumber(newsSwiper) {
+  let slidesNumber = newsSwiper.slides.length;
+  const slidesToAdd = newsSlider.innerHTML;
+  while (slidesNumber < MIN_SLIDES_NUMBER_SLIDER_NEWS) {
+    newsSlider.insertAdjacentHTML('beforeend', slidesToAdd);
+    slidesNumber += slidesNumber;
+  }
+}
+
+
+const updateSlider = () => {
+  console.log('123')
+  newsSwiper.updateProgress();
+  newsSwiper.updateSize();
+  newsSwiper.updateSlides();
+  newsSwiper.update();
+}
+
+newsSwiper.on('resize', updateSlider);
 window.addEventListener('resize', onWindowResizeEvent);

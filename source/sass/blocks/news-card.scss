@@ -2,7 +2,7 @@
   min-width: 290px;
   max-width: 290px;
   min-height: 240px;
-  height: fit-content;
+  min-height: fit-content;
   display: grid;
   grid-template-columns: 1fr;
   border-radius: 12px;
@@ -14,10 +14,15 @@
   }
 
 
-  // @media (min-width: $desktop-width) {
-  //   min-width: 392px;
-  //   max-width: 392px;
-  // }
+  @media (min-width: $desktop-width) {
+    min-width: 286px;
+    max-width: 286px;
+    min-height: 100%;
+    // &:nth-child(3n) {
+    //   min-width: 604px;
+    //   max-width: 604px;
+    // }
+  }
 }
 
 .news-card__image-wrap {

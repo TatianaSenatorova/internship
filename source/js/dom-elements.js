@@ -20,6 +20,7 @@ export const accordion = document.querySelector('.accordion');
 export const activeAccordions = accordion.querySelectorAll('.accordion__element--is-active');
 
 export const newsSlider = document.querySelector('.news__slider-list');
+export const newsSlides = document.querySelectorAll('.news__slider-item');
 
   // slidesPerView: 1,
   // slidesPerColumn: 2,
