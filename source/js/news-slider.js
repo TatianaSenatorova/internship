@@ -5,7 +5,8 @@ import {
   newsSlides
 } from './dom-elements.js';
 import {
-  MIN_SLIDES_NUMBER_SLIDER_NEWS
+  MIN_SLIDES_NUMBER_SLIDER_NEWS,
+  SLIDES_PERVIEW_DESKTOP_SLIDER_NEWS
 } from './constants.js';
 
 let windowWidth = document.documentElement.clientWidth;
@@ -39,7 +40,7 @@ const initSlider = () => {
       1440: {
         grid: false,
         spaceBetween: 32,
-        slidesPerView: 3,
+        slidesPerView: SLIDES_PERVIEW_DESKTOP_SLIDER_NEWS,
         slidesPerGroup: 3,
       }
     },
