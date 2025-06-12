@@ -9,94 +9,130 @@ import {
 } from './constants.js';
 
 let windowWidth = document.documentElement.clientWidth;
+const initSlidesNumber = newsSlides.length;
 
-export const newsSwiper = new Swiper('.swiper-news', {
-  modules: [Pagination, Navigation, Grid],
-  direction: 'horizontal',
-  slidesPerView: 1,
-  initialSlide: 0,
-  spaceBetween: 18,
+let slidesInDom;
 
-  grid: {
-    rows: 2,
-    fill: 'column',
-  },
+let newsSwiper;
 
-  breakpoints: {
-    768: {
-      spaceBetween: 30,
-      slidesPerView: 2,
-      slidesPerGroup: 4,
+const initSlider = () => {
+  newsSwiper = new Swiper('.swiper-news', {
+    modules: [Pagination, Navigation, Grid],
+    direction: 'horizontal',
+    slidesPerView: 1,
+    initialSlide: 0,
+    spaceBetween: 18,
+
+    grid: {
+      rows: 2,
+      fill: 'column',
     },
 
-    1440: {
-      grid: false,
-      spaceBetween: 32,
-      slidesPerView: 3,
-      slidesPerGroup: 3,
-    }
-  },
+    breakpoints: {
 
-  pagination: {
-    el: '.news__slider-pagination',
-    bulletClass: 'pagination-button',
-    bulletActiveClass: 'pagination-button--is-active',
-    type: 'bullets',
-    clickable: true,
-    dynamicBullets: true,
-    dynamicMainBullets: 4,
-    renderBullet: function (index, bulletClass) {
-      return `<button class=${bulletClass}><span class="visually-hidden">Перейти к слайду ${index + 1
-        }</span>${index + 1}</button>`;
+      768: {
+        spaceBetween: 30,
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+      },
+
+      1440: {
+        grid: false,
+        spaceBetween: 32,
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      }
     },
-    enabled: true,
-  },
-  navigation: {
-    nextEl: '.swiper-button-news-next',
-    prevEl: '.swiper-button-news-prev'
-  },
 
-  on: {
-    afterInit: function (newsSwiper) {
-      checkSlidesNumber(newsSwiper);
+    pagination: {
+      el: '.news__slider-pagination',
+      bulletClass: 'pagination-button',
+      bulletActiveClass: 'pagination-button--is-active',
+      type: 'bullets',
+      clickable: true,
+      dynamicBullets: true,
+      dynamicMainBullets: 4,
+      renderBullet: function (index, bulletClass) {
+        return `<button class=${bulletClass}><span class="visually-hidden">Перейти к слайду ${index + 1
+          }</span>${index + 1}</button>`;
+      },
+      enabled: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-news-next',
+      prevEl: '.swiper-button-news-prev'
+    },
+
+    on: {
+      beforeInit: function () {
+        checkSlidesQuantity();
+      }
     }
+  });
+};
+
+initSlider();
+
+const initCheckWindowWidth = () => {
+  if (windowWidth >= 768 && windowWidth < 1440) {
+    changeSlidesPlace(newsSwiper);
   }
-});
+}
 
+initCheckWindowWidth();
 
 // const unfocusNonActiveSlide = () => {
 //   slidesHero[heroSwiper.activeIndex].querySelector('.hero-card__primary-button').removeAttribute('tabindex');
 //   slidesHero[heroSwiper.previousIndex].querySelector('.hero-card__primary-button').setAttribute('tabindex', '-1');
 // };
 
-const changeSlidesPlace = () => {
+function changeSlidesPlace() {
   const slidesNumber = newsSwiper.slides.length;
-  const slidesDom = newsSlider.querySelectorAll('.news__slider-item');
-  let numberGridColumn = 2;
-  console.log(slidesNumber)
+  slidesInDom = newsSlider.querySelectorAll('.news__slider-item');
+  let countGridColumn = 2;
   for (let index = 2; index < slidesNumber; index += 4) {
-    slidesDom[index].style.gridColumn = `${numberGridColumn} / ${numberGridColumn + 1}`;
-    slidesDom[index + 1].style.gridColumn = `${numberGridColumn - 1} / ${numberGridColumn}`;
-    numberGridColumn += 2;
+    slidesInDom[index].style.gridColumn = `${countGridColumn} / ${countGridColumn + 1}`;
+    slidesInDom[index + 1].style.gridColumn = `${countGridColumn - 1} / ${countGridColumn}`;
+    countGridColumn += 2;
   }
 }
 
-checkWindowWidth();
+// const gridColumnsRemove = () => {
+//   console.log('remove')
+//   slidesInDom.forEach(slide => {
+//     slide.style.gridColumn = 'unset';
+//   })
+// }
 
+const removeAddedSlides = () => {
+  slidesInDom = newsSlider.querySelectorAll('.news__slider-item');
+  slidesInDom.forEach((slide, index) => {
+    if (index >= initSlidesNumber) {
+      slide.remove();
+    }
+  });
+}
 
 function checkWindowWidth() {
-  console.log(document.documentElement.clientWidth );
-  if (document.documentElement.clientWidth < 1440 && document.documentElement.clientWidth >= 768) {
-    changeSlidesPlace();
+  const currentWindowWidth = document.documentElement.clientWidth;
+  if ((currentWindowWidth < 768 && windowWidth < 768) || (currentWindowWidth >= 1440 && windowWidth >= 1440) ||
+    ((currentWindowWidth >= 768 && currentWindowWidth < 1440 && windowWidth >= 768 && windowWidth < 1440))) {
+    windowWidth = currentWindowWidth;
+    return;
   }
+  windowWidth = currentWindowWidth;
+  newsSwiper.destroy(true, true);
+  removeAddedSlides();
+  initSlider();
+  initCheckWindowWidth();
 }
 
 const onWindowResizeEvent = () => {
   checkWindowWidth();
 }
 
-function checkSlidesNumber(newsSwiper) {
-  let slidesNumber = newsSwiper.slides.length;
+function checkSlidesQuantity() {
+  let slidesNumber = initSlidesNumber;
   const slidesToAdd = newsSlider.innerHTML;
   while (slidesNumber < MIN_SLIDES_NUMBER_SLIDER_NEWS) {
     newsSlider.insertAdjacentHTML('beforeend', slidesToAdd);
@@ -104,14 +140,4 @@ function checkSlidesNumber(newsSwiper) {
   }
 }
 
-
-const updateSlider = () => {
-  console.log('123')
-  newsSwiper.updateProgress();
-  newsSwiper.updateSize();
-  newsSwiper.updateSlides();
-  newsSwiper.update();
-}
-
-newsSwiper.on('resize', updateSlider);
 window.addEventListener('resize', onWindowResizeEvent);

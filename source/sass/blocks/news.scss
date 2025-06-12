@@ -65,7 +65,9 @@
   }
 
   @media (min-width: $desktop-width) {
-    display: flex;
+      display: flex;
+    //   grid-template-columns: auto;
+    //  grid-template-rows: 1fr;
   }
 }
 
