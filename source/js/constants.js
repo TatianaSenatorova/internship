@@ -3,7 +3,9 @@ export const CLASS_SUB_MENU_BUTTON_ACTIVE = 'main-header__nav-button--is-active'
 export const SUB_MENU_PADDING_TOP = 7;
 export const HTML_FOR_PAGINATION = '<div class="hero__slider-pagination swiper-pagination"></div>';
 export const PADDING_TOP_SLIDE_CONTENT = 80;
-export const MIN_SLIDES_NUMBER_SLIDER_NEWS = 20;
+export const MIN_SLIDES_NUMBER_SLIDER_NEWS = 24;
 export const SLIDES_PERVIEW_DESKTOP_SLIDER_NEWS = 3;
-
+export const DESKTOP_WIDTH = 1440;
+export const TABLET_WIDTH = 768;
+export const MOBILE_WIDTH = 320;
 

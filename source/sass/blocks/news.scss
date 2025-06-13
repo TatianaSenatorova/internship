@@ -106,26 +106,28 @@
   }
 
   @media (min-width: $desktop-width) {
-    width: fit-content;
-    max-width: fit-content;
+    min-width: 286px;
+    max-width: 286px;
 
-
-    &:first-child {
-      max-height: 100%;
-      min-width: 604px;
-      max-width: 604px;
-        object-position: center;
+    &:nth-child(even) {
+      top: unset;
     }
 
-    &:nth-child(3n+1) {
+    //   &:nth-child(3n) {
+    //   grid-row:;
+    // }
+
+    // &:nth-child(4n) {
+    //   grid-row: 2 / 3;
+    // }
+
+    &--bigger-on-desktop {
       max-height: 100%;
       min-width: 604px;
       max-width: 604px;
-        object-position: center;
     }
   }
 }
-
 
 .news__buttons-swiper-list {
   display: flex;
