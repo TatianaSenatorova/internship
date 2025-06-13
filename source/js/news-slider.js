@@ -2,7 +2,8 @@ import Swiper from 'swiper';
 import { Pagination, Navigation, Grid } from 'swiper/modules';
 import {
   newsSlider,
-  newsSlides
+  newsSlides,
+  newsPagination
 } from './dom-elements.js';
 import {
   MIN_SLIDES_NUMBER_SLIDER_NEWS,
@@ -17,6 +18,8 @@ const initSlidesNumber = newsSlides.length;
 let slidesInDom;
 
 let newsSwiper;
+
+let bullets;
 
 const initSlider = () => {
   newsSwiper = new Swiper('.swiper-news', {
@@ -48,15 +51,15 @@ const initSlider = () => {
 
     pagination: {
       el: '.news__slider-pagination',
-      bulletClass: 'pagination-button',
-      bulletActiveClass: 'pagination-button--is-active',
+      bulletClass: 'pagination-item',
+      bulletActiveClass: 'pagination-item--is-active',
       type: 'bullets',
       clickable: true,
       dynamicBullets: true,
       dynamicMainBullets: 4,
       renderBullet: function (index, bulletClass) {
-        return `<button class=${bulletClass}><span class="visually-hidden">Перейти к слайду ${index + 1
-          }</span>${index + 1}</button>`;
+        return `<li class=${bulletClass}><button class="pagination-button"><span class="visually-hidden">Перейти к слайду ${index + 1
+          }</span>${index + 1}</button></li>`;
       },
       enabled: true,
     },
@@ -68,12 +71,20 @@ const initSlider = () => {
     on: {
       beforeInit: function () {
         checkSlidesQuantity();
+      },
+      afterInit: function () {
+        getPaginationBullets();
       }
     }
   });
 };
 
 initSlider();
+
+function getPaginationBullets() {
+  bullets = newsPagination.querySelectorAll('.pagination-item');
+  console.log(bullets);
+}
 
 // const unfocusNonActiveSlide = () => {
 //   slidesHero[heroSwiper.activeIndex].querySelector('.hero-card__primary-button').removeAttribute('tabindex');
@@ -168,6 +179,13 @@ const onDocumentDomContentLoaded = () => {
     addClassToSmallerCard();
   }
 }
+
+const onNewsSwiperSlideChange = () => {
+  const currentBulletWidth = bullets[newsSwiper.activeIndex].offsetWidth;
+console.log(currentBulletWidth);
+}
+
+newsSwiper.on('slideChange', onNewsSwiperSlideChange);
 
 window.addEventListener('resize', onWindowResizeEvent);
 document.addEventListener("DOMContentLoaded", onDocumentDomContentLoaded);

@@ -36,7 +36,7 @@
     color: $color-white;
   }
 
-  &--is-active {
+  .pagination-item--is-active & {
     background-color: $color-cerulean-blue;
     color: $color-white;
   }
