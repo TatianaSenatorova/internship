@@ -2,7 +2,6 @@
   min-width: 290px;
   max-width: 290px;
   min-height: 240px;
-  min-height: fit-content;
   display: grid;
   grid-template-columns: 1fr;
   border-radius: 12px;
@@ -11,6 +10,7 @@
   @media (min-width: $tablet-width) {
     min-width: 324px;
     max-width: 324px;
+    min-height: fit-content;
   }
 
   @media (min-width: $desktop-width) {
