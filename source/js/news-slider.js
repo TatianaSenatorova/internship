@@ -58,7 +58,7 @@ const initSlider = () => {
       dynamicBullets: true,
       dynamicMainBullets: 4,
       renderBullet: function (index, bulletClass) {
-        return `<li class=${bulletClass}><button class="pagination-button"><span class="visually-hidden">Перейти к слайду ${index + 1
+        return `<li class=${bulletClass} data-page=${index + 1}><button class="pagination-button"><span class="visually-hidden">Перейти к слайду ${index + 1
           }</span>${index + 1}</button></li>`;
       },
       enabled: true,
@@ -83,7 +83,6 @@ initSlider();
 
 function getPaginationBullets() {
   bullets = newsPagination.querySelectorAll('.pagination-item');
-  console.log(bullets);
 }
 
 // const unfocusNonActiveSlide = () => {
@@ -105,7 +104,6 @@ const removeAddedSlidesAndClasses = () => {
       cardImg.style.display = 'block';
     }
   });
-  console.log(slidesInDom);
 }
 
 function checkWindowWidth() {
@@ -142,7 +140,6 @@ function checkSlidesQuantity() {
 }
 
 const changeImgToBackground = (slide) => {
-  console.log('change')
   const cardImgWrap = slide.querySelector('.news-card__image-wrap');
   const cardImg = slide.querySelector('.news-card__image-wrap img');
   const urlForBackground = cardImg.getAttribute('src');
@@ -181,8 +178,11 @@ const onDocumentDomContentLoaded = () => {
 }
 
 const onNewsSwiperSlideChange = () => {
-  const currentBulletWidth = bullets[newsSwiper.activeIndex].offsetWidth;
-console.log(currentBulletWidth);
+  const currentBullet = newsPagination.querySelector('.pagination-item--is-active');
+  const currentBulletWidth = currentBullet.offsetWidth;
+  const xDistanceToParent = currentBullet.getBoundingClientRect();
+  const xNewsPagination = newsPagination.getBoundingClientRect();
+  console.log(xDistanceToParent, xNewsPagination)
 }
 
 newsSwiper.on('slideChange', onNewsSwiperSlideChange);

@@ -8,5 +8,6 @@ export const SLIDES_PERVIEW_DESKTOP_SLIDER_NEWS = 3;
 export const DESKTOP_WIDTH = 1440;
 export const TABLET_WIDTH = 768;
 export const MOBILE_WIDTH = 320;
+export const SHOW_NUMBER_BULLETS = 4;
 
 
