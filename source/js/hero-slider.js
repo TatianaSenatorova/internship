@@ -4,48 +4,61 @@ import {
   slidesHero,
   heroFalsePaginations,
   realPagination,
-  slidesHeroInfoContent,
   heroWrapsPagination
 } from './dom-elements.js';
 import {
-  PADDING_TOP_SLIDE_CONTENT
+  DESKTOP_WIDTH,
+  TABLET_WIDTH
 } from './constants.js';
 
 let windowWidth = document.documentElement.clientWidth;
+let heroSwiper;
+let prevIndex = 0;
 
-export const heroSwiper = new Swiper('.swiper-hero', {
-  modules: [Pagination],
-  direction: 'horizontal',
-  loop: true,
-  slidesPerView: 1,
-  initialSlide: 0,
+const initSlider = () => {
+  heroSwiper = new Swiper('.swiper-hero', {
+    modules: [Pagination],
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    initialSlide: 0,
 
-  breakpoints: {
-    768: {
+    breakpoints: {
+      768: {
+      },
+      1440: {
+        allowTouchMove: false,
+      }
     },
-    1440: {
-      allowTouchMove: false,
+
+    pagination: {
+      el: '.hero__slider-pagination',
+      bulletClass: 'pagination-bullet',
+      bulletActiveClass: 'pagination-bullet--is-active',
+      type: 'bullets',
+      clickable: true,
+      renderBullet: function (index, bulletClass) {
+        return `<button class=${bulletClass}><span class="visually-hidden">Перейти к слайду ${index + 1
+          }</span></button>`;
+      },
+      enabled: true,
+    },
+
+    on: {
+      slideChange: function (heroSwiper) {
+        onSlideChange(heroSwiper);
+      }
     }
-  },
+  });
+}
 
-  pagination: {
-    el: '.hero__slider-pagination',
-    bulletClass: 'pagination-bullet',
-    bulletActiveClass: 'pagination-bullet--is-active',
-    type: 'bullets',
-    clickable: true,
-    renderBullet: function (index, bulletClass) {
-      return `<button class=${bulletClass}><span class="visually-hidden">Перейти к слайду ${index + 1
-      }</span></button>`;
-    },
-    enabled: true,
-  },
-});
+initSlider();
 
-
-const unfocusNonActiveSlide = () => {
-  slidesHero[heroSwiper.activeIndex].querySelector('.hero-card__primary-button').removeAttribute('tabindex');
-  slidesHero[heroSwiper.previousIndex].querySelector('.hero-card__primary-button').setAttribute('tabindex', '-1');
+function unfocusNonActiveSlide(heroSwiper) {
+  slidesHero[heroSwiper.realIndex].querySelector('.hero-card__primary-button').removeAttribute('tabindex');
+  slidesHero[prevIndex].querySelector('.hero-card__primary-button').setAttribute('tabindex', '-1');
+  prevIndex = heroSwiper.realIndex;
 };
 
 const renderFalseBullets = () => {
@@ -61,38 +74,31 @@ const renderFalseBullets = () => {
   }
 };
 
-const renderRealPagination = () => {
-  heroWrapsPagination[heroSwiper.activeIndex].insertAdjacentElement('beforeend', realPagination);
+function renderRealPagination(currentSlide = 0) {
+  heroWrapsPagination[currentSlide].insertAdjacentElement('beforeend', realPagination)
 };
 
 renderFalseBullets();
 renderRealPagination();
 
-const hideRealPagination = () => {
-  realPagination.style.display = 'none';
-};
-
-const onSlideChangeTransitionEnd = () => {
-  realPagination.style.display = 'flex';
-};
-
-const onBeforeTransitionStart = () => {
-  hideRealPagination();
-  unfocusNonActiveSlide();
-  renderRealPagination();
+function onSlideChange(heroSwiper) {
+  const activeSlide = heroSwiper.realIndex;
+  unfocusNonActiveSlide(heroSwiper);
+  renderRealPagination(activeSlide);
 };
 
 const onWindowResize = () => {
   const currentWindowWidth = document.documentElement.clientWidth;
-  if ((currentWindowWidth < 768 && windowWidth < 768) || (768 >= currentWindowWidth < 1440 && 768 >= windowWidth < 1440) || (currentWindowWidth >= 1440 && windowWidth >= 1440)) {
+  if ((currentWindowWidth < TABLET_WIDTH && windowWidth < TABLET_WIDTH) || (currentWindowWidth >= DESKTOP_WIDTH && windowWidth >= DESKTOP_WIDTH) ||
+    ((currentWindowWidth >= TABLET_WIDTH && currentWindowWidth < DESKTOP_WIDTH && windowWidth >= TABLET_WIDTH && windowWidth < DESKTOP_WIDTH))) {
     windowWidth = currentWindowWidth;
     return;
   }
-  hideRealPagination();
+  windowWidth = document.documentElement.clientWidth;
+  prevIndex = 0;
+  heroSwiper.destroy(true, true);
+  initSlider();
   renderRealPagination();
-  onSlideChangeTransitionEnd();
 };
 
-heroSwiper.on('slideChangeTransitionStart', onBeforeTransitionStart);
-heroSwiper.on('slideChangeTransitionEnd', onSlideChangeTransitionEnd);
 window.addEventListener('resize', onWindowResize);

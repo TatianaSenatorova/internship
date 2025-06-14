@@ -6,9 +6,9 @@ export const navSubLists = mainHeader.querySelectorAll('.main-header__sub-nav-li
 export const buttonsSubMenu = mainHeader.querySelectorAll('.main-header__nav-button');
 export const mainHeaderSublinks = mainHeader.querySelectorAll('.main-header__nav-link--sub-link');
 export const subMenus = document.querySelectorAll('.main-header__sub-nav-list');
+
 export const sliderHero = document.querySelector('.hero__slider');
 export const slidesHero = sliderHero.querySelectorAll('.hero__slider-item');
-export const slidesHeroInfoContent = sliderHero.querySelectorAll('.hero-card__info-wrap');
 export const heroPagination = sliderHero.querySelector('.hero__slider-pagination');
 export const heroFalsePaginations = sliderHero.querySelectorAll('.hero-card__false-pagination');
 export const heroWrapsPagination = sliderHero.querySelectorAll('.hero-card__pagination-nebo-wrap');

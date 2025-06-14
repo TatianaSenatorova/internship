@@ -121,7 +121,6 @@ function getStartPage(activeIndex = 0) {
 }
 
 function updatePagination(activeIndex = 0) {
-  console.log('pag')
   getStartPage(activeIndex);
   let paginationHTML = '';
   for (let i = startPage; i < startPage + SHOW_NUMBER_BULLETS; i++) {
