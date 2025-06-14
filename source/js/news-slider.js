@@ -7,7 +7,12 @@ import {
 } from './dom-elements.js';
 import {
   MIN_SLIDES_NUMBER_SLIDER_NEWS,
-  SLIDES_PERVIEW_DESKTOP_SLIDER_NEWS,
+  SLIDES_PERPAGE_DESKTOP_SLIDER_NEWS,
+  SLIDES_PERPAGE_TABLET_SLIDER_NEWS,
+  SLIDES_PERPAGE_MOBILE_SLIDER_NEWS,
+  INIT_PAGE_SLIDER_NEWS,
+  SLIDES_ROWS_SLIDER_NEWS,
+  SHOW_NUMBER_BULLETS,
   DESKTOP_WIDTH,
   TABLET_WIDTH
 } from './constants.js';
@@ -15,17 +20,21 @@ import {
 let windowWidth = document.documentElement.clientWidth;
 const initSlidesNumber = newsSlides.length;
 
-let slidesInDom;
+let slidesInDom, slidesNumber, totalPages, startPage, slidesPerPage;
+let currentPage = INIT_PAGE_SLIDER_NEWS;
 
 let newsSwiper;
 
-let bullets;
+const bulletClass = 'pagination-item';
+
+// let startBullet = Math.min(Math.max(current - 2, 1), total - countBullets + 1);
 
 const initSlider = () => {
   newsSwiper = new Swiper('.swiper-news', {
     modules: [Pagination, Navigation, Grid],
     direction: 'horizontal',
     slidesPerView: 1,
+    slidesPerGroup: 1,
     initialSlide: 0,
     spaceBetween: 18,
 
@@ -44,7 +53,7 @@ const initSlider = () => {
       1440: {
         grid: false,
         spaceBetween: 32,
-        slidesPerView: SLIDES_PERVIEW_DESKTOP_SLIDER_NEWS,
+        slidesPerView: SLIDES_PERPAGE_DESKTOP_SLIDER_NEWS,
         slidesPerGroup: 3,
       }
     },
@@ -55,8 +64,8 @@ const initSlider = () => {
       bulletActiveClass: 'pagination-item--is-active',
       type: 'bullets',
       clickable: true,
-      dynamicBullets: true,
-      dynamicMainBullets: 4,
+      // dynamicBullets: true,
+      // dynamicMainBullets: 4,
       renderBullet: function (index, bulletClass) {
         return `<li class=${bulletClass} data-page=${index + 1}><button class="pagination-button"><span class="visually-hidden">Перейти к слайду ${index + 1
           }</span>${index + 1}</button></li>`;
@@ -71,19 +80,72 @@ const initSlider = () => {
     on: {
       beforeInit: function () {
         checkSlidesQuantity();
+        getTotalPages();
       },
       afterInit: function () {
-        getPaginationBullets();
+        // getPaginationBullets();
       }
     }
   });
 };
 
 initSlider();
+getStartPage();
 
-function getPaginationBullets() {
-  bullets = newsPagination.querySelectorAll('.pagination-item');
+function getTotalPages() {
+  if (windowWidth < 768) {
+    slidesPerPage = SLIDES_PERPAGE_MOBILE_SLIDER_NEWS;
+    totalPages = Math.ceil(slidesNumber / SLIDES_PERPAGE_MOBILE_SLIDER_NEWS);
+    return;
+  } else if (windowWidth <= 1440) {
+    slidesPerPage = SLIDES_PERPAGE_DESKTOP_SLIDER_NEWS;
+    totalPages = Math.ceil(slidesNumber / SLIDES_PERPAGE_DESKTOP_SLIDER_NEWS);
+    return;
+  }
+  slidesPerPage = SLIDES_PERPAGE_TABLET_SLIDER_NEWS;
+  totalPages = Math.ceil(slidesNumber / SLIDES_PERPAGE_TABLET_SLIDER_NEWS);
 }
+
+function getStartPage(activeIndex = 0) {
+  if (windowWidth >= 1440) {
+    currentPage = Math.floor(activeIndex / SLIDES_PERPAGE_DESKTOP_SLIDER_NEWS) + 1;
+    return startPage = Math.min(Math.max(currentPage - 2, 1), totalPages - SHOW_NUMBER_BULLETS + 1);
+
+  } else if (windowWidth < 768) {
+    currentPage = activeIndex + 1;
+    return startPage = Math.min(Math.max(currentPage - 2, 1), totalPages - SHOW_NUMBER_BULLETS + 1);
+  }
+  currentPage = Math.floor(activeIndex / SLIDES_ROWS_SLIDER_NEWS) + 1;
+  return startPage = Math.min(Math.max(currentPage - 2, 1), totalPages - SHOW_NUMBER_BULLETS + 1);
+}
+
+function updatePagination(activeIndex = 0) {
+  console.log('зашел')
+  getStartPage(activeIndex);
+  console.log(activeIndex, currentPage, startPage)
+  let paginationHTML = '';
+  for (let i = startPage; i < startPage + SHOW_NUMBER_BULLETS; i++) {
+    const isActive = i === currentPage ? 'pagination-item--is-active' : '';
+    paginationHTML += `<li class="pagination-item ${isActive}" data-index="${i - 1}"><button class="pagination-button"><span class="visually-hidden">Перейти к слайду ${i
+      }</span>${i}</button></li>`
+    // paginationHTML += `<span class="swiper-pagination-bullet ${isActive}" data-index="${i}">${i + 1}</span>`;
+  }
+  newsPagination.innerHTML = paginationHTML;
+
+  // Добавляем обработчик клика для переключения слайдов
+  newsPagination.querySelectorAll('.swiper-pagination-bullet').forEach(bullet => {
+    bullet.addEventListener('click', function () {
+      const index = parseInt(this.dataset.index);
+      newsSwiper.slideTo(index);
+    });
+  });
+}
+
+updatePagination();
+
+newsSwiper.on('slideChange', () => updatePagination(newsSwiper.activeIndex));
+
+
 
 // const unfocusNonActiveSlide = () => {
 //   slidesHero[heroSwiper.activeIndex].querySelector('.hero-card__primary-button').removeAttribute('tabindex');
@@ -131,7 +193,7 @@ const onWindowResizeEvent = () => {
 
 function checkSlidesQuantity() {
   slidesInDom = newsSlider.querySelectorAll('.news__slider-item');
-  let slidesNumber = slidesInDom.length;
+  slidesNumber = slidesInDom.length;
   const slidesToAdd = newsSlider.innerHTML;
   while (slidesNumber < MIN_SLIDES_NUMBER_SLIDER_NEWS) {
     newsSlider.insertAdjacentHTML('beforeend', slidesToAdd);
@@ -177,15 +239,15 @@ const onDocumentDomContentLoaded = () => {
   }
 }
 
-const onNewsSwiperSlideChange = () => {
-  const currentBullet = newsPagination.querySelector('.pagination-item--is-active');
-  const currentBulletWidth = currentBullet.offsetWidth;
-  const xDistanceToParent = currentBullet.getBoundingClientRect();
-  const xNewsPagination = newsPagination.getBoundingClientRect();
-  console.log(xDistanceToParent, xNewsPagination)
-}
+// const onNewsSwiperSlideChange = () => {
+//   const currentBullet = newsPagination.querySelector('.pagination-item--is-active');
+//   const currentBulletWidth = currentBullet.offsetWidth;
+//   const xDistanceToParent = currentBullet.getBoundingClientRect();
+//   const xNewsPagination = newsPagination.getBoundingClientRect();
+//   console.log(xDistanceToParent, xNewsPagination)
+// }
 
-newsSwiper.on('slideChange', onNewsSwiperSlideChange);
+newsSwiper.on('slideChange', getStartPage);
 
 window.addEventListener('resize', onWindowResizeEvent);
 document.addEventListener("DOMContentLoaded", onDocumentDomContentLoaded);
