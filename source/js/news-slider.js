@@ -91,6 +91,7 @@ const initSlider = () => {
 
 initSlider();
 getStartPage();
+updatePagination();
 
 function getTotalPages() {
   if (windowWidth < 768) {
@@ -120,18 +121,20 @@ function getStartPage(activeIndex = 0) {
 }
 
 function updatePagination(activeIndex = 0) {
+  console.log('pag')
   getStartPage(activeIndex);
   let paginationHTML = '';
   for (let i = startPage; i < startPage + SHOW_NUMBER_BULLETS; i++) {
     const isActive = i === currentPage ? 'pagination-button--is-active' : '';
-    paginationHTML += `<li ><button class="pagination-button ${isActive}" data-index="${i - 1}"><span class="visually-hidden">Перейти к слайду ${i
-    }</span>${i}</button></li>`;
+    paginationHTML += `<button class="pagination-button ${isActive}" data-index="${i - 1}"><span class="visually-hidden">Перейти к слайду ${i
+    }</span>${i}</button>`;
     // paginationHTML += `<span class="swiper-pagination-bullet ${isActive}" data-index="${i}">${i + 1}</span>`;
   }
   newsPagination.innerHTML = paginationHTML;
 
   // Добавляем обработчик клика для переключения слайдов
   newsPagination.querySelectorAll('.swiper-pagination-bullet').forEach((bullet) => {
+    console.log(bullet);
     bullet.addEventListener('click', function () {
       const index = parseInt(this.dataset.index);
       newsSwiper.slideTo(index);
@@ -182,6 +185,8 @@ function checkWindowWidth() {
     addClassToSmallerCard();
   }
   initSlider();
+  getStartPage();
+  updatePagination();
 }
 
 const onWindowResizeEvent = () => {
@@ -235,14 +240,6 @@ const onDocumentDomContentLoaded = () => {
     addClassToSmallerCard();
   }
 };
-
-// const onNewsSwiperSlideChange = () => {
-//   const currentBullet = newsPagination.querySelector('.pagination-button--is-active');
-//   const currentBulletWidth = currentBullet.offsetWidth;
-//   const xDistanceToParent = currentBullet.getBoundingClientRect();
-//   const xNewsPagination = newsPagination.getBoundingClientRect();
-//   console.log(xDistanceToParent, xNewsPagination)
-// }
 
 newsSwiper.on('slideChange', getStartPage);
 
