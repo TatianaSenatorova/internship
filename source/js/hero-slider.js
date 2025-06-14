@@ -13,7 +13,7 @@ import {
 
 let windowWidth = document.documentElement.clientWidth;
 let heroSwiper;
-let prevIndex = 0;
+let prevIndex;
 
 const initSlider = () => {
   heroSwiper = new Swiper('.swiper-hero', {
@@ -56,8 +56,12 @@ const initSlider = () => {
 initSlider();
 
 function unfocusNonActiveSlide(heroSwiper) {
+  console.log('зашел', heroSwiper.realIndex, prevIndex);
+  console.log(slidesHero[heroSwiper.realIndex].querySelector('.hero-card__primary-button'))
   slidesHero[heroSwiper.realIndex].querySelector('.hero-card__primary-button').removeAttribute('tabindex');
-  slidesHero[prevIndex].querySelector('.hero-card__primary-button').setAttribute('tabindex', '-1');
+  if (prevIndex) {
+    slidesHero[prevIndex].querySelector('.hero-card__primary-button').setAttribute('tabindex', '-1');
+  }
   prevIndex = heroSwiper.realIndex;
 };
 
@@ -95,7 +99,7 @@ const onWindowResize = () => {
     return;
   }
   windowWidth = document.documentElement.clientWidth;
-  prevIndex = 0;
+  prevIndex = null;
   heroSwiper.destroy(true, true);
   initSlider();
   renderRealPagination();
