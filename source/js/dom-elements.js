@@ -23,12 +23,12 @@ export const newsSlider = document.querySelector('.news__slider-list');
 export const newsSlides = document.querySelectorAll('.news__slider-item');
 export const newsPagination = document.querySelector('.news__slider-pagination');
 
-  // slidesPerView: 1,
-  // slidesPerColumn: 2,
-  // initialSlide: 0,
-  // spaceBetween: 30,
+// slidesPerView: 1,
+// slidesPerColumn: 2,
+// initialSlide: 0,
+// spaceBetween: 30,
 
-  // grid: {
-  //   rows: 2,
-  //   // fill: 'row',
-  // },
+// grid: {
+//   rows: 2,
+//   // fill: 'row',
+// },

@@ -1,6 +1,7 @@
 .reviews {
   padding: 50px 0;
 
+  --slider-nav-buttons-height: 32px;
   --padding-tablet: 45px;
   --padding-desktop: 100px;
   --additional-padding-click-zone: 10px;
@@ -18,10 +19,6 @@
   }
 }
 
-.reviews__wrap {
-  position: relative;
-}
-
 .reviews__section-title {
   min-height: var(--slider-nav-buttons-height);
   margin: 0;
@@ -32,7 +29,7 @@
     min-height: unset;
     margin-bottom: 40px;
   }
-  
+
 
   @media (min-width: $desktop-width) {
     margin-bottom: 45px;

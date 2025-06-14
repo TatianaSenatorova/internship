@@ -1,6 +1,7 @@
 .programs {
   padding: 48px 0 50px;
 
+  --slider-nav-buttons-height: 32px;
   --padding-tablet: 45px;
   --additional-padding-click-zone: 10px;
 
@@ -95,9 +96,6 @@
   @media (min-width: $tablet-width) {
     width: fit-content;
   }
-  @media (min-width: $desktop-width) {
-  }
-
 }
 
 .programs__buttons-swiper-list {

@@ -29,4 +29,3 @@ export const reviewsSwiper = new Swiper('.swiper-reviews', {
     prevEl: '.swiper-button-reviews-prev'
   }
 });
-

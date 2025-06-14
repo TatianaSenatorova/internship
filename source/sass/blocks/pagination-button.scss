@@ -1,5 +1,6 @@
 .pagination-button {
   --pagination-buttons-height: 26px;
+
   position: relative;
   display: flex;
   align-items: center;
@@ -42,7 +43,7 @@
   }
 
   @media (min-width: $tablet-width) {
-      width: 32px;
-  height: 32px;
+    width: 32px;
+    height: 32px;
   }
 }

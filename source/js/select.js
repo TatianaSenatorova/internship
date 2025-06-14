@@ -56,7 +56,7 @@ export class CustomSelect {
       item.classList.add('not-empty');
       buttonTextBlock.innerHTML = str;
     } else if (multiple) {
-      return;
+
     } else {
       item.classList.add('not-empty');
       buttonTextBlock.innerHTML = activeItems[0].innerHTML;

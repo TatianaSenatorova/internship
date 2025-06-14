@@ -32,8 +32,6 @@
   @media (min-width: $tablet-width) {
     margin-bottom: 30px;
   }
-
-  @media (min-width: $desktop-width) {}
 }
 
 .contacts__items-wrapper {
@@ -62,8 +60,6 @@
       margin-bottom: unset;
     }
   }
-
-  @media (min-width: $desktop-width) {}
 }
 
 .contacts__item-title {
@@ -89,8 +85,6 @@
       margin-bottom: 24px;
     }
   }
-
-  @media (min-width: $desktop-width) {}
 }
 
 .contacts__address-text {

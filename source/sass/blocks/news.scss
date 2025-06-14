@@ -1,8 +1,8 @@
 .news {
   position: relative;
   padding: 51px 0 50px;
-  --pagination-buttons-height: 26px;
 
+  --pagination-buttons-height: 26px;
 }
 
 .news__section-title {
@@ -45,7 +45,6 @@
 
 .news__slider .news__slider-item {
   height: auto;
-
 }
 
 .news__slider-list {
@@ -119,8 +118,6 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-
-  @media (min-width: $desktop-width) {}
 }
 
 .news__buttons-swiper-list {
@@ -130,8 +127,6 @@
   width: 100%;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
-
-  @media (min-width: $desktop-width) {}
 }
 
 .news__slider-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {

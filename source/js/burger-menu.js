@@ -12,7 +12,7 @@ import {
   SUB_MENU_PADDING_TOP
 } from './constants.js';
 
-let subLists = {};
+const subLists = {};
 
 const scrollWidth = window.innerWidth - document.documentElement.clientWidth;
 
@@ -21,8 +21,8 @@ const getSubLinks = () => {
     const subListName = button.getAttribute('data-button');
     const subListItems = navList.querySelector(`[data-submenu=${subListName}]`).querySelectorAll('.main-header__nav-link--sub-link');
     subLists[subListName] = subListItems;
-  })
-}
+  });
+};
 getSubLinks();
 
 const changeTabindexSubLinks = (subLinks, isToAdd = true) => {
@@ -33,8 +33,8 @@ const changeTabindexSubLinks = (subLinks, isToAdd = true) => {
     } else {
       subLink.removeAttribute('tabindex', '-1');
     }
-  })
-}
+  });
+};
 
 const onButtonSubMenuClick = (evt) => {
   evt.target.classList.toggle(CLASS_SUB_MENU_BUTTON_ACTIVE);

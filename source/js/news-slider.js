@@ -68,7 +68,7 @@ const initSlider = () => {
       // dynamicMainBullets: 4,
       renderBullet: function (index, bulletClass) {
         return `<li><button class=${bulletClass} data-index=${index + 1}><span class="visually-hidden">Перейти к слайду ${index + 1
-          }</span>${index + 1}</button></li>`;
+        }</span>${index + 1}</button></li>`;
       },
       enabled: true,
     },
@@ -120,20 +120,20 @@ function getStartPage(activeIndex = 0) {
 }
 
 function updatePagination(activeIndex = 0) {
-  console.log('зашел')
+  console.log('зашел');
   getStartPage(activeIndex);
-  console.log(activeIndex, currentPage, startPage)
+  console.log(activeIndex, currentPage, startPage);
   let paginationHTML = '';
   for (let i = startPage; i < startPage + SHOW_NUMBER_BULLETS; i++) {
     const isActive = i === currentPage ? 'pagination-button--is-active' : '';
     paginationHTML += `<li ><button class="pagination-button ${isActive}" data-index="${i - 1}"><span class="visually-hidden">Перейти к слайду ${i
-      }</span>${i}</button></li>`
+    }</span>${i}</button></li>`;
     // paginationHTML += `<span class="swiper-pagination-bullet ${isActive}" data-index="${i}">${i + 1}</span>`;
   }
   newsPagination.innerHTML = paginationHTML;
 
   // Добавляем обработчик клика для переключения слайдов
-  newsPagination.querySelectorAll('.swiper-pagination-bullet').forEach(bullet => {
+  newsPagination.querySelectorAll('.swiper-pagination-bullet').forEach((bullet) => {
     bullet.addEventListener('click', function () {
       const index = parseInt(this.dataset.index);
       newsSwiper.slideTo(index);
@@ -144,7 +144,6 @@ function updatePagination(activeIndex = 0) {
 updatePagination();
 
 newsSwiper.on('slideChange', () => updatePagination(newsSwiper.activeIndex));
-
 
 
 // const unfocusNonActiveSlide = () => {
@@ -166,7 +165,7 @@ const removeAddedSlidesAndClasses = () => {
       cardImg.style.display = 'block';
     }
   });
-}
+};
 
 function checkWindowWidth() {
   const currentWindowWidth = document.documentElement.clientWidth;
@@ -189,7 +188,7 @@ function checkWindowWidth() {
 
 const onWindowResizeEvent = () => {
   checkWindowWidth();
-}
+};
 
 function checkSlidesQuantity() {
   slidesInDom = newsSlider.querySelectorAll('.news__slider-item');
@@ -207,7 +206,7 @@ const changeImgToBackground = (slide) => {
   const urlForBackground = cardImg.getAttribute('src');
   cardImgWrap.style.backgroundImage = `url('../../${urlForBackground}')`;
   cardImg.style.display = 'none';
-}
+};
 
 const addClassToBiggerCard = () => {
   slidesInDom = newsSlider.querySelectorAll('.news__slider-item');
@@ -216,8 +215,8 @@ const addClassToBiggerCard = () => {
       slide.classList.add('news__slider-item--bigger-on-desktop');
       changeImgToBackground(slide);
     }
-  })
-}
+  });
+};
 
 const addClassToSmallerCard = () => {
   slidesInDom = newsSlider.querySelectorAll('.news__slider-item');
@@ -226,8 +225,8 @@ const addClassToSmallerCard = () => {
       slide.classList.add('news__slider-item--smaller-on-mobile');
       changeImgToBackground(slide);
     }
-  })
-}
+  });
+};
 
 
 const onDocumentDomContentLoaded = () => {
@@ -237,7 +236,7 @@ const onDocumentDomContentLoaded = () => {
   } else if (windowWidth < TABLET_WIDTH) {
     addClassToSmallerCard();
   }
-}
+};
 
 // const onNewsSwiperSlideChange = () => {
 //   const currentBullet = newsPagination.querySelector('.pagination-button--is-active');
@@ -250,4 +249,4 @@ const onDocumentDomContentLoaded = () => {
 newsSwiper.on('slideChange', getStartPage);
 
 window.addEventListener('resize', onWindowResizeEvent);
-document.addEventListener("DOMContentLoaded", onDocumentDomContentLoaded);
+document.addEventListener('DOMContentLoaded', onDocumentDomContentLoaded);

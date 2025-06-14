@@ -94,17 +94,17 @@
     padding-left: 30px;
   }
 
+  &--dark-background::before {
+    background-color: $color-white;
+  }
+
+  &--dark-background::after {
+    background-color: $color-cerulean-blue;
+  }
+
   &--dark-background {
     color: $color-white;
     border-color: $color-white;
-
-    &::before {
-      background-color: $color-white;
-    }
-
-    &::after {
-      background-color: $color-cerulean-blue;
-    }
 
     &:hover {
       background-color: $color-white;
@@ -123,7 +123,7 @@
     &:focus {
       background-color: $color-cerulean-blue;
       color: $color-white;
-     border-color: $color-white;
+      border-color: $color-white;
     }
 
     &:focus::before {
@@ -182,7 +182,7 @@
   @media (min-width: $tablet-width) {
     grid-template-columns: 1fr 48px;
     column-gap: 29px;
-      padding: 3px 4px 3px 29px;
+    padding: 3px 4px 3px 29px;
     font-size: 14px;
     letter-spacing: 0.28px;
 

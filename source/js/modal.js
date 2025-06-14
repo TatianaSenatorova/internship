@@ -19,14 +19,14 @@ const onDocumentlClick = (evt) => {
   if (evt.target.closest('.modal__close-button') || !evt.target.closest('.modal__content')) {
     closeModal();
   }
-}
+};
 
 const onButtonOpenModalClick = (evt) => {
   evt.stopPropagation();
   modal.classList.add('modal--is-opened');
   document.addEventListener('keydown', onDocumentKeydown);
   document.addEventListener('click', onDocumentlClick);
-}
+};
 
 const clearForm = () => {
   modalForm.reset();
@@ -40,5 +40,3 @@ function closeModal() {
 }
 
 buttonOpenModal.addEventListener('click', onButtonOpenModalClick);
-
-

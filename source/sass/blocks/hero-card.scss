@@ -55,8 +55,6 @@
     min-height: 40px;
     border-radius: 20px 20px 0 0;
   }
-
-  @media (min-width: $desktop-width) {}
 }
 
 .hero-card__false-pagination {
@@ -77,8 +75,6 @@
     gap: 8px;
     padding: 12px 18px;
   }
-
-  @media (min-width: $desktop-width) {}
 }
 
 .hero-card__pagination-right-rounding {
@@ -97,8 +93,6 @@
 
     @include radius-rounding($radius: var(--radius-20));
   }
-
-  @media (min-width: $desktop-width) {}
 }
 
 .hero-card__title {

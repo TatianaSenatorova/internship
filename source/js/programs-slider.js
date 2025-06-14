@@ -16,11 +16,11 @@ export const programsSwiper = new Swiper('.swiper-programs', {
   //       rows: 1,
   //       // fill: 'row',
   //   },
-    // grid: {
-    //     rows: 1, // Количество строк
-    //     perRow: 2, // Количество слайдов в каждой строке (или по-другому, columns)
-    //     gutter: 20, // Расстояние между слайдами (gap)
-    //   },
+  // grid: {
+  //     rows: 1, // Количество строк
+  //     perRow: 2, // Количество слайдов в каждой строке (или по-другому, columns)
+  //     gutter: 20, // Расстояние между слайдами (gap)
+  //   },
 
   breakpoints: {
     768: {
@@ -44,4 +44,3 @@ export const programsSwiper = new Swiper('.swiper-programs', {
     prevEl: '.swiper-button-programs-prev'
   }
 });
-

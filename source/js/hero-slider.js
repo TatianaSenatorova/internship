@@ -36,7 +36,7 @@ export const heroSwiper = new Swiper('.swiper-hero', {
     clickable: true,
     renderBullet: function (index, bulletClass) {
       return `<button class=${bulletClass}><span class="visually-hidden">Перейти к слайду ${index + 1
-        }</span></button>`;
+      }</span></button>`;
     },
     enabled: true,
   },
@@ -53,34 +53,34 @@ const renderFalseBullets = () => {
   for (let index = 0; index < numberOfSlides; index++) {
     for (let j = 0; j < numberOfSlides; j++) {
       if (index === j) {
-        heroFalsePaginations[index].insertAdjacentHTML('beforeend', `<span class="pagination-bullet pagination-bullet--is-active"></span>`);
+        heroFalsePaginations[index].insertAdjacentHTML('beforeend', '<span class="pagination-bullet pagination-bullet--is-active"></span>');
       } else {
-        heroFalsePaginations[index].insertAdjacentHTML('beforeend', `<span class="pagination-bullet"></span>`);
+        heroFalsePaginations[index].insertAdjacentHTML('beforeend', '<span class="pagination-bullet"></span>');
       }
     }
   }
-}
+};
 
 const renderRealPagination = () => {
   heroWrapsPagination[heroSwiper.activeIndex].insertAdjacentElement('beforeend', realPagination);
-}
+};
 
 renderFalseBullets();
 renderRealPagination();
 
 const hideRealPagination = () => {
   realPagination.style.display = 'none';
-}
+};
 
 const onSlideChangeTransitionEnd = () => {
   realPagination.style.display = 'flex';
-}
+};
 
 const onBeforeTransitionStart = () => {
   hideRealPagination();
   unfocusNonActiveSlide();
   renderRealPagination();
-}
+};
 
 const onWindowResize = () => {
   const currentWindowWidth = document.documentElement.clientWidth;
@@ -91,7 +91,7 @@ const onWindowResize = () => {
   hideRealPagination();
   renderRealPagination();
   onSlideChangeTransitionEnd();
-}
+};
 
 heroSwiper.on('slideChangeTransitionStart', onBeforeTransitionStart);
 heroSwiper.on('slideChangeTransitionEnd', onSlideChangeTransitionEnd);

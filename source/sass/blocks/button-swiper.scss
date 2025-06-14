@@ -1,8 +1,7 @@
 .button-swiper {
-  position: relative;
+  --slider-nav-buttons-height: 32px;
 
-  // width: 32px;
-  // height: 32px;
+  position: relative;
   width: var(--slider-nav-buttons-height);
   height: var(--slider-nav-buttons-height);
   padding: 6px;
