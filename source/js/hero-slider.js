@@ -6,12 +6,7 @@ import {
   realPagination,
   heroWrapsPagination
 } from './dom-elements.js';
-import {
-  DESKTOP_WIDTH,
-  TABLET_WIDTH
-} from './constants.js';
 
-let windowWidth = document.documentElement.clientWidth;
 let heroSwiper;
 let prevIndex;
 
@@ -89,18 +84,9 @@ function onSlideChange(heroSwiper) {
   renderRealPagination(activeSlide);
 };
 
-const onWindowResize = () => {
-  const currentWindowWidth = document.documentElement.clientWidth;
-  if ((currentWindowWidth < TABLET_WIDTH && windowWidth < TABLET_WIDTH) || (currentWindowWidth >= DESKTOP_WIDTH && windowWidth >= DESKTOP_WIDTH) ||
-    ((currentWindowWidth >= TABLET_WIDTH && currentWindowWidth < DESKTOP_WIDTH && windowWidth >= TABLET_WIDTH && windowWidth < DESKTOP_WIDTH))) {
-    windowWidth = currentWindowWidth;
-    return;
-  }
-  windowWidth = document.documentElement.clientWidth;
+export const onResizeUpdateHeroSlider = () => {
   prevIndex = null;
   heroSwiper.destroy(true, true);
   initSlider();
   renderRealPagination();
 };
-
-window.addEventListener('resize', onWindowResize);

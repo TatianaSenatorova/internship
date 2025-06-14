@@ -1,10 +1,5 @@
 import Swiper from 'swiper';
 import { Navigation, Scrollbar } from 'swiper/modules';
-// import {
-//   slidesHero,
-//   slidesHeroInfoContent,
-//   heroPagination
-// } from './dom-elements.js';
 
 export const programsSwiper = new Swiper('.swiper-programs', {
   modules: [Navigation, Scrollbar],
@@ -12,15 +7,6 @@ export const programsSwiper = new Swiper('.swiper-programs', {
   slidesPerView: 1,
   initialSlide: 0,
   spaceBetween: 30,
-  //  grid: {
-  //       rows: 1,
-  //       // fill: 'row',
-  //   },
-  // grid: {
-  //     rows: 1, // Количество строк
-  //     perRow: 2, // Количество слайдов в каждой строке (или по-другому, columns)
-  //     gutter: 20, // Расстояние между слайдами (gap)
-  //   },
 
   breakpoints: {
     768: {
@@ -44,3 +30,5 @@ export const programsSwiper = new Swiper('.swiper-programs', {
     prevEl: '.swiper-button-programs-prev'
   }
 });
+
+
