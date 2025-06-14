@@ -6,7 +6,7 @@
   display: grid;
   grid-template-columns: 1fr;
   align-content: flex-end;
-   border-radius: 12px;
+  border-radius: 12px;
   background-color: $color-echo-blue;
   --radius-18: 18px;
   background-repeat: no-repeat;
@@ -99,7 +99,6 @@
 }
 
 .programs-card__info {
-
   display: grid;
   grid-template-rows: auto 1fr;
   border-radius: 12px;
@@ -156,6 +155,7 @@
 }
 
 .programs-card__bottom-wrap {
+  min-height: 69px;
   display: grid;
   grid-template-columns: 188px 36px;
   gap: 10px;
@@ -165,8 +165,13 @@
   background-color: $color-white;
 
   @media (min-width: $tablet-width) {
+    min-height: 87px;
     grid-template-columns: 195px 36px;
     gap: 17px;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-height: 82px;
   }
 }
 

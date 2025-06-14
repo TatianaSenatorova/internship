@@ -25,7 +25,7 @@ let currentPage = INIT_PAGE_SLIDER_NEWS;
 
 let newsSwiper;
 
-const bulletClass = 'pagination-item';
+const bulletClass = 'pagination-button';
 
 // let startBullet = Math.min(Math.max(current - 2, 1), total - countBullets + 1);
 
@@ -60,14 +60,14 @@ const initSlider = () => {
 
     pagination: {
       el: '.news__slider-pagination',
-      bulletClass: 'pagination-item',
-      bulletActiveClass: 'pagination-item--is-active',
+      bulletClass: 'pagination-button',
+      bulletActiveClass: 'pagination-button--is-active',
       type: 'bullets',
       clickable: true,
       // dynamicBullets: true,
       // dynamicMainBullets: 4,
       renderBullet: function (index, bulletClass) {
-        return `<li class=${bulletClass} data-page=${index + 1}><button class="pagination-button"><span class="visually-hidden">Перейти к слайду ${index + 1
+        return `<li><button class=${bulletClass} data-index=${index + 1}><span class="visually-hidden">Перейти к слайду ${index + 1
           }</span>${index + 1}</button></li>`;
       },
       enabled: true,
@@ -125,8 +125,8 @@ function updatePagination(activeIndex = 0) {
   console.log(activeIndex, currentPage, startPage)
   let paginationHTML = '';
   for (let i = startPage; i < startPage + SHOW_NUMBER_BULLETS; i++) {
-    const isActive = i === currentPage ? 'pagination-item--is-active' : '';
-    paginationHTML += `<li class="pagination-item ${isActive}" data-index="${i - 1}"><button class="pagination-button"><span class="visually-hidden">Перейти к слайду ${i
+    const isActive = i === currentPage ? 'pagination-button--is-active' : '';
+    paginationHTML += `<li ><button class="pagination-button ${isActive}" data-index="${i - 1}"><span class="visually-hidden">Перейти к слайду ${i
       }</span>${i}</button></li>`
     // paginationHTML += `<span class="swiper-pagination-bullet ${isActive}" data-index="${i}">${i + 1}</span>`;
   }
@@ -240,7 +240,7 @@ const onDocumentDomContentLoaded = () => {
 }
 
 // const onNewsSwiperSlideChange = () => {
-//   const currentBullet = newsPagination.querySelector('.pagination-item--is-active');
+//   const currentBullet = newsPagination.querySelector('.pagination-button--is-active');
 //   const currentBulletWidth = currentBullet.offsetWidth;
 //   const xDistanceToParent = currentBullet.getBoundingClientRect();
 //   const xNewsPagination = newsPagination.getBoundingClientRect();

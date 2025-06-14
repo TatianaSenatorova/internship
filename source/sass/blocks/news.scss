@@ -36,11 +36,9 @@
     gap: 5px;
     flex-wrap: wrap;
   }
-
 }
 
 .news__slider {
-  // height: 700px;
   overflow: hidden;
   margin-bottom: 24px;
 }
@@ -56,8 +54,6 @@
   padding: 0;
   list-style: none;
   display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  // grid-template-rows: repeat(2, auto);
 
   @media (min-width: $tablet-width) {
     grid-template-columns: repeat(auto-fit, minmax(324px, 1fr));
@@ -66,8 +62,6 @@
 
   @media (min-width: $desktop-width) {
     display: flex;
-    //   grid-template-columns: auto;
-    //  grid-template-rows: 1fr;
   }
 }
 
@@ -113,14 +107,6 @@
       top: unset;
     }
 
-    //   &:nth-child(3n) {
-    //   grid-row:;
-    // }
-
-    // &:nth-child(4n) {
-    //   grid-row: 2 / 3;
-    // }
-
     &--bigger-on-desktop {
       max-height: 100%;
       min-width: 604px;
@@ -130,8 +116,11 @@
 }
 
 .news__slider-bottom {
-  position: relative;
-  height: 60px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+
+  @media (min-width: $desktop-width) {}
 }
 
 .news__buttons-swiper-list {
@@ -139,35 +128,28 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+
+  @media (min-width: $desktop-width) {}
 }
 
 .news__slider-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+  position: static;
+  align-self: center;
+  justify-self: center;
+  max-width: 152px;
   padding: 0;
+  margin: 0;
   list-style: none;
   display: flex;
+  gap: 16px;
   align-items: center;
-}
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
 
-.div {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid blue;
-  height: 32px;
-  width: 152px;
-  overflow: hidden;
+  @media (min-width: $desktop-width) {
+    width: 188px;
+    gap: 20px;
+  }
 }
-
-.pagination-item {
-  position: relative;
-  min-width: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-// .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
-//   // width: fit-content;
-//   // transform: unset;
-// }

@@ -36,18 +36,13 @@
     color: $color-white;
   }
 
-  .pagination-item--is-active & {
+  &--is-active {
     background-color: $color-cerulean-blue;
     color: $color-white;
   }
 
-  // &--is-active-main {
-  //   position: relative;
-  //   z-index: 100;
-  //   background-color: aqua;
-  //  }
-}
-
-.pagination-button:not(.pagination-button--is-active-main) {
-    //  display: none;
+  @media (min-width: $tablet-width) {
+      width: 32px;
+  height: 32px;
+  }
 }
