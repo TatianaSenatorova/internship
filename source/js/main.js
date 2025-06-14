@@ -14,3 +14,4 @@ import './news-slider.js';
 import './accordion.js';
 import './reviews-slider.js';
 import './on-window-resize.js';
+import './add-slides.js';

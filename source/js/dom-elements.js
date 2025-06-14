@@ -13,8 +13,12 @@ export const heroPagination = sliderHero.querySelector('.hero__slider-pagination
 export const heroFalsePaginations = sliderHero.querySelectorAll('.hero-card__false-pagination');
 export const heroWrapsPagination = sliderHero.querySelectorAll('.hero-card__pagination-nebo-wrap');
 export const realPagination = sliderHero.querySelector('.hero__slider-pagination');
-export const modal = document.querySelector('.modal');
 
+export const programsSlider = document.querySelector('.programs__slider');
+export const programsSlides = document.querySelectorAll('.programs__slider-item');
+export const programsSlidesList = document.querySelector('.programs__slider-list');
+
+export const modal = document.querySelector('.modal');
 export const buttonOpenModal = document.querySelector('.about__primary-button');
 export const buttonCloseModal = document.querySelector('.modal__close-button');
 export const modalForm = modal.querySelector('.form');

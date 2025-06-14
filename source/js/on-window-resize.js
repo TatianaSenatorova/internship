@@ -3,6 +3,11 @@ import {
 } from './hero-slider.js';
 
 import {
+  onResizeUpdateProgramsSlider
+} from './programs-slider.js';
+
+
+import {
   DESKTOP_WIDTH,
   TABLET_WIDTH
 } from './constants.js';
@@ -18,6 +23,7 @@ const onWindowResize = () => {
   }
   windowWidth = document.documentElement.clientWidth;
   onResizeUpdateHeroSlider();
+  onResizeUpdateProgramsSlider();
 };
 
 window.addEventListener('resize', onWindowResize);
