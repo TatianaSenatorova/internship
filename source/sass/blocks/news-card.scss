@@ -7,6 +7,8 @@
   border-radius: 12px;
   background-color: $color-sandrift;
 
+  --radius-16: 16px;
+
   @media (min-width: $tablet-width) {
     min-width: 324px;
     max-width: 324px;
@@ -35,20 +37,6 @@
   height: 100%;
   object-fit: cover;
   border-radius: 12px;
-
-  // .news__slider-item:first-child & {
-  //   max-height: 100%;
-  //   width: 100%;
-  // }
-
-  // .news__slider-item:nth-child(3n+1) & {
-  //   max-height: 100%;
-  //   width: 100%;
-  // }
-
-  // .news__slider-item--bigger-on-desktop & {
-
-  // }
 }
 
 .news-card__info-wrap {
@@ -67,35 +55,25 @@
   position: relative;
   width: fit-content;
   padding-top: 16px;
+
+
 }
 
 .news-card__date-top-left-rounding {
-  position: absolute;
+  @include radius-rounding($radius: var(--radius-16));
+  --nb-r: var(--radius-16);
   left: 0;
-  top: -16px;
-  width: 32px;
-  height: 32px;
-
-  --nb-r: 16px;
-  --nb-w: 0px;
-  --nb-h: 0px;
-
+  top: calc(var(--radius-16) * -1);
   background-color: $color-alabaster;
 }
 
 .news-card__date-bottom-right-rounding,
 .news-card__title-bottom-right-rounding,
 .news-card__bottom-wrap-right-rounding {
-  position: absolute;
-  right: -32px;
+  @include radius-rounding($radius: var(--radius-16));
+  --nb-r: var(--radius-16);
+  right: calc(var(--radius-16) * -2);
   bottom: 0;
-  width: 32px;
-  height: 32px;
-
-  --nb-r: 16px;
-  --nb-w: 0px;
-  --nb-h: 0px;
-
   background-color: $color-alabaster;
 }
 
