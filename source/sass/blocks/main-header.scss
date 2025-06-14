@@ -5,6 +5,24 @@
   width: 100%;
   z-index: $z-index-second;
 
+  &::after {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgba(13, 29, 51, 0.4);
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  &--nav-is-opened::after {
+    opacity: 1;
+    visibility: visible;
+  }
+
   @media (min-width: $tablet-width) {
     padding-top: 30px;
   }
@@ -23,6 +41,8 @@
 }
 
 .main-header__menu-button {
+  position: relative;
+  z-index: $z-index-third;
   min-height: 54px;
   min-width: 136px;
   max-width: 136px;
@@ -79,7 +99,6 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 14px;
   border-radius: 16px;
   background-color: $color-cerulean-blue;
 
@@ -104,6 +123,7 @@
 
 .main-header__nav-item {
   display: block;
+  margin-bottom: 14px;
 }
 
 .main-header__nav-link,
@@ -120,6 +140,7 @@
   color: rgba(255, 255, 255, 0.7);
   background-color: transparent;
   border: none;
+  word-break: break-all;
   cursor: pointer;
   transition: color 0.3s;
 
@@ -138,5 +159,47 @@
 
   &--sub-link:active {
     color: rgba(255, 255, 255, 0.9);
+  }
+
+  &--is-disabled {
+    pointer-events: none;
+    opacity: 0.2;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.2;
+  }
+}
+
+.main-header__nav-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    mask-image: url("/__spritemap#sprite-arrow-down-view");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: rotate(180deg);
+  }
+
+  &:focus::after {
+    background-color: $color-white;
+  }
+
+  &--is-active {
+    color: $color-white;
+  }
+
+  &--is-active::after {
+    background-color: $color-white;
+    transform: unset;
   }
 }

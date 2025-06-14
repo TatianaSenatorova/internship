@@ -120,9 +120,7 @@ function getStartPage(activeIndex = 0) {
 }
 
 function updatePagination(activeIndex = 0) {
-  console.log('зашел');
   getStartPage(activeIndex);
-  console.log(activeIndex, currentPage, startPage);
   let paginationHTML = '';
   for (let i = startPage; i < startPage + SHOW_NUMBER_BULLETS; i++) {
     const isActive = i === currentPage ? 'pagination-button--is-active' : '';

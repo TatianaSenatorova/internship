@@ -3,8 +3,13 @@ import {
   menuButton,
   body,
   buttonsSubMenu,
-  navList
+  navSubLists,
+  navList,
+  mainHeaderSublinks
 } from './dom-elements';
+import {
+  isEscapeKey
+} from './utils.js';
 
 import {
   CLASS_MENU_IS_OPENED,
@@ -15,6 +20,13 @@ import {
 const subLists = {};
 
 const scrollWidth = window.innerWidth - document.documentElement.clientWidth;
+
+const onDocumentKeydown = (evt) => {
+  if (isEscapeKey(evt)) {
+    evt.preventDefault();
+    closeNavigation();
+  }
+};
 
 const getSubLinks = () => {
   buttonsSubMenu.forEach((button) => {
@@ -48,13 +60,10 @@ const onButtonSubMenuClick = (evt) => {
   subMenu.style.paddingTop = `${SUB_MENU_PADDING_TOP}px`;
   subMenu.style.maxHeight = `${subMenu.scrollHeight}px`;
   changeTabindexSubLinks(subMenu.getAttribute('data-submenu'), false);
-
 };
 
 const onMenuButtonClick = (evt) => {
   evt.stopPropagation();
-
-  console.log(body);
   mainHeader.classList.toggle(CLASS_MENU_IS_OPENED);
   if (mainHeader.classList.contains(CLASS_MENU_IS_OPENED)) {
     body.style.paddingRight = `${scrollWidth}px`;
@@ -62,14 +71,28 @@ const onMenuButtonClick = (evt) => {
     buttonsSubMenu.forEach((buttonSubMenu) => {
       buttonSubMenu.addEventListener('click', onButtonSubMenuClick);
     });
+
+    document.addEventListener('keydown', onDocumentKeydown);
     return;
   }
   body.style.paddingRight = '0px';
+  document.removeEventListener('keydown', onDocumentKeydown);
   body.removeEventListener('click', onBodyClick);
 };
 
 const closeNavigation = () => {
   mainHeader.classList.remove(CLASS_MENU_IS_OPENED);
+  console.log(navSubLists);
+  navSubLists.forEach((list) => {
+    list.style.maxHeight = null;
+    list.style.paddingTop = null;
+  })
+  buttonsSubMenu.forEach((button) => {
+    button.classList.remove(CLASS_SUB_MENU_BUTTON_ACTIVE);
+  })
+  mainHeaderSublinks.forEach((link) => {
+    link.setAttribute('tabindex', '-1');
+  });
 };
 
 const onBodyClick = (evt) => {

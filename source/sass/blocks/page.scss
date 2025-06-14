@@ -21,12 +21,5 @@
 .page__body:has(.main-header--nav-is-opened),
 .page__body:has(.modal--is-opened) {
   overflow-y: hidden;
-
-  &::after {
-    z-index: 1;
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(13, 29, 51, 0.4);
-  }
+  // background-color: rgba(13, 29, 51, 0.4);
 }
