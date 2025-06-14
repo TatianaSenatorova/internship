@@ -38,8 +38,10 @@ const getSubLinks = () => {
 getSubLinks();
 
 const changeTabindexSubLinks = (subLinks, isToAdd = true) => {
-  const currentSublinks = subLists[subLinks];
-  currentSublinks.forEach((subLink) => {
+  // const currentSublinks = subLists[subLinks];
+  // console.log(currentSublinks);
+  console.log(subLinks)
+  subLinks.forEach((subLink) => {
     if (isToAdd) {
       subLink.setAttribute('tabindex', '-1');
     } else {
@@ -51,15 +53,17 @@ const changeTabindexSubLinks = (subLinks, isToAdd = true) => {
 const onButtonSubMenuClick = (evt) => {
   evt.target.classList.toggle(CLASS_SUB_MENU_BUTTON_ACTIVE);
   const subMenu = evt.target.closest('.main-header__nav-item').querySelector('.main-header__sub-nav-list');
+  const openedSubLinks = subMenu.querySelectorAll('.main-header__nav-link--sub-link');
+   console.log(openedSubLinks)
   if (subMenu.style.maxHeight) {
     subMenu.style.maxHeight = null;
     subMenu.style.paddingTop = null;
-    changeTabindexSubLinks(subMenu.getAttribute('data-submenu'));
-    return;
+    changeTabindexSubLinks(openedSubLinks);
+     return;
   }
   subMenu.style.paddingTop = `${SUB_MENU_PADDING_TOP}px`;
   subMenu.style.maxHeight = `${subMenu.scrollHeight}px`;
-  changeTabindexSubLinks(subMenu.getAttribute('data-submenu'), false);
+  changeTabindexSubLinks(openedSubLinks, false);
 };
 
 const onMenuButtonClick = (evt) => {
@@ -76,13 +80,13 @@ const onMenuButtonClick = (evt) => {
     return;
   }
   body.style.paddingRight = '0px';
+  closeNavigation();
   document.removeEventListener('keydown', onDocumentKeydown);
   body.removeEventListener('click', onBodyClick);
 };
 
 const closeNavigation = () => {
   mainHeader.classList.remove(CLASS_MENU_IS_OPENED);
-  console.log(navSubLists);
   navSubLists.forEach((list) => {
     list.style.maxHeight = null;
     list.style.paddingTop = null;
@@ -90,9 +94,7 @@ const closeNavigation = () => {
   buttonsSubMenu.forEach((button) => {
     button.classList.remove(CLASS_SUB_MENU_BUTTON_ACTIVE);
   })
-  mainHeaderSublinks.forEach((link) => {
-    link.setAttribute('tabindex', '-1');
-  });
+  changeTabindexSubLinks(mainHeaderSublinks)
 };
 
 const onBodyClick = (evt) => {

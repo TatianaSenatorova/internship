@@ -110,6 +110,7 @@
 
 .main-header__sub-nav-list {
   margin: 0;
+  margin-bottom: 14px;
   padding: 0;
   padding-left: 16px;
   list-style: none;
@@ -124,6 +125,14 @@
 .main-header__nav-item {
   display: block;
   margin-bottom: 14px;
+
+  &:last-child {
+  margin-bottom: 0;
+  }
+
+  &:has(.main-header__nav-link--sub-link) {
+    margin-bottom: 0;
+  }
 }
 
 .main-header__nav-link,

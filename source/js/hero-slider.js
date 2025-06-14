@@ -56,8 +56,6 @@ const initSlider = () => {
 initSlider();
 
 function unfocusNonActiveSlide(heroSwiper) {
-  console.log('зашел', heroSwiper.realIndex, prevIndex);
-  console.log(slidesHero[heroSwiper.realIndex].querySelector('.hero-card__primary-button'))
   slidesHero[heroSwiper.realIndex].querySelector('.hero-card__primary-button').removeAttribute('tabindex');
   if (prevIndex) {
     slidesHero[prevIndex].querySelector('.hero-card__primary-button').setAttribute('tabindex', '-1');
