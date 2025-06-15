@@ -53,7 +53,7 @@ initProgramsSlider();
 
 export const onResizeDestroyProgramsSlider = () => {
   programsSwiper.destroy(true, true);
- };
+};
 
 export const onDomLoadedAddProgramsSlides = (windowWidth) => {
 
@@ -63,10 +63,10 @@ export const onDomLoadedAddProgramsSlides = (windowWidth) => {
   let slideIndexToAdd = 0;
   const minQuantitySlides = windowWidth >= DESKTOP_WIDTH ? MIN_SLIDES_NUMBER_DESKTOP_PROGRAMS : MIN_SLIDES_NUMBER_TABLET_PROGRAMS;
   let slidesCounter = initQuantitySides;
-   console.log('зашел', windowWidth, minQuantitySlides, slidesCounter)
+  console.log('зашел', windowWidth, minQuantitySlides, slidesCounter);
   if (slidesCounter < minQuantitySlides) {
     while (slidesCounter < minQuantitySlides) {
-         console.log('зашел', slidesCounter, minQuantitySlides)
+      console.log('зашел', slidesCounter, minQuantitySlides);
       const сlone = programsSlides[slideIndexToAdd].cloneNode(true);
       programsSlidesList.insertAdjacentElement('beforeend', сlone);
       slidesCounter++;

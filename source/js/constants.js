@@ -1,6 +1,7 @@
 import {
   inputPhone,
-  inputName
+  inputName,
+  inputCheckbox
 } from './dom-elements.js';
 
 export const CLASS_MENU_IS_OPENED = 'main-header--nav-is-opened';
@@ -28,9 +29,14 @@ export const DataForValidation = [
   },
   {
     DOM_INPUT: inputPhone,
-    REG_EXP: /^(?=(?:.*\d){10,})[0-9()+\-\s]+$/,
+    REG_EXP: /.*\\S.*/,
     VALID: true,
     ERROR: 'Заполните это поле. Не вводите буквы. Можно символы +, -, ( , ) и 10 цифр'
+  },
+   {
+    DOM_INPUT: inputCheckbox,
+    VALID: true,
+    ERROR: 'Поставьте, пожалуйста, галочку.'
   },
 ];
 

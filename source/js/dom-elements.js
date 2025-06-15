@@ -32,6 +32,7 @@ export const newsPagination = document.querySelector('.news__slider-pagination')
 export const sectionForm = document.querySelector('.section-form__form');
 export const inputName = sectionForm.querySelector('.input__field[name=\'name\']');
 export const inputPhone = sectionForm.querySelector('.input__field[name=\'phone\']');
+export const inputCheckbox = sectionForm.querySelector('.checkbox__input');
 export const submitButton = sectionForm.querySelector('.form__primary-button');
 
 

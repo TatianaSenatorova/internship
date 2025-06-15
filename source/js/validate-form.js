@@ -4,6 +4,7 @@ import {
   sectionForm,
   inputName,
   inputPhone,
+  inputCheckbox,
   submitButton
 } from './dom-elements.js';
 
@@ -12,15 +13,12 @@ import {
 } from './constants.js';
 
 const phoneMask = new window.IMask(inputPhone, {
-    mask: '+7 (000) 000-00-00'
-  });
+  mask: '+7 (000) 000-00-00'
+});
 
 console.log(phoneMask);
 
-const inputs = [inputName, inputPhone];
-
-let invalidInputsData = [inputName, inputPhone];
-console.log(DataForValidation[1].REG_EXP.test(inputName.value.trim()))
+let invalidInputsData = [inputName];
 
 startValidation();
 
@@ -29,7 +27,6 @@ const blockSubmitButton = (isBlocked = true) => {
 };
 
 const showError = () => {
-
   const inputParent = invalidInputsData[0].DOM_INPUT.closest('.input');
   inputParent.classList.add('input--error');
   invalidInputsData[0].DOM_INPUT.setCustomValidity(invalidInputsData[0].ERROR);
@@ -38,24 +35,49 @@ const showError = () => {
 
 function startValidation() {
   sectionForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    isValid();
     blockSubmitButton();
-    if (!isValid()) {
-      event.preventDefault();
-      showError();
-    }
-    blockSubmitButton(false);
+    // if (!isValid()) {
+    //   event.preventDefault();
+    //         showError();
+    // }
+    // blockSubmitButton(false);
   });
+}
+
+const checkInputName = () => {
+  const inputNameIsValid = DataForValidation[0].REG_EXP.test(inputName.value.trim());
+  if (!inputNameIsValid) {
+    invalidInputsData.push(DataForValidation[0].DOM_INPUT);
+  }
+  return inputNameIsValid;
+}
+
+const checkInputPhone = () => {
+  const inputPhoneIsValid = inputPhone.value.trim() !== '';
+  if (!inputPhoneIsValid) {
+    invalidInputsData.push(DataForValidation[1].DOM_INPUT);
+  }
+  return inputPhoneIsValid;
+}
+
+const checkInputCheckBox = () => {
+  const inputCheckBox = inputCheckbox[':checked'];
+  if (!inputCheckBox) {
+    invalidInputsData.push(DataForValidation[2].DOM_INPUT);
+  }
+  return inputPhoneIsValid;
 }
 
 function isValid() {
   invalidInputsData = [];
-  DataForValidation.forEach((element) => {
-       if (!(element.REG_EXP.test(element.DOM_INPUT.value.trim()))) {
-      element.VALID = !element.VALID;
-      invalidInputsData.push(element);
-        console.log(invalidInputsData)
-    }
-  });
+  checkInputName();
+  checkInputPhone();
+  checkInputCheckBox();
+
+  console.log(invalidInputsData);
+
   return invalidInputsData[length - 1];
 }
 
