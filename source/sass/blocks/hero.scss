@@ -30,8 +30,6 @@
 
 .hero__slider-list {
   margin: 0;
-
-  // margin-top: auto;
   padding: 0;
   list-style: none;
 }
@@ -41,9 +39,6 @@
   z-index: $z-index-third;
   position: absolute;
   inset: 0;
-
-  // height: fit-content;
-  // left: calc(50vw - $mobile-width / 2 + var(--mobile-padding-left));
   background-color: transparent;
   padding: 6px 12px;
   border-radius: 12px 12px 0 0;
@@ -54,17 +49,8 @@
   width: fit-content;
 
   @media (min-width: $tablet-width) {
-    // left: calc(50vw - $tablet-width / 2 + var(--tablet-padding-left));
     border-radius: 20px 20px 0 0;
     gap: 8px;
     padding: 12px 18px;
-  }
-
-  @media (min-width: $desktop-width) {
-    // left: calc(50vw - $desktop-width / 2 + var(--desktop-padding-left));
-  }
-
-  @media (max-width: $less-then-mobile-width) {
-    // left: var(--mobile-padding-left);
   }
 }
