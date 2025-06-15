@@ -1,5 +1,5 @@
 .programs {
-  padding: 48px 0 50px;
+  padding: 49px 0 50px;
 
   --slider-nav-buttons-height: 32px;
   --padding-tablet: 45px;
@@ -64,7 +64,7 @@
 
 .programs__slider {
   overflow: hidden;
-  margin-bottom: 31px;
+  margin-bottom: 30px;
 
   @media (min-width: $tablet-width) {
     margin-bottom: unset;

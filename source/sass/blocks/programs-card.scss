@@ -1,4 +1,5 @@
 .programs-card {
+  position: relative;
   min-width: 290px;
   max-width: 290px;
   min-height: 400px;
@@ -15,28 +16,35 @@
   background-position: center;
   background-size: cover;
 
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(49, 109, 194, 0.20);
+  }
+
   &--internship {
     background-image:
       image-set(url("../../img/programs-photos/programs-mobile-1@1x.webp") type("image/webp") 1x,
-      url("../../img/programs-photos/programs-mobile-1@2x.webp") type("image/webp") 2x,
-      url("../../img/programs-photos/programs-mobile-1@1x.jpg") type("image/jpeg") 1x,
-      url("../../img/programs-photos/programs-mobile-1@2x.jpg") type("image/jpeg") 2x);
+        url("../../img/programs-photos/programs-mobile-1@2x.webp") type("image/webp") 2x,
+        url("../../img/programs-photos/programs-mobile-1@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/programs-photos/programs-mobile-1@2x.jpg") type("image/jpeg") 2x);
   }
 
   &--volunteering {
     background-image:
       image-set(url("../../img/programs-photos/programs-mobile-2@1x.webp") type("image/webp") 1x,
-      url("../../img/programs-photos/programs-mobile-2@2x.webp") type("image/webp") 2x,
-      url("../../img/programs-photos/programs-mobile-2@1x.jpg") type("image/jpeg") 1x,
-      url("../../img/programs-photos/programs-mobile-2@2x.jpg") type("image/jpeg") 2x);
+        url("../../img/programs-photos/programs-mobile-2@2x.webp") type("image/webp") 2x,
+        url("../../img/programs-photos/programs-mobile-2@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/programs-photos/programs-mobile-2@2x.jpg") type("image/jpeg") 2x);
   }
 
   &--studies {
     background-image:
       image-set(url("../../img/programs-photos/programs-mobile-3@1x.webp") type("image/webp") 1x,
-      url("../../img/programs-photos/programs-mobile-3@2x.webp") type("image/webp") 2x,
-      url("../../img/programs-photos/programs-mobile-3@1x.jpg") type("image/jpeg") 1x,
-      url("../../img/programs-photos/programs-mobile-3@2x.jpg") type("image/jpeg") 2x);
+        url("../../img/programs-photos/programs-mobile-3@2x.webp") type("image/webp") 2x,
+        url("../../img/programs-photos/programs-mobile-3@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/programs-photos/programs-mobile-3@2x.jpg") type("image/jpeg") 2x);
   }
 
   @media (min-width: $tablet-width) {
@@ -47,26 +55,28 @@
     &--intership {
       background-image:
         image-set(url("../../img/programs-photos/programs-tablet-1@1x.webp") type("image/webp") 1x,
-        url("../../img/programs-photos/programs-tablet-1@2x.webp") type("image/webp") 2x,
-        url("../../img/programs-photos/programs-tablet-1@1x.jpg") type("image/jpeg") 1x,
-        url("../../img/programs-photos/programs-tablet-1@2x.jpg") type("image/jpeg") 2x);
+          url("../../img/programs-photos/programs-tablet-1@2x.webp") type("image/webp") 2x,
+          url("../../img/programs-photos/programs-tablet-1@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/programs-photos/programs-tablet-1@2x.jpg") type("image/jpeg") 2x);
     }
 
     &--volunteering {
       background-image:
         image-set(url("../../img/programs-photos/programs-tablet-2@1x.webp") type("image/webp") 1x,
-        url("../../img/programs-photos/programs-tablet-2@2x.webp") type("image/webp") 2x,
-        url("../../img/programs-photos/programs-tablet-2@1x.jpg") type("image/jpeg") 1x,
-        url("../../img/programs-photos/programs-tablet-2@2x.jpg") type("image/jpeg") 2x);
+          url("../../img/programs-photos/programs-tablet-2@2x.webp") type("image/webp") 2x,
+          url("../../img/programs-photos/programs-tablet-2@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/programs-photos/programs-tablet-2@2x.jpg") type("image/jpeg") 2x);
     }
 
     &--studies {
       background-image:
         image-set(url("../../img/programs-photos/programs-tablet-3@1x.webp") type("image/webp") 1x,
-        url("../../img/programs-photos/programs-tablet-3@2x.webp") type("image/webp") 2x,
-        url("../../img/programs-photos/programs-tablet-3@1x.jpg") type("image/jpeg") 1x,
-        url("../../img/programs-photos/programs-tablet-3@2x.jpg") type("image/jpeg") 2x);
+          url("../../img/programs-photos/programs-tablet-3@2x.webp") type("image/webp") 2x,
+          url("../../img/programs-photos/programs-tablet-3@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/programs-photos/programs-tablet-3@2x.jpg") type("image/jpeg") 2x);
     }
+
+
   }
 
   @media (min-width: $desktop-width) {
@@ -76,36 +86,37 @@
     &--intership {
       background-image:
         image-set(url("../../img/programs-photos/programs-desktop-1@1x.webp") type("image/webp") 1x,
-        url("../../img/programs-photos/programs-desktop-1@2x.webp") type("image/webp") 2x,
-        url("../../img/programs-photos/programs-desktop-1@1x.jpg") type("image/jpeg") 1x,
-        url("../../img/programs-photos/programs-desktop-1@2x.jpg") type("image/jpeg") 2x);
+          url("../../img/programs-photos/programs-desktop-1@2x.webp") type("image/webp") 2x,
+          url("../../img/programs-photos/programs-desktop-1@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/programs-photos/programs-desktop-1@2x.jpg") type("image/jpeg") 2x);
     }
 
 
     &--volunteering {
       background-image:
         image-set(url("../../img/programs-photos/programs-desktop-2@1x.webp") type("image/webp") 1x,
-        url("../../img/programs-photos/programs-desktop-2@2x.webp") type("image/webp") 2x,
-        url("../../img/programs-photos/programs-desktop-2@1x.jpg") type("image/jpeg") 1x,
-        url("../../img/programs-photos/programs-desktop-2@2x.jpg") type("image/jpeg") 2x);
+          url("../../img/programs-photos/programs-desktop-2@2x.webp") type("image/webp") 2x,
+          url("../../img/programs-photos/programs-desktop-2@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/programs-photos/programs-desktop-2@2x.jpg") type("image/jpeg") 2x);
     }
 
     &--studies {
       background-image:
         image-set(url("../../img/programs-photos/programs-desktop-3@1x.webp") type("image/webp") 1x,
-        url("../../img/programs-photos/programs-desktop-3@2x.webp") type("image/webp") 2x,
-        url("../../img/programs-photos/programs-desktop-3@1x.jpg") type("image/jpeg") 1x,
-        url("../../img/programs-photos/programs-desktop-3@2x.jpg") type("image/jpeg") 2x);
+          url("../../img/programs-photos/programs-desktop-3@2x.webp") type("image/webp") 2x,
+          url("../../img/programs-photos/programs-desktop-3@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/programs-photos/programs-desktop-3@2x.jpg") type("image/jpeg") 2x);
     }
   }
 }
 
 .programs-card__info {
+  position: relative;
+  z-index: $z-index-second;
   display: grid;
   grid-template-rows: auto 1fr;
   border-radius: 12px;
-  padding: 38px 10px 17px;
-  background-color: rgba(49, 109, 194, 0.2);
+  padding: 38px 10px 18px;
 
   @media (min-width: $tablet-width) {
     padding: 38px 20px 10px;
@@ -159,8 +170,8 @@
 .programs-card__bottom-wrap {
   min-height: 69px;
   display: grid;
-  grid-template-columns: 188px 36px;
-  gap: 10px;
+  grid-template-columns: 188px 30px;
+  gap: 16px;
   align-items: center;
   border-radius: 0 12px 12px;
   padding: 12px 18px 15px;
