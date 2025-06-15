@@ -78,6 +78,7 @@
   font-weight: 400;
   color: $color-charcoal;
   transition: color 0.3s;
+  word-break: break-all;
 
   &:hover {
     color: rgba(49, 109, 194, 0.7);

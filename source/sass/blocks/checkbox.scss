@@ -124,11 +124,10 @@
   padding-left: 30px;
 
   @media (min-width: $tablet-width) {
- br {
+    br {
       display: none;
     }
   }
-
 }
 
 .checkbox--error:has(.checkbox__input:not(:checked)) .checkbox__mark {

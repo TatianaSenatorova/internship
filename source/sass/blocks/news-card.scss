@@ -60,7 +60,9 @@
 
 .news-card__date-top-left-rounding {
   @include radius-rounding($radius: var(--radius-16));
+
   --nb-r: var(--radius-16);
+
   left: 0;
   top: calc(var(--radius-16) * -1);
   background-color: $color-alabaster;
@@ -70,7 +72,9 @@
 .news-card__title-bottom-right-rounding,
 .news-card__bottom-wrap-right-rounding {
   @include radius-rounding($radius: var(--radius-16));
+
   --nb-r: var(--radius-16);
+
   right: calc(var(--radius-16) * -2);
   bottom: 0;
   background-color: $color-alabaster;
@@ -154,7 +158,6 @@
   }
 
   @media (min-width: $desktop-width) {
-
     .news__slider-item--bigger-on-desktop & {
       min-width: 468px;
       grid-template-columns: 404px 40px;

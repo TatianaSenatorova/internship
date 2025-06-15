@@ -40,7 +40,6 @@
     margin-bottom: 19px;
     width: 100%;
     overflow: unset;
-    justify-content: space-between;
     gap: 4px;
     flex-wrap: wrap;
   }
@@ -60,6 +59,7 @@
   @media (min-width: $tablet-width) {
     margin-bottom: unset;
   }
+
   @media (min-width: $desktop-width) {
     margin-bottom: 40px;
   }

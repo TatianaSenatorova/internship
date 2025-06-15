@@ -20,31 +20,31 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-color: rgba(49, 109, 194, 0.20);
+    background-color: rgba(49, 109, 194, 0.2);
   }
 
   &--internship {
     background-image:
       image-set(url("../../img/programs-photos/programs-mobile-1@1x.webp") type("image/webp") 1x,
-        url("../../img/programs-photos/programs-mobile-1@2x.webp") type("image/webp") 2x,
-        url("../../img/programs-photos/programs-mobile-1@1x.jpg") type("image/jpeg") 1x,
-        url("../../img/programs-photos/programs-mobile-1@2x.jpg") type("image/jpeg") 2x);
+      url("../../img/programs-photos/programs-mobile-1@2x.webp") type("image/webp") 2x,
+      url("../../img/programs-photos/programs-mobile-1@1x.jpg") type("image/jpeg") 1x,
+      url("../../img/programs-photos/programs-mobile-1@2x.jpg") type("image/jpeg") 2x);
   }
 
   &--volunteering {
     background-image:
       image-set(url("../../img/programs-photos/programs-mobile-2@1x.webp") type("image/webp") 1x,
-        url("../../img/programs-photos/programs-mobile-2@2x.webp") type("image/webp") 2x,
-        url("../../img/programs-photos/programs-mobile-2@1x.jpg") type("image/jpeg") 1x,
-        url("../../img/programs-photos/programs-mobile-2@2x.jpg") type("image/jpeg") 2x);
+      url("../../img/programs-photos/programs-mobile-2@2x.webp") type("image/webp") 2x,
+      url("../../img/programs-photos/programs-mobile-2@1x.jpg") type("image/jpeg") 1x,
+      url("../../img/programs-photos/programs-mobile-2@2x.jpg") type("image/jpeg") 2x);
   }
 
   &--studies {
     background-image:
       image-set(url("../../img/programs-photos/programs-mobile-3@1x.webp") type("image/webp") 1x,
-        url("../../img/programs-photos/programs-mobile-3@2x.webp") type("image/webp") 2x,
-        url("../../img/programs-photos/programs-mobile-3@1x.jpg") type("image/jpeg") 1x,
-        url("../../img/programs-photos/programs-mobile-3@2x.jpg") type("image/jpeg") 2x);
+      url("../../img/programs-photos/programs-mobile-3@2x.webp") type("image/webp") 2x,
+      url("../../img/programs-photos/programs-mobile-3@1x.jpg") type("image/jpeg") 1x,
+      url("../../img/programs-photos/programs-mobile-3@2x.jpg") type("image/jpeg") 2x);
   }
 
   @media (min-width: $tablet-width) {
@@ -55,28 +55,26 @@
     &--internship {
       background-image:
         image-set(url("../../img/programs-photos/programs-tablet-1@1x.webp") type("image/webp") 1x,
-          url("../../img/programs-photos/programs-tablet-1@2x.webp") type("image/webp") 2x,
-          url("../../img/programs-photos/programs-tablet-1@1x.jpg") type("image/jpeg") 1x,
-          url("../../img/programs-photos/programs-tablet-1@2x.jpg") type("image/jpeg") 2x);
+        url("../../img/programs-photos/programs-tablet-1@2x.webp") type("image/webp") 2x,
+        url("../../img/programs-photos/programs-tablet-1@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/programs-photos/programs-tablet-1@2x.jpg") type("image/jpeg") 2x);
     }
 
     &--volunteering {
       background-image:
         image-set(url("../../img/programs-photos/programs-tablet-2@1x.webp") type("image/webp") 1x,
-          url("../../img/programs-photos/programs-tablet-2@2x.webp") type("image/webp") 2x,
-          url("../../img/programs-photos/programs-tablet-2@1x.jpg") type("image/jpeg") 1x,
-          url("../../img/programs-photos/programs-tablet-2@2x.jpg") type("image/jpeg") 2x);
+        url("../../img/programs-photos/programs-tablet-2@2x.webp") type("image/webp") 2x,
+        url("../../img/programs-photos/programs-tablet-2@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/programs-photos/programs-tablet-2@2x.jpg") type("image/jpeg") 2x);
     }
 
     &--studies {
       background-image:
         image-set(url("../../img/programs-photos/programs-tablet-3@1x.webp") type("image/webp") 1x,
-          url("../../img/programs-photos/programs-tablet-3@2x.webp") type("image/webp") 2x,
-          url("../../img/programs-photos/programs-tablet-3@1x.jpg") type("image/jpeg") 1x,
-          url("../../img/programs-photos/programs-tablet-3@2x.jpg") type("image/jpeg") 2x);
+        url("../../img/programs-photos/programs-tablet-3@2x.webp") type("image/webp") 2x,
+        url("../../img/programs-photos/programs-tablet-3@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/programs-photos/programs-tablet-3@2x.jpg") type("image/jpeg") 2x);
     }
-
-
   }
 
   @media (min-width: $desktop-width) {
@@ -86,26 +84,26 @@
     &--internship {
       background-image:
         image-set(url("../../img/programs-photos/programs-desktop-1@1x.webp") type("image/webp") 1x,
-          url("../../img/programs-photos/programs-desktop-1@2x.webp") type("image/webp") 2x,
-          url("../../img/programs-photos/programs-desktop-1@1x.jpg") type("image/jpeg") 1x,
-          url("../../img/programs-photos/programs-desktop-1@2x.jpg") type("image/jpeg") 2x);
+        url("../../img/programs-photos/programs-desktop-1@2x.webp") type("image/webp") 2x,
+        url("../../img/programs-photos/programs-desktop-1@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/programs-photos/programs-desktop-1@2x.jpg") type("image/jpeg") 2x);
     }
 
 
     &--volunteering {
       background-image:
         image-set(url("../../img/programs-photos/programs-desktop-2@1x.webp") type("image/webp") 1x,
-          url("../../img/programs-photos/programs-desktop-2@2x.webp") type("image/webp") 2x,
-          url("../../img/programs-photos/programs-desktop-2@1x.jpg") type("image/jpeg") 1x,
-          url("../../img/programs-photos/programs-desktop-2@2x.jpg") type("image/jpeg") 2x);
+        url("../../img/programs-photos/programs-desktop-2@2x.webp") type("image/webp") 2x,
+        url("../../img/programs-photos/programs-desktop-2@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/programs-photos/programs-desktop-2@2x.jpg") type("image/jpeg") 2x);
     }
 
     &--studies {
       background-image:
         image-set(url("../../img/programs-photos/programs-desktop-3@1x.webp") type("image/webp") 1x,
-          url("../../img/programs-photos/programs-desktop-3@2x.webp") type("image/webp") 2x,
-          url("../../img/programs-photos/programs-desktop-3@1x.jpg") type("image/jpeg") 1x,
-          url("../../img/programs-photos/programs-desktop-3@2x.jpg") type("image/jpeg") 2x);
+        url("../../img/programs-photos/programs-desktop-3@2x.webp") type("image/webp") 2x,
+        url("../../img/programs-photos/programs-desktop-3@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/programs-photos/programs-desktop-3@2x.jpg") type("image/jpeg") 2x);
     }
   }
 }

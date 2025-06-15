@@ -30,7 +30,7 @@
 
 .main-header__content {
   display: grid;
-  grid-template-columns: auto 136px;
+  grid-template-columns: 52px 1fr;
   align-items: center;
   justify-content: space-between;
 }
@@ -45,7 +45,7 @@
   z-index: $z-index-third;
   min-height: 54px;
   min-width: 136px;
-  max-width: 136px;
+  max-width: 200px;
   justify-self: end;
 
 
@@ -129,7 +129,7 @@
   margin-bottom: 14px;
 
   &:last-child {
-  margin-bottom: 0;
+    margin-bottom: 0;
   }
 
   &:has(.main-header__nav-link--sub-link) {
@@ -189,6 +189,7 @@
   gap: 10px;
 
   &::after {
+    flex-shrink: 0;
     content: "";
     display: block;
     width: 12px;
