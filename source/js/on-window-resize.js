@@ -3,9 +3,10 @@ import {
 } from './hero-slider.js';
 
 import {
-  onResizeUpdateProgramsSlider,
+  onResizeDestroyProgramsSlider,
   onDomLoadedAddProgramsSlides,
-  deleteAddedProgramsSlides
+  deleteAddedProgramsSlides,
+  initProgramsSlider
 } from './programs-slider.js';
 
 
@@ -25,9 +26,10 @@ const onWindowResize = () => {
   }
   windowWidth = document.documentElement.clientWidth;
   onResizeUpdateHeroSlider();
-  onResizeUpdateProgramsSlider();
+  onResizeDestroyProgramsSlider();
   deleteAddedProgramsSlides();
   onDomLoadedAddProgramsSlides(windowWidth);
+  initProgramsSlider();
 };
 
 window.addEventListener('resize', onWindowResize);

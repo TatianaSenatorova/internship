@@ -17,7 +17,7 @@ import {
 let programsSwiper;
 const initQuantitySides = programsSlides.length;
 
-const initSlider = () => {
+export const initProgramsSlider = () => {
   programsSwiper = new Swiper('.swiper-programs', {
     modules: [Navigation, Scrollbar],
     direction: 'horizontal',
@@ -49,22 +49,24 @@ const initSlider = () => {
   });
 };
 
-initSlider();
+initProgramsSlider();
 
-export const onResizeUpdateProgramsSlider = () => {
+export const onResizeDestroyProgramsSlider = () => {
   programsSwiper.destroy(true, true);
-  initSlider();
-};
+ };
 
 export const onDomLoadedAddProgramsSlides = (windowWidth) => {
+
   if (windowWidth < TABLET_WIDTH) {
     return;
   }
   let slideIndexToAdd = 0;
-  let slidesCounter = initQuantitySides;
   const minQuantitySlides = windowWidth >= DESKTOP_WIDTH ? MIN_SLIDES_NUMBER_DESKTOP_PROGRAMS : MIN_SLIDES_NUMBER_TABLET_PROGRAMS;
+  let slidesCounter = initQuantitySides;
+   console.log('зашел', windowWidth, minQuantitySlides, slidesCounter)
   if (slidesCounter < minQuantitySlides) {
     while (slidesCounter < minQuantitySlides) {
+         console.log('зашел', slidesCounter, minQuantitySlides)
       const сlone = programsSlides[slideIndexToAdd].cloneNode(true);
       programsSlidesList.insertAdjacentElement('beforeend', сlone);
       slidesCounter++;
