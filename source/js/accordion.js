@@ -6,8 +6,8 @@ import {
 let windowWidth;
 
 const updateAccordionsHeight = () => {
-  activeAccordions.forEach((accordion) => {
-    const contentElement = accordion.querySelector('.accordion__wrapper-content');
+  activeAccordions.forEach((activeItem) => {
+    const contentElement = activeItem.querySelector('.accordion__wrapper-content');
     const openHeight = contentElement.scrollHeight;
     contentElement.style.maxHeight = `${openHeight}px`;
   });

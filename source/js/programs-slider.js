@@ -6,11 +6,16 @@ import {
   programsSlides,
   programsSlidesList
 } from './dom-elements';
+
 import {
-  MIN_SLIDES_NUMBER_DESKTOP_PROGRAMS
+  MIN_SLIDES_NUMBER_DESKTOP_PROGRAMS,
+  MIN_SLIDES_NUMBER_TABLET_PROGRAMS,
+  DESKTOP_WIDTH,
+  TABLET_WIDTH
 } from './constants.js';
 
 let programsSwiper;
+const initQuantitySides = programsSlides.length;
 
 const initSlider = () => {
   programsSwiper = new Swiper('.swiper-programs', {
@@ -42,7 +47,7 @@ const initSlider = () => {
       prevEl: '.swiper-button-programs-prev'
     }
   });
-}
+};
 
 initSlider();
 
@@ -51,16 +56,32 @@ export const onResizeUpdateProgramsSlider = () => {
   initSlider();
 };
 
-export const onDomLoadedAddProgramsSlides = () => {
-  let slidesCounter = programsSlides.length;
-  console.log(programsSlides[0])
-  if (slidesCounter < MIN_SLIDES_NUMBER_DESKTOP_PROGRAMS) {
-    while (slidesCounter < MIN_SLIDES_NUMBER_DESKTOP_PROGRAMS) {
-      const сlone = programsSlides[0].cloneNode(true);
+export const onDomLoadedAddProgramsSlides = (windowWidth) => {
+  if (windowWidth < TABLET_WIDTH) {
+    return;
+  }
+  let slideIndexToAdd = 0;
+  let slidesCounter = initQuantitySides;
+  const minQuantitySlides = windowWidth >= DESKTOP_WIDTH ? MIN_SLIDES_NUMBER_DESKTOP_PROGRAMS : MIN_SLIDES_NUMBER_TABLET_PROGRAMS;
+  if (slidesCounter < minQuantitySlides) {
+    while (slidesCounter < minQuantitySlides) {
+      const сlone = programsSlides[slideIndexToAdd].cloneNode(true);
       programsSlidesList.insertAdjacentElement('beforeend', сlone);
       slidesCounter++;
-  console.log(slidesCounter)
+      slideIndexToAdd++;
+      if (slideIndexToAdd === (programsSlides.length - 1)) {
+        slideIndexToAdd = 0;
+      }
     }
   }
+};
+
+export const deleteAddedProgramsSlides = () => {
+  const currentSlides = programsSlider.querySelectorAll('.programs__slider-item');
+  currentSlides.forEach((slide, index) => {
+    if (index >= initQuantitySides) {
+      slide.remove();
+    }
+  });
 };
 

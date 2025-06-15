@@ -105,9 +105,9 @@
   z-index: $z-index-first;
 
   @media (min-width: $tablet-width) {
-    position: relative;
-    bottom: top;
-  }
+    top: unset;
+  bottom: 0;
+    }
 }
 
 .programs__bottom-wrap {
@@ -117,6 +117,10 @@
     grid-template-columns: 562px 74px;
     gap: 43px;
     align-items: center;
+  }
+
+    @media (min-width: $desktop-width) {
+    grid-template-columns: 1136px 74px;
   }
 }
 

@@ -35,7 +35,7 @@ const initSlider = () => {
       clickable: true,
       renderBullet: function (index, bulletClass) {
         return `<button class=${bulletClass}><span class="visually-hidden">Перейти к слайду ${index + 1
-          }</span></button>`;
+        }</span></button>`;
       },
       enabled: true,
     },
@@ -46,7 +46,7 @@ const initSlider = () => {
       }
     }
   });
-}
+};
 
 initSlider();
 
@@ -56,7 +56,7 @@ function unfocusNonActiveSlide(heroSwiper) {
     slidesHero[prevIndex].querySelector('.hero-card__primary-button').setAttribute('tabindex', '-1');
   }
   prevIndex = heroSwiper.realIndex;
-};
+}
 
 const renderFalseBullets = () => {
   const numberOfSlides = heroSwiper.slides.length;
@@ -72,8 +72,8 @@ const renderFalseBullets = () => {
 };
 
 function renderRealPagination(currentSlide = 0) {
-  heroWrapsPagination[currentSlide].insertAdjacentElement('beforeend', realPagination)
-};
+  heroWrapsPagination[currentSlide].insertAdjacentElement('beforeend', realPagination);
+}
 
 renderFalseBullets();
 renderRealPagination();
@@ -82,7 +82,7 @@ function onSlideChange(heroSwiper) {
   const activeSlide = heroSwiper.realIndex;
   unfocusNonActiveSlide(heroSwiper);
   renderRealPagination(activeSlide);
-};
+}
 
 export const onResizeUpdateHeroSlider = () => {
   prevIndex = null;

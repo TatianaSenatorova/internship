@@ -3,7 +3,9 @@ import {
 } from './hero-slider.js';
 
 import {
-  onResizeUpdateProgramsSlider
+  onResizeUpdateProgramsSlider,
+  onDomLoadedAddProgramsSlides,
+  deleteAddedProgramsSlides
 } from './programs-slider.js';
 
 
@@ -24,6 +26,8 @@ const onWindowResize = () => {
   windowWidth = document.documentElement.clientWidth;
   onResizeUpdateHeroSlider();
   onResizeUpdateProgramsSlider();
+  deleteAddedProgramsSlides();
+  onDomLoadedAddProgramsSlides(windowWidth);
 };
 
 window.addEventListener('resize', onWindowResize);
