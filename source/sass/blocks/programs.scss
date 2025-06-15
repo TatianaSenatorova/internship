@@ -105,9 +105,9 @@
   z-index: $z-index-first;
 
   @media (min-width: $tablet-width) {
+    position: relative;
     top: unset;
-  bottom: 0;
-    }
+  }
 }
 
 .programs__bottom-wrap {

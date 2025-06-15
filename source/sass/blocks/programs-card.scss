@@ -52,7 +52,7 @@
     max-width: 324px;
     min-height: 420px;
 
-    &--intership {
+    &--internship {
       background-image:
         image-set(url("../../img/programs-photos/programs-tablet-1@1x.webp") type("image/webp") 1x,
           url("../../img/programs-photos/programs-tablet-1@2x.webp") type("image/webp") 2x,
@@ -83,7 +83,7 @@
     min-width: 392px;
     max-width: 392px;
 
-    &--intership {
+    &--internship {
       background-image:
         image-set(url("../../img/programs-photos/programs-desktop-1@1x.webp") type("image/webp") 1x,
           url("../../img/programs-photos/programs-desktop-1@2x.webp") type("image/webp") 2x,
@@ -179,8 +179,8 @@
 
   @media (min-width: $tablet-width) {
     min-height: 87px;
-    grid-template-columns: 195px 36px;
-    gap: 17px;
+    grid-template-columns: 195px 30px;
+    gap: 23px;
   }
 
   @media (min-width: $desktop-width) {
