@@ -101,6 +101,8 @@
   flex-direction: column;
   border-radius: 16px;
   background-color: $color-cerulean-blue;
+  max-height: 500px;
+  overflow-y: auto;
 
   @media (min-width: $tablet-width) {
     width: 286px;

@@ -29,6 +29,12 @@ export const newsSlider = document.querySelector('.news__slider-list');
 export const newsSlides = document.querySelectorAll('.news__slider-item');
 export const newsPagination = document.querySelector('.news__slider-pagination');
 
+export const sectionForm = document.querySelector('.section-form__form');
+export const inputName = sectionForm.querySelector('.input__field[name=\'name\']');
+export const inputPhone = sectionForm.querySelector('.input__field[name=\'phone\']');
+export const submitButton = sectionForm.querySelector('.form__primary-button');
+
+
 // slidesPerView: 1,
 // slidesPerColumn: 2,
 // initialSlide: 0,

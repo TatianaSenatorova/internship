@@ -1,3 +1,8 @@
+import {
+  inputPhone,
+  inputName
+} from './dom-elements.js';
+
 export const CLASS_MENU_IS_OPENED = 'main-header--nav-is-opened';
 export const CLASS_SUB_MENU_BUTTON_ACTIVE = 'main-header__nav-button--is-active';
 export const SUB_MENU_PADDING_TOP = 7;
@@ -14,3 +19,18 @@ export const DESKTOP_WIDTH = 1440;
 export const TABLET_WIDTH = 768;
 export const MOBILE_WIDTH = 320;
 export const SHOW_NUMBER_BULLETS = 4;
+export const DataForValidation = [
+  {
+    DOM_INPUT: inputName,
+    REG_EXP: /^[A-Za-zА-Яа-яЁё\-]+(?: [A-Za-zА-Яа-яЁё\-]+)*$/,
+    VALID: true,
+    ERROR: 'Не вводите цифры и спецсимволы, кроме дефиса'
+  },
+  {
+    DOM_INPUT: inputPhone,
+    REG_EXP: /^(?=(?:.*\d){10,})[0-9()+\-\s]+$/,
+    VALID: true,
+    ERROR: 'Не вводите буквы. Можно символы +, -, ( , ). Минимум 10 цифр'
+  },
+];
+
