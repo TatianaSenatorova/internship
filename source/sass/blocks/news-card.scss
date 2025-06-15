@@ -102,7 +102,7 @@
   min-height: 32px;
   width: 200px;
   margin: 0;
-  padding: 9px 18px 4px 0;
+  padding: 9px 18px 3px 0;
   border-radius: 0 12px 0 0;
   font-size: 16px;
   font-weight: 400;
@@ -113,15 +113,21 @@
   @media (min-width: $tablet-width) {
     width: 207px;
     min-width: 173px;
-        padding: 12px 18px 4px 0;
+    padding: 12px 18px 4px 0;
     font-size: 20px;
     line-height: 1.2;
   }
 
   @media (min-width: $desktop-width) {
-    min-width: 194px;
+    width: 193px;
+    min-width: 193px;
     font-size: 24px;
-    line-height: 0.71;
+    line-height: 1.08;
+
+    .news__slider-item--bigger-on-desktop & {
+      min-width: 426px;
+      padding: 18px 18px 6px 0;
+    }
   }
 }
 
@@ -145,6 +151,14 @@
     grid-template-columns: 176px 40px;
     padding: 12px 18px 15px 0;
     gap: 16px;
+  }
+
+  @media (min-width: $desktop-width) {
+
+    .news__slider-item--bigger-on-desktop & {
+      min-width: 468px;
+      grid-template-columns: 404px 40px;
+    }
   }
 }
 
@@ -176,6 +190,7 @@
 
   @media (min-width: $desktop-width) {
     line-height: 1.29;
+    max-width: unset;
 
     p {
       line-height: 1.29;

@@ -4,11 +4,15 @@
 
   --pagination-buttons-height: 26px;
 
+  @media (min-width: $desktop-width) {
+    padding: 61px 0 60px;
+  }
+
 }
 
 .news__section-title {
   margin: 0;
-  margin-bottom: 24px;
+  margin-bottom: 23px;
   text-align: center;
 
   @media (min-width: $tablet-width) {
@@ -17,13 +21,17 @@
     justify-content: space-between;
     flex-wrap: wrap;
   }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 39px;
+  }
 }
 
 .news__buttons-list {
   padding: 0;
   padding-bottom: 11px;
   margin: 0;
-  margin-bottom: 12px;
+  margin-bottom: 13px;
   list-style: none;
   display: flex;
   gap: 9px;
@@ -37,6 +45,13 @@
     gap: 4px;
     flex-wrap: wrap;
   }
+
+  @media (min-width: $desktop-width) {
+    gap: unset;
+    max-width: 720px;
+    margin: 0 auto;
+    margin-bottom: 29px;
+  }
 }
 
 .news__slider {
@@ -46,6 +61,10 @@
   @media (min-width: $tablet-width) {
     margin-bottom: unset;
   }
+  @media (min-width: $desktop-width) {
+    margin-bottom: 40px;
+  }
+
 }
 
 .news__slider .news__slider-item {
@@ -85,6 +104,7 @@
 
   @media (min-width: $tablet-width) {
     min-height: fit-content;
+    height: auto;
 
     &:nth-child(odd) {
       grid-row: unset;
@@ -150,12 +170,8 @@
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 
-   @media (min-width: $tablet-width) {
-  max-width: 188px;
+  @media (min-width: $tablet-width) {
+    max-width: 188px;
     gap: 20px;
-  }
-
-  @media (min-width: $desktop-width) {
-   
   }
 }

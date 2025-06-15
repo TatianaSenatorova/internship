@@ -45,4 +45,9 @@
     font-size: 14px;
     letter-spacing: 0.28px;
   }
+
+  @media (min-width: $desktop-width) {
+    padding: 14px 7px;
+    min-width: 119px;
+  }
 }

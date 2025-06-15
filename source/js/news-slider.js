@@ -68,7 +68,7 @@ const initSlider = () => {
       // dynamicMainBullets: 4,
       renderBullet: function (index, bulletClass) {
         return `<li><button class=${bulletClass} data-index=${index + 1}><span class="visually-hidden">Перейти к слайду ${index + 1
-        }</span>${index + 1}</button></li>`;
+          }</span>${index + 1}</button></li>`;
       },
       enabled: true,
     },
@@ -126,7 +126,7 @@ function updatePagination(activeIndex = 0) {
   for (let i = startPage; i < startPage + SHOW_NUMBER_BULLETS; i++) {
     const isActive = i === currentPage ? 'pagination-button--is-active' : '';
     paginationHTML += `<button class="pagination-button ${isActive}" data-index="${i - 1}"><span class="visually-hidden">Перейти к слайду ${i
-    }</span>${i}</button>`;
+      }</span>${i}</button>`;
     // paginationHTML += `<span class="swiper-pagination-bullet ${isActive}" data-index="${i}">${i + 1}</span>`;
   }
   newsPagination.innerHTML = paginationHTML;
@@ -204,9 +204,20 @@ function checkSlidesQuantity() {
 
 const changeImgToBackground = (slide) => {
   const cardImgWrap = slide.querySelector('.news-card__image-wrap');
-  const cardImg = slide.querySelector('.news-card__image-wrap img');
-  const urlForBackground = cardImg.getAttribute('src');
-  cardImgWrap.style.backgroundImage = `url('../../${urlForBackground}')`;
+  const cardImg = cardImgWrap.querySelector('.news-card__image-wrap img');
+  const urlForBackground = cardImgWrap.querySelector('picture source').getAttribute('srcset');
+  let url = urlForBackground.split('@')[0];
+  console.log(url)
+  if (windowWidth < 768) {
+    url = cardImgWrap.querySelector('img').getAttribute('src').split('@')[0];
+   }
+  cardImgWrap.style.backgroundImage = `image-set(
+      url("../../${url}@1x.webp") type("image/webp") 1x,
+      url("../../${url}@2x.webp") type("image/webp") 2x,
+      url("../../${url}@1x.jpg") type("image/jpeg") 1x,
+      url("../../${url}@2x.jpg") type("image/jpeg") 2x
+    )
+`;
   cardImg.style.display = 'none';
 };
 
