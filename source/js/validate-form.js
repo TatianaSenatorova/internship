@@ -12,11 +12,18 @@ import {
   DataForValidation
 } from './constants.js';
 
+console.log(SlimSelect)
+
 const phoneMask = new window.IMask(inputPhone, {
   mask: '+7 (000) 000-00-00'
 });
 
-console.log(phoneMask);
+const select = new SlimSelect({
+  select: '#sectionSelect',
+})
+
+
+console.log(select);
 
 let invalidInputsData = [inputName];
 
@@ -56,6 +63,7 @@ const checkInputName = () => {
 
 const checkInputPhone = () => {
   const inputPhoneIsValid = inputPhone.value.trim() !== '';
+  console.log(inputPhoneIsValid)
   if (!inputPhoneIsValid) {
     invalidInputsData.push(DataForValidation[1].DOM_INPUT);
   }
@@ -63,11 +71,11 @@ const checkInputPhone = () => {
 }
 
 const checkInputCheckBox = () => {
-  const inputCheckBox = inputCheckbox[':checked'];
+  const inputCheckBox = inputCheckbox.checked;
   if (!inputCheckBox) {
     invalidInputsData.push(DataForValidation[2].DOM_INPUT);
   }
-  return inputPhoneIsValid;
+  return inputCheckBox;
 }
 
 function isValid() {
