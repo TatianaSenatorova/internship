@@ -121,6 +121,10 @@
   @media (min-width: $tablet-width) {
     padding: 38px 20px 10px;
   }
+
+  @media (min-width: $desktop-width) {
+    padding: 38px 20px 16px;
+  }
 }
 
 .programs-card__title {
@@ -147,6 +151,9 @@
   }
 
   @media (min-width: $desktop-width) {
+    min-width: 194px;
+    max-width: 194px;
+    padding: 18px 15px 6px;
     font-size: 24px;
     line-height: 0.71;
   }
@@ -184,7 +191,9 @@
   }
 
   @media (min-width: $desktop-width) {
+    width: fit-content;
     min-height: 82px;
+    grid-template-columns: 233px 30px;
   }
 }
 
