@@ -1,5 +1,6 @@
 .button-swiper {
   --slider-nav-buttons-height: 32px;
+  --additional-padding-click-zone: 10px;
 
   position: relative;
   width: var(--slider-nav-buttons-height);
@@ -62,6 +63,15 @@
   &:disabled {
     pointer-events: none;
     color: $color-mischka;
+  }
+
+  .news__buttons-swiper-list & {
+    right: calc(var(--additional-padding-click-zone) * -1);
+  }
+
+  .news__buttons-swiper-list &--prev {
+    right: unset;
+    left: calc(var(--additional-padding-click-zone) * -1);
   }
 }
 

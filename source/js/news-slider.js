@@ -36,7 +36,7 @@ const initSlider = () => {
     slidesPerView: 1,
     slidesPerGroup: 1,
     initialSlide: 0,
-    spaceBetween: 18,
+    spaceBetween: 20,
 
     grid: {
       rows: 2,
