@@ -1,3 +1,5 @@
+import * as mask from './vendor/imask.js';
+
 import {
   sectionForm,
   inputName,
@@ -8,6 +10,14 @@ import {
 import {
   DataForValidation
 } from './constants.js';
+
+const phoneMask = new window.IMask(inputPhone, {
+    mask: '+7 (000) 000-00-00'
+  });
+
+console.log(phoneMask);
+
+const inputs = [inputName, inputPhone];
 
 let invalidInputsData = [inputName, inputPhone];
 console.log(DataForValidation[1].REG_EXP.test(inputName.value.trim()))
@@ -65,5 +75,9 @@ invalidInputsData.forEach((input) => {
   });
 });
 
-
+// inputs.forEach((input) => {
+//     input.addEventListener('input', (evt) => {
+//     input.value =
+//   });
+// })
 
