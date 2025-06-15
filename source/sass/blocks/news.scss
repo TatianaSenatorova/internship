@@ -40,7 +40,7 @@
 
 .news__slider {
   overflow: hidden;
-  margin-bottom: 24px;
+  // margin-bottom: 24px;
 }
 
 .news__slider .news__slider-item {
@@ -127,6 +127,8 @@
   width: 100%;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
+
+  
 }
 
 .news__slider-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
