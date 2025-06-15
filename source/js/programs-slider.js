@@ -49,14 +49,18 @@ export const initProgramsSlider = () => {
   });
 };
 
+const windowWidth = document.documentElement.clientWidth;
+
+onDomLoadedAddProgramsSlides(windowWidth);
 initProgramsSlider();
+
 
 export const onResizeDestroyProgramsSlider = () => {
   programsSwiper.destroy(true, true);
 };
 
-export const onDomLoadedAddProgramsSlides = (windowWidth) => {
-
+export function onDomLoadedAddProgramsSlides (windowWidth) {
+  console.log('зашел')
   if (windowWidth < TABLET_WIDTH) {
     return;
   }
