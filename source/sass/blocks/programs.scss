@@ -46,6 +46,13 @@
   min-height: var(--slider-nav-buttons-height);
   margin: 0;
   max-width: 200px;
+
+   @media (min-width: $tablet-width) {
+   max-width: 400px;
+  }
+   @media (min-width: $desktop-width) {
+   max-width: 1000px;
+  }
 }
 
 .programs__primary-button {

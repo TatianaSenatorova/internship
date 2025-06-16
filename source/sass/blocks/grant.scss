@@ -102,13 +102,26 @@
 }
 
 .grant__image-wrap img {
+  width: 290px;
+  height: 200px;
   position: relative;
   z-index: -1;
   border-radius: 16px;
   display: block;
   object-fit: cover;
   text-indent: -100vw;
+
+  @media (min-width: $tablet-width) {
+    width: 678px;
+    height: 375px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 498px;
+    height: 363px;
+  }
 }
+
 
 .grant__bottom-wrap {
   @media (min-width: $desktop-width) {

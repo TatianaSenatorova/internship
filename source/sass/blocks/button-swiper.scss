@@ -5,6 +5,7 @@
   position: relative;
   width: var(--slider-nav-buttons-height);
   height: var(--slider-nav-buttons-height);
+  flex-shrink: 0;
   padding: 6px;
   display: flex;
   align-items: center;

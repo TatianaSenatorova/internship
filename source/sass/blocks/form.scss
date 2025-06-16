@@ -115,6 +115,10 @@
   .form--dark-background & {
     margin-bottom: 20px;
   }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 20px;
+  }
 }
 
 .form__select {

@@ -29,10 +29,13 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: $z-index-forth;
+  height: 580px;
+  overflow-y: auto;
 
   @media (min-width: $tablet-width) {
     top: 204px;
     width: 510px;
+    height: 700px;
   }
 
   @media (min-width: $desktop-width) {
