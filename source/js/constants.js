@@ -23,7 +23,7 @@ export const SHOW_NUMBER_BULLETS = 4;
 export const DataForValidation = [
   {
     DOM_INPUT: inputName,
-    REG_EXP: /^[A-Za-zА-Яа-яЁё\-]+(?: [A-Za-zА-Яа-яЁё\-]+)*$/,
+    REG_EXP: /^[A-Za-zА-Яа-яЁё-]+(?: [A-Za-zА-Яа-яЁё-]+)*$/,
     VALID: true,
     ERROR: 'Заполните это поле. Не вводите цифры и спецсимволы.'
   },
@@ -33,7 +33,7 @@ export const DataForValidation = [
     VALID: true,
     ERROR: 'Заполните это поле. Не вводите буквы. Можно символы +, -, ( , ) и 10 цифр'
   },
-   {
+  {
     DOM_INPUT: inputCheckbox,
     VALID: true,
     ERROR: 'Поставьте, пожалуйста, галочку.'

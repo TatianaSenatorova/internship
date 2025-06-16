@@ -20,14 +20,10 @@ import {
 let windowWidth = document.documentElement.clientWidth;
 const initSlidesNumber = newsSlides.length;
 
-let slidesInDom, slidesNumber, totalPages, startPage, slidesPerPage;
+let slidesInDom, slidesNumber, totalPages, startPage;
 let currentPage = INIT_PAGE_SLIDER_NEWS;
 
 let newsSwiper;
-
-const bulletClass = 'pagination-button';
-
-// let startBullet = Math.min(Math.max(current - 2, 1), total - countBullets + 1);
 
 const initSlider = () => {
   newsSwiper = new Swiper('.swiper-news', {
@@ -64,11 +60,9 @@ const initSlider = () => {
       bulletActiveClass: 'pagination-button--is-active',
       type: 'bullets',
       clickable: true,
-      // dynamicBullets: true,
-      // dynamicMainBullets: 4,
       renderBullet: function (index, bulletClass) {
         return `<li><button class=${bulletClass} data-index=${index + 1}><span class="visually-hidden">Перейти к слайду ${index + 1
-          }</span>${index + 1}</button></li>`;
+        }</span>${index + 1}</button></li>`;
       },
       enabled: true,
     },
@@ -95,29 +89,28 @@ updatePagination();
 
 function getTotalPages() {
   if (windowWidth < 768) {
-    slidesPerPage = SLIDES_PERPAGE_MOBILE_SLIDER_NEWS;
     totalPages = Math.ceil(slidesNumber / SLIDES_PERPAGE_MOBILE_SLIDER_NEWS);
     return;
   } else if (windowWidth <= 1440) {
-    slidesPerPage = SLIDES_PERPAGE_DESKTOP_SLIDER_NEWS;
     totalPages = Math.ceil(slidesNumber / SLIDES_PERPAGE_DESKTOP_SLIDER_NEWS);
     return;
   }
-  slidesPerPage = SLIDES_PERPAGE_TABLET_SLIDER_NEWS;
   totalPages = Math.ceil(slidesNumber / SLIDES_PERPAGE_TABLET_SLIDER_NEWS);
 }
 
 function getStartPage(activeIndex = 0) {
   if (windowWidth >= 1440) {
     currentPage = Math.floor(activeIndex / SLIDES_PERPAGE_DESKTOP_SLIDER_NEWS) + 1;
-    return startPage = Math.min(Math.max(currentPage - 2, 1), totalPages - SHOW_NUMBER_BULLETS + 1);
-
+    startPage = Math.min(Math.max(currentPage - 2, 1), totalPages - SHOW_NUMBER_BULLETS + 1);
+    return;
   } else if (windowWidth < 768) {
     currentPage = activeIndex + 1;
-    return startPage = Math.min(Math.max(currentPage - 2, 1), totalPages - SHOW_NUMBER_BULLETS + 1);
+    startPage = Math.min(Math.max(currentPage - 2, 1), totalPages - SHOW_NUMBER_BULLETS + 1);
+    return;
   }
   currentPage = Math.floor(activeIndex / SLIDES_ROWS_SLIDER_NEWS) + 1;
-  return startPage = Math.min(Math.max(currentPage - 2, 1), totalPages - SHOW_NUMBER_BULLETS + 1);
+  startPage = Math.min(Math.max(currentPage - 2, 1), totalPages - SHOW_NUMBER_BULLETS + 1);
+
 }
 
 function updatePagination(activeIndex = 0) {
@@ -126,14 +119,10 @@ function updatePagination(activeIndex = 0) {
   for (let i = startPage; i < startPage + SHOW_NUMBER_BULLETS; i++) {
     const isActive = i === currentPage ? 'pagination-button--is-active' : '';
     paginationHTML += `<button class="pagination-button ${isActive}" data-index="${i - 1}"><span class="visually-hidden">Перейти к слайду ${i
-      }</span>${i}</button>`;
-    // paginationHTML += `<span class="swiper-pagination-bullet ${isActive}" data-index="${i}">${i + 1}</span>`;
+    }</span>${i}</button>`;
   }
   newsPagination.innerHTML = paginationHTML;
-
-  // Добавляем обработчик клика для переключения слайдов
   newsPagination.querySelectorAll('.swiper-pagination-bullet').forEach((bullet) => {
-    console.log(bullet);
     bullet.addEventListener('click', function () {
       const index = parseInt(this.dataset.index);
       newsSwiper.slideTo(index);
@@ -207,10 +196,9 @@ const changeImgToBackground = (slide) => {
   const cardImg = cardImgWrap.querySelector('.news-card__image-wrap img');
   const urlForBackground = cardImgWrap.querySelector('picture source').getAttribute('srcset');
   let url = urlForBackground.split('@')[0];
-  console.log(url)
   if (windowWidth < 768) {
     url = cardImgWrap.querySelector('img').getAttribute('src').split('@')[0];
-   }
+  }
   cardImgWrap.style.backgroundImage = `image-set(
       url("../../${url}@1x.webp") type("image/webp") 1x,
       url("../../${url}@2x.webp") type("image/webp") 2x,

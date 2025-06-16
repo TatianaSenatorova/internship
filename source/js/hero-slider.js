@@ -8,7 +8,6 @@ import {
 } from './dom-elements.js';
 
 let heroSwiper;
-let prevIndex;
 
 const initSlider = () => {
   heroSwiper = new Swiper('.swiper-hero', {
@@ -39,23 +38,17 @@ const initSlider = () => {
       },
       enabled: true,
     },
-
-    on: {
-      slideChange: function (heroSwiper) {
-        onSlideChange(heroSwiper);
-      }
-    }
   });
+
 };
 
 initSlider();
 
-function unfocusNonActiveSlide(heroSwiper) {
-  slidesHero[heroSwiper.realIndex].querySelector('.hero-card__primary-button').removeAttribute('tabindex');
-  if (prevIndex) {
-    slidesHero[prevIndex].querySelector('.hero-card__primary-button').setAttribute('tabindex', '-1');
-  }
-  prevIndex = heroSwiper.realIndex;
+function unfocusNonActiveSlide(initIndex = 0) {
+  slidesHero.forEach((slide) => {
+    slide.querySelector('.hero-card__primary-button').setAttribute('tabindex', '-1');
+  });
+  slidesHero[initIndex].querySelector('.hero-card__primary-button').removeAttribute('tabindex');
 }
 
 const renderFalseBullets = () => {
@@ -78,15 +71,18 @@ function renderRealPagination(currentSlide = 0) {
 renderFalseBullets();
 renderRealPagination();
 
-function onSlideChange(heroSwiper) {
+function onSlideChange() {
   const activeSlide = heroSwiper.realIndex;
-  unfocusNonActiveSlide(heroSwiper);
+  unfocusNonActiveSlide(activeSlide);
   renderRealPagination(activeSlide);
 }
 
 export const onResizeUpdateHeroSlider = () => {
-  prevIndex = null;
   heroSwiper.destroy(true, true);
+  const initIndex = 0;
+  renderRealPagination(initIndex);
+  unfocusNonActiveSlide(initIndex);
   initSlider();
-  renderRealPagination();
 };
+
+heroSwiper.on('slideChange', onSlideChange);
