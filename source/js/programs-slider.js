@@ -49,9 +49,9 @@ export const initProgramsSlider = () => {
   });
 };
 
-const windowWidth = document.documentElement.clientWidth;
+const window = document.documentElement.clientWidth;
 
-onDomLoadedAddProgramsSlides(windowWidth);
+onDomLoadedAddProgramsSlides(window);
 initProgramsSlider();
 
 
@@ -87,4 +87,3 @@ export const deleteAddedProgramsSlides = () => {
     }
   });
 };
-

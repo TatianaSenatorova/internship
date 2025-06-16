@@ -10,7 +10,7 @@
     margin-bottom: 12px;
     font-size: 12px;
     line-height: 1.17;
-    color: rgba(240, 239, 233, 0.8);
+    color: $color-alabaster;
   }
 
   .input:has(.input__field:not(:disabled)):hover & {

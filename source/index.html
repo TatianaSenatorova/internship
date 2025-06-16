@@ -178,7 +178,7 @@
                           ощущая настоящий студенческий стиль жизни!</p>
                       </div>
                       <div class="hero-card__button-nebo-wrap">
-                        <!-- Чтобы кнопка  button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
+                        <!-- Чтобы кнопка primary-button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
                         <a class="hero-card__primary-button primary-button" href="#">Подробнее</a>
                         <div class="hero-card__button-right-rounding nebo nebo--br"></div>
                       </div>
@@ -228,7 +228,7 @@
                           и&nbsp;другое.</p>
                       </div>
                       <div class="hero-card__button-nebo-wrap">
-                        <!-- Чтобы кнопка  button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
+                        <!-- Чтобы кнопка  primary-button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
                         <a class="hero-card__primary-button primary-button" href="#" tabindex="-1">Подробнее</a>
                         <div class="hero-card__button-right-rounding nebo nebo--br"></div>
                       </div>
@@ -277,7 +277,7 @@
                           организациях.</p>
                       </div>
                       <div class="hero-card__button-nebo-wrap">
-                        <!-- Чтобы кнопка  button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
+                        <!-- Чтобы кнопка  primary-button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
                         <a class="hero-card__primary-button primary-button" href="#" tabindex="-1">Подробнее</a>
                         <div class="hero-card__button-right-rounding nebo nebo--br"></div>
                       </div>
@@ -355,6 +355,7 @@
         <div class="programs__wrap">
           <div class="programs__top-wrap">
             <h2 class="programs__section-title section-title">Программы</h2>
+            <!-- Чтобы кнопка  primary-button отобразилась в неактивном состоянии, необходимо добавить класс-модификатор is-disabled -->
             <a class="programs__primary-button primary-button" href="#">Все программы</a>
           </div>
           <div class="programs__slider swiper-programs">
@@ -1036,7 +1037,7 @@
                   <!-- Чтобы отобразить инпут в состоянии ошибки надо добавить класс-модификатор error к элементу с классом input". -->
                   <label class="input input--dark-background">
                     <span class="input__label">Имя</span>
-                    <input class="input__field" type="text" id="username" name="name" required>
+                    <input class="input__field" type="text" id="username" name="name" pattern="^[a-zA-Zа-яА-ЯёЁ]{2,30}$" required>
                   </label>
                 </li>
                 <li class="form__list-item">
@@ -1061,24 +1062,24 @@
               <label class="select__label" for="select-button">Выберите город</label>
               <button class="select__button" id="select-button" type="button" aria-label="Выберите одну из опций"
                 tabindex="0"></button>
-              <ul class="select__list">
+              <ul class="select__list" role="listbox">
                 <!-- Если надо сделать состояние disable опции - добавляем элементу с классом select__item класс-модификатор is-disabled -->
-                <li class="select__item" tabindex="0" data-select-value="id-1" aria-selected="false">
+                <li class="select__item" tabindex="0" data-select-value="id-1" aria-selected="false" aria-checked="false" role="option">
                   <span class="select__text">
                     Санкт-Петербург
                   </span>
                 </li>
-                <li class="select__item" tabindex="0" data-select-value="id-2" aria-selected="false">
+                <li class="select__item" tabindex="0" data-select-value="id-2" aria-selected="false" aria-checked="false" role="option">
                   <span class="select__text">
                     Санкт-Петербург
                   </span>
                 </li>
-                <li class="select__item" tabindex="0" data-select-value="id-3" aria-selected="false">
+                <li class="select__item" tabindex="0" data-select-value="id-3" aria-selected="false" aria-checked="false" role="option">
                   <span class="select__text">
                     Санкт-Петербург
                   </span>
                 </li>
-                <li class="select__item" tabindex="0" data-select-value="id-4" aria-selected="false">
+                <li class="select__item" tabindex="0" data-select-value="id-4" aria-selected="false" aria-checked="false" role="option">
                   <span class="select__text">
                     Санкт-Петербург
                   </span>
@@ -1211,24 +1212,24 @@
             data-id="select">
             <span class="select__label">Выберите город</span>
             <button class="select__button" type="button" aria-label="Выберите одну из опций" tabindex="0"></button>
-            <ul class="select__list">
+            <ul class="select__list" role="listbox">
               <!-- Если надо сделать состояние disable опции - добавляем элементу с классом select__item класс-модификатор is-disabled -->
-              <li class="select__item" tabindex="0" data-select-value="id-1" aria-selected="false">
+              <li class="select__item" tabindex="0" data-select-value="id-1" aria-selected="false" aria-checked="false" role="option">
                 <span class="select__text">
                   Санкт-Петербург
                 </span>
               </li>
-              <li class="select__item" tabindex="0" data-select-value="id-2" aria-selected="false">
+              <li class="select__item" tabindex="0" data-select-value="id-2" aria-selected="false" aria-checked="false" role="option">
                 <span class="select__text">
                   Санкт-Петербург
                 </span>
               </li>
-              <li class="select__item" tabindex="0" data-select-value="id-3" aria-selected="false">
+              <li class="select__item" tabindex="0" data-select-value="id-3" aria-selected="false" aria-checked="false" role="option">
                 <span class="select__text">
                   Санкт-Петербург
                 </span>
               </li>
-              <li class="select__item" tabindex="0" data-select-value="id-4" aria-selected="false">
+              <li class="select__item" tabindex="0" data-select-value="id-4" aria-selected="false" aria-checked="false" role="option">
                 <span class="select__text">
                   Санкт-Петербург
                 </span>

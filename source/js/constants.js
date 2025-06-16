@@ -20,23 +20,42 @@ export const DESKTOP_WIDTH = 1440;
 export const TABLET_WIDTH = 768;
 export const MOBILE_WIDTH = 320;
 export const SHOW_NUMBER_BULLETS = 4;
-export const DataForValidation = [
-  {
-    DOM_INPUT: inputName,
-    REG_EXP: /^[A-Za-zА-Яа-яЁё-]+(?: [A-Za-zА-Яа-яЁё-]+)*$/,
-    VALID: true,
-    ERROR: 'Заполните это поле. Не вводите цифры и спецсимволы.'
-  },
-  {
-    DOM_INPUT: inputPhone,
-    REG_EXP: /.*\\S.*/,
-    VALID: true,
-    ERROR: 'Заполните это поле. Не вводите буквы. Можно символы +, -, ( , ) и 10 цифр'
-  },
-  {
-    DOM_INPUT: inputCheckbox,
-    VALID: true,
-    ERROR: 'Поставьте, пожалуйста, галочку.'
-  },
-];
+// export const DataForValidation = [
+//   {
+//     DOM_INPUT: inputName,
+//     REG_EXP: /^[A-Za-zА-Яа-яЁё-]+(?: [A-Za-zА-Яа-яЁё-]+)*$/,
+//     VALID: true,
+//     ERROR: 'Заполните это поле. Не вводите цифры и спецсимволы.'
+//   },
+//   {
+//     DOM_INPUT: inputPhone,
+//     REG_EXP: /^(?=(?:.*\d){10,})[0-9()+\-\s]+$/,
+//     VALID: true,
+//     ERROR: 'Заполните это поле. Не вводите буквы. Можно символы +, -, ( , ) и 10 цифр'
+//   },
+//   {
+//     DOM_INPUT: inputCheckbox,
+//     VALID: true,
+//     ERROR: 'Поставьте, пожалуйста, галочку.'
+//   },
+// ];
 
+export const DataForValidationName = {
+  DOM_INPUT: inputName,
+  REG_EXP: /^[A-Za-zА-Яа-яЁё-]+(?: [A-Za-zА-Яа-яЁё-]+)*$/,
+  VALID: true,
+  ERROR: 'Заполните это поле. Не вводите цифры и спецсимволы.'
+};
+
+export const DataForValidationPhone = {
+  DOM_INPUT: inputPhone,
+  REG_EXP: /^(?=(?:.*\d){10,})[0-9()+\-\s]+$/,
+  VALID: true,
+  ERROR: 'Заполните это поле. Не вводите буквы. Можно символы +, -, ( , ) и 10 цифр'
+};
+
+export const DataForValidationCheckbox = {
+  DOM_INPUT: inputCheckbox,
+  VALID: true,
+  ERROR: 'Поставьте, пожалуйста, галочку.'
+};

@@ -20,8 +20,9 @@
   @media (min-width: $tablet-width) {
     min-height: 1024px;
   }
+
   @media (min-width: $desktop-width) {
-   min-height: 800px;
+    min-height: 800px;
   }
 }
 
@@ -47,6 +48,7 @@
   @media (min-width: $tablet-width) {
     padding-bottom: 60px;
   }
+
   @media (min-width: $desktop-width) {
     padding-top: 100px;
   }

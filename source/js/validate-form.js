@@ -9,23 +9,16 @@ import {
 } from './dom-elements.js';
 
 import {
-  DataForValidation
+  DataForValidationName,
+  DataForValidationPhone,
+  DataForValidationCheckbox
 } from './constants.js';
 
-console.log(SlimSelect);
-
-const phoneMask = new window.IMask(inputPhone, {
+export const phoneMask = new window.IMask(inputPhone, {
   mask: '+7 (000) 000-00-00'
 });
 
-const select = new SlimSelect({
-  select: '#sectionSelect',
-});
-
-
-console.log(select);
-
-let invalidInputsData = [inputName];
+let invalidInputsData = [];
 
 startValidation();
 
@@ -33,39 +26,52 @@ const blockSubmitButton = (isBlocked = true) => {
   submitButton.disabled = isBlocked;
 };
 
+const onInputRemoveError = (evt) => {
+  evt.target.closest('.input').classList.remove('input--error');
+  evt.target.setCustomValidity(' ');
+  evt.target.reportValidity();
+  evt.target.blur();
+  evt.target.focus();
+};
+
 const showError = () => {
-  const inputParent = invalidInputsData[0].DOM_INPUT.closest('.input');
-  inputParent.classList.add('input--error');
-  invalidInputsData[0].DOM_INPUT.setCustomValidity(invalidInputsData[0].ERROR);
-  invalidInputsData[0].DOM_INPUT.reportValidity(invalidInputsData[0].ERROR);
+  let inputLabel;
+  const input = invalidInputsData[0][0];
+  if (input.type === 'checkbox') {
+    inputLabel = input.closest('.checkbox');
+    inputLabel.classList.add('checkbox--error');
+  } else {
+    inputLabel = input.closest('.input');
+    inputLabel.classList.add('input--error');
+  }
+  input.setCustomValidity(invalidInputsData[0][1]);
+  input.reportValidity(invalidInputsData[0][1]);
+  input.addEventListener('input', onInputRemoveError);
 };
 
 function startValidation() {
   sectionForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    isValid();
     blockSubmitButton();
-    // if (!isValid()) {
-    //   event.preventDefault();
-    //         showError();
-    // }
-    // blockSubmitButton(false);
+    if (isValid()) {
+      event.preventDefault();
+      showError();
+    }
+    blockSubmitButton(false);
   });
 }
 
 const checkInputName = () => {
-  const inputNameIsValid = DataForValidation[0].REG_EXP.test(inputName.value.trim());
+  const inputNameIsValid = DataForValidationName.REG_EXP.test(inputName.value.trim());
   if (!inputNameIsValid) {
-    invalidInputsData.push(DataForValidation[0].DOM_INPUT);
+    invalidInputsData.push([inputName, DataForValidationName.ERROR]);
   }
   return inputNameIsValid;
 };
 
 const checkInputPhone = () => {
-  const inputPhoneIsValid = inputPhone.value.trim() !== '';
-  console.log(inputPhoneIsValid);
+  const inputPhoneIsValid = DataForValidationPhone.REG_EXP.test(inputPhone.value.trim());
   if (!inputPhoneIsValid) {
-    invalidInputsData.push(DataForValidation[1].DOM_INPUT);
+    invalidInputsData.push([inputPhone, DataForValidationPhone.ERROR]);
   }
   return inputPhoneIsValid;
 };
@@ -73,7 +79,7 @@ const checkInputPhone = () => {
 const checkInputCheckBox = () => {
   const inputCheckBox = inputCheckbox.checked;
   if (!inputCheckBox) {
-    invalidInputsData.push(DataForValidation[2].DOM_INPUT);
+    invalidInputsData.push([inputCheckbox, DataForValidationCheckbox.ERROR]);
   }
   return inputCheckBox;
 };
@@ -83,31 +89,12 @@ function isValid() {
   checkInputName();
   checkInputPhone();
   checkInputCheckBox();
-
-  console.log(invalidInputsData);
-
-  return invalidInputsData[length - 1];
+  return invalidInputsData;
 }
 
-const removeError = (target) => {
-  if (target.closest('.input').classList.contains('input--error')) {
-    target.closest('.input').classList.remove('input--error');
-    target.setCustomValidity(' ');
-    target.reportValidity();
-    target.blur();
-    target.focus();
-  }
+const onInput = (evt) => {
+  const value = evt.target.value.replace(/[0-9]/g, '');
+  evt.target.value = value;
 };
 
-invalidInputsData.forEach((input) => {
-  input.addEventListener('input', (evt) => {
-    removeError(evt.target);
-  });
-});
-
-// inputs.forEach((input) => {
-//     input.addEventListener('input', (evt) => {
-//     input.value =
-//   });
-// })
-
+inputName.addEventListener('input', onInput);

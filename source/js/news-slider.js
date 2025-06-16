@@ -110,7 +110,6 @@ function getStartPage(activeIndex = 0) {
   }
   currentPage = Math.floor(activeIndex / SLIDES_ROWS_SLIDER_NEWS) + 1;
   startPage = Math.min(Math.max(currentPage - 2, 1), totalPages - SHOW_NUMBER_BULLETS + 1);
-
 }
 
 function updatePagination(activeIndex = 0) {
@@ -118,13 +117,13 @@ function updatePagination(activeIndex = 0) {
   let paginationHTML = '';
   for (let i = startPage; i < startPage + SHOW_NUMBER_BULLETS; i++) {
     const isActive = i === currentPage ? 'pagination-button--is-active' : '';
-    paginationHTML += `<button class="pagination-button ${isActive}" data-index="${i - 1}"><span class="visually-hidden">Перейти к слайду ${i
+    paginationHTML += `<button class="pagination-button ${isActive}" data-index="${i}"><span class="visually-hidden">Перейти к слайду ${i
     }</span>${i}</button>`;
   }
   newsPagination.innerHTML = paginationHTML;
   newsPagination.querySelectorAll('.swiper-pagination-bullet').forEach((bullet) => {
     bullet.addEventListener('click', function () {
-      const index = parseInt(this.dataset.index);
+      const index = parseInt(this.dataset.index, 10);
       newsSwiper.slideTo(index);
     });
   });
@@ -133,12 +132,6 @@ function updatePagination(activeIndex = 0) {
 updatePagination();
 
 newsSwiper.on('slideChange', () => updatePagination(newsSwiper.activeIndex));
-
-
-// const unfocusNonActiveSlide = () => {
-//   slidesHero[heroSwiper.activeIndex].querySelector('.hero-card__primary-button').removeAttribute('tabindex');
-//   slidesHero[heroSwiper.previousIndex].querySelector('.hero-card__primary-button').setAttribute('tabindex', '-1');
-// };
 
 const removeAddedSlidesAndClasses = () => {
   slidesInDom = newsSlider.querySelectorAll('.news__slider-item');
@@ -155,41 +148,6 @@ const removeAddedSlidesAndClasses = () => {
     }
   });
 };
-
-function checkWindowWidth() {
-  const currentWindowWidth = document.documentElement.clientWidth;
-  if ((currentWindowWidth < TABLET_WIDTH && windowWidth < TABLET_WIDTH) || (currentWindowWidth >= DESKTOP_WIDTH && windowWidth >= DESKTOP_WIDTH) ||
-    ((currentWindowWidth >= TABLET_WIDTH && currentWindowWidth < DESKTOP_WIDTH && windowWidth >= TABLET_WIDTH && windowWidth < DESKTOP_WIDTH))) {
-    windowWidth = currentWindowWidth;
-    return;
-  }
-  windowWidth = currentWindowWidth;
-  newsSwiper.destroy(true, true);
-  removeAddedSlidesAndClasses();
-  checkSlidesQuantity();
-  if (windowWidth >= DESKTOP_WIDTH) {
-    addClassToBiggerCard();
-  } else if (windowWidth < TABLET_WIDTH) {
-    addClassToSmallerCard();
-  }
-  initSlider();
-  getStartPage();
-  updatePagination();
-}
-
-const onWindowResizeEvent = () => {
-  checkWindowWidth();
-};
-
-function checkSlidesQuantity() {
-  slidesInDom = newsSlider.querySelectorAll('.news__slider-item');
-  slidesNumber = slidesInDom.length;
-  const slidesToAdd = newsSlider.innerHTML;
-  while (slidesNumber < MIN_SLIDES_NUMBER_SLIDER_NEWS) {
-    newsSlider.insertAdjacentHTML('beforeend', slidesToAdd);
-    slidesNumber += initSlidesNumber;
-  }
-}
 
 const changeImgToBackground = (slide) => {
   const cardImgWrap = slide.querySelector('.news-card__image-wrap');
@@ -229,6 +187,40 @@ const addClassToSmallerCard = () => {
   });
 };
 
+function checkWindowWidth() {
+  const currentWindowWidth = document.documentElement.clientWidth;
+  if ((currentWindowWidth < TABLET_WIDTH && windowWidth < TABLET_WIDTH) || (currentWindowWidth >= DESKTOP_WIDTH && windowWidth >= DESKTOP_WIDTH) ||
+    ((currentWindowWidth >= TABLET_WIDTH && currentWindowWidth < DESKTOP_WIDTH && windowWidth >= TABLET_WIDTH && windowWidth < DESKTOP_WIDTH))) {
+    windowWidth = currentWindowWidth;
+    return;
+  }
+  windowWidth = currentWindowWidth;
+  newsSwiper.destroy(true, true);
+  removeAddedSlidesAndClasses();
+  checkSlidesQuantity();
+  if (windowWidth >= DESKTOP_WIDTH) {
+    addClassToBiggerCard();
+  } else if (windowWidth < TABLET_WIDTH) {
+    addClassToSmallerCard();
+  }
+  initSlider();
+  getStartPage();
+  updatePagination();
+}
+
+const onWindowResizeEvent = () => {
+  checkWindowWidth();
+};
+
+function checkSlidesQuantity() {
+  slidesInDom = newsSlider.querySelectorAll('.news__slider-item');
+  slidesNumber = slidesInDom.length;
+  const slidesToAdd = newsSlider.innerHTML;
+  while (slidesNumber < MIN_SLIDES_NUMBER_SLIDER_NEWS) {
+    newsSlider.insertAdjacentHTML('beforeend', slidesToAdd);
+    slidesNumber += initSlidesNumber;
+  }
+}
 
 const onDocumentDomContentLoaded = () => {
   checkSlidesQuantity();
